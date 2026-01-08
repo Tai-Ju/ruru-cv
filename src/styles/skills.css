@@ -41,9 +41,20 @@
 
 .skill-item {
   animation: fadeIn 0.5s ease;
+  padding: var(--spacing-md);
+  background-color: var(--bg-color);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--secondary-color);
+  transition: var(--transition);
 }
 
-.skill-info {
+.skill-item:hover {
+  border-left-color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(5px);
+}
+
+.skill-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,42 +67,19 @@
   font-size: var(--font-size-base);
 }
 
-.skill-percentage {
+.skill-level {
   font-size: var(--font-size-sm);
-  color: var(--text-light);
+  color: var(--bg-color);
+  background-color: var(--secondary-color);
+  padding: 2px 12px;
+  border-radius: var(--radius-sm);
   font-weight: 600;
 }
 
-.skill-bar {
-  height: 10px;
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-}
-
-.skill-progress {
-  height: 100%;
-  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-  border-radius: 10px;
-  transition: width 1s ease;
-  position: relative;
-}
-
-.skill-progress::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  animation: shimmer 2s infinite;
+.skill-experience {
+  font-size: var(--font-size-sm);
+  color: var(--text-light);
+  line-height: 1.4;
 }
 
 @keyframes fadeIn {
@@ -102,15 +90,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
   }
 }
 
