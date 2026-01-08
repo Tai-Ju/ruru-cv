@@ -54,26 +54,11 @@
   transform: translateX(5px);
 }
 
-.skill-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--spacing-xs);
-}
-
 .skill-name {
   font-weight: 600;
   color: var(--text-color);
   font-size: var(--font-size-base);
-}
-
-.skill-level {
-  font-size: var(--font-size-sm);
-  color: var(--bg-color);
-  background-color: var(--secondary-color);
-  padding: 2px 12px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
 }
 
 .skill-experience {
