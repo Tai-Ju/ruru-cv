@@ -1,4 +1,6 @@
 <script setup>
+import { trackProjectClick, trackOutboundLink } from '../../utils/analytics'
+
 const projects = [
   {
     id: 1,
@@ -29,6 +31,11 @@ const projects = [
     link: 'https://github.com/Tai-Ju/autohotkey-scripts'
   }
 ]
+
+const handleProjectClick = (project) => {
+  trackProjectClick(project.title)
+  trackOutboundLink(project.link, project.title)
+}
 </script>
 
 <template>
@@ -59,6 +66,7 @@ const projects = [
             class="project-link"
             target="_blank"
             rel="noopener noreferrer"
+            @click="handleProjectClick(project)"
           >
             查看專案 →
           </a>

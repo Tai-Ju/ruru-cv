@@ -1,10 +1,14 @@
 <script setup>
 import { ref } from 'vue'
+import { trackEvent } from '../../utils/analytics'
 
 const isMenuOpen = ref(false)
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
+  trackEvent('menu_toggle', {
+    is_open: isMenuOpen.value
+  })
 }
 
 const scrollToSection = (sectionId) => {
@@ -12,6 +16,9 @@ const scrollToSection = (sectionId) => {
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' })
     isMenuOpen.value = false
+    trackEvent('navigation_click', {
+      section: sectionId
+    })
   }
 }
 </script>
