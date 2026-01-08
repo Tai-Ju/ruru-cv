@@ -14,6 +14,12 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-3ZCLM9N3S2');
+      
+      // 調試：確認 GA 已加載
+      console.log('[GA] Google Analytics script initialized');
+      console.log('[GA] Measurement ID: G-3ZCLM9N3S2');
+      console.log('[GA] gtag function available:', typeof gtag === 'function');
+      console.log('[GA] dataLayer:', window.dataLayer);
     </script>
   </head>
   <body>
