@@ -1,6 +1,7 @@
 # 個人履歷網站
 
 這是一個使用 Vite + Vue 3 建立的現代化履歷網站專案。
+🌐 **線上預覽**：[ruru-cv.vercel.app](https://ruru-cv.vercel.app)
 
 ## 專案特色
 
