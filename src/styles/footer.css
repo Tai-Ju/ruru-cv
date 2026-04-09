@@ -36,6 +36,10 @@
   color: var(--secondary-color);
 }
 
+.copy-phone-link {
+  cursor: copy;
+}
+
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;

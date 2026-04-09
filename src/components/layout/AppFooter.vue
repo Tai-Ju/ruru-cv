@@ -1,9 +1,12 @@
 <script setup>
 import { trackContactClick, trackOutboundLink } from '../../utils/analytics'
+import { ref } from 'vue'
 
 const currentYear = new Date().getFullYear()
 const gmailComposeUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=lk117868@gmail.com'
 const mailtoFallback = 'mailto:lk117868@gmail.com'
+const phoneNumber = '0909-213-395'
+const isPhoneCopied = ref(false)
 
 const handleContactClick = (type, url) => {
   trackContactClick(type)
@@ -18,6 +21,25 @@ const openGmailCompose = () => {
   if (!newWindow) {
     window.location.href = mailtoFallback
   }
+}
+
+const copyPhoneNumber = async () => {
+  handleContactClick('phone')
+  try {
+    await navigator.clipboard.writeText(phoneNumber)
+  } catch {
+    const input = document.createElement('input')
+    input.value = phoneNumber
+    document.body.appendChild(input)
+    input.select()
+    document.execCommand('copy')
+    document.body.removeChild(input)
+  }
+
+  isPhoneCopied.value = true
+  setTimeout(() => {
+    isPhoneCopied.value = false
+  }, 1600)
 }
 </script>
 
@@ -41,11 +63,13 @@ const openGmailCompose = () => {
           >
             Email
           </a>
-          <a 
-            href="tel:+886909213395"
-            @click="handleContactClick('phone')"
+          <a
+            href="#"
+            class="copy-phone-link"
+            :title="isPhoneCopied ? '已複製' : `點擊複製 ${phoneNumber}`"
+            @click.prevent="copyPhoneNumber"
           >
-            Phone
+            {{ isPhoneCopied ? '已複製電話' : `Phone ${phoneNumber}` }}
           </a>
         </div>
       </div>
