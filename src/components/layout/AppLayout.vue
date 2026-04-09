@@ -13,12 +13,12 @@ import ResumeEducation from '../resume/ResumeEducation.vue'
   <div class="app-layout">
     <AppHeader />
     <main class="main-content">
-      <ResumeHero />
-      <ResumeAbout />
-      <ResumeExperience />
-      <ResumeSkills />
-      <ResumeProjects />
-      <ResumeEducation />
+      <ResumeHero class="resume-topic" />
+      <ResumeAbout class="resume-topic" />
+      <ResumeExperience class="resume-topic" />
+      <ResumeSkills class="resume-topic" />
+      <ResumeProjects class="resume-topic" />
+      <ResumeEducation class="resume-topic" />
     </main>
     <AppFooter />
   </div>

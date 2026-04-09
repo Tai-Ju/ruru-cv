@@ -1,7 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import html2canvas from 'html2canvas'
-import { jsPDF } from 'jspdf'
 import photoUrl from '../../assets/photo.jpg'
 import { trackDownload } from '../../utils/analytics'
 
@@ -26,39 +24,42 @@ const downloadResumeAsPdf = async () => {
       throw new Error('找不到履歷內容區塊')
     }
 
-    const canvas = await html2canvas(resumeElement, {
-      scale: 2,
-      useCORS: true,
-      backgroundColor: '#ffffff'
-    })
-
-    const pdf = new jsPDF('p', 'mm', 'a4')
-    const pageWidth = pdf.internal.pageSize.getWidth()
-    const pageHeight = pdf.internal.pageSize.getHeight()
-    const imageWidth = pageWidth
-    const imageHeight = (canvas.height * imageWidth) / canvas.width
-    const imageData = canvas.toDataURL('image/jpeg', 0.95)
-
-    let heightLeft = imageHeight
-    let position = 0
-
-    pdf.addImage(imageData, 'JPEG', 0, position, imageWidth, imageHeight)
-    heightLeft -= pageHeight
-
-    while (heightLeft > 0) {
-      position = heightLeft - imageHeight
-      pdf.addPage()
-      pdf.addImage(imageData, 'JPEG', 0, position, imageWidth, imageHeight)
-      heightLeft -= pageHeight
-    }
-
     const fileName = 'Tai-Ju-Liu-CV.pdf'
-    pdf.save(fileName)
+    const html2pdf = (await import('html2pdf.js')).default
+
+    document.body.classList.add('pdf-exporting')
+
+    await html2pdf()
+      .set({
+        margin: [8, 8, 8, 8],
+        filename: fileName,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: {
+          scale: 1.6,
+          useCORS: true,
+          backgroundColor: '#ffffff',
+          scrollY: 0
+        },
+        jsPDF: {
+          unit: 'mm',
+          format: 'a4',
+          orientation: 'portrait',
+          compress: true
+        },
+        pagebreak: {
+          mode: ['css', 'legacy'],
+          avoid: ['.resume-topic', '.timeline-item', '.project-card', '.education-item', '.info-block']
+        }
+      })
+      .from(resumeElement)
+      .save()
+
     trackDownload(fileName, 'pdf')
   } catch (error) {
     console.error('[PDF] 產生 PDF 失敗:', error)
     alert('下載 PDF 失敗，請稍後再試。')
   } finally {
+    document.body.classList.remove('pdf-exporting')
     isGeneratingPdf.value = false
   }
 }

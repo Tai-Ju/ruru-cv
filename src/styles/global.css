@@ -129,3 +129,26 @@ img {
 .mt-lg {
   margin-top: var(--spacing-lg);
 }
+
+/* PDF 匯出時略微縮小排版，降低分頁裁切風險 */
+body.pdf-exporting {
+  font-size: 0.95rem;
+}
+
+body.pdf-exporting .section-title {
+  margin-bottom: var(--spacing-sm);
+}
+
+body.pdf-exporting .container {
+  padding: 0 var(--spacing-sm);
+}
+
+/* 避免主題區塊和卡片在 PDF 分頁時被切開 */
+body.pdf-exporting .resume-topic,
+body.pdf-exporting .timeline-item,
+body.pdf-exporting .project-card,
+body.pdf-exporting .education-item,
+body.pdf-exporting .info-block {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
