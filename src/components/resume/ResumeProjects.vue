@@ -30,6 +30,13 @@ const projects = [
     tags: ['PYTHON', 'JUPYTER', 'AUTOHOTKEY', 'BATCH'],
     description: '開發多套自動化腳本集合 (autohotkey-scripts)，包含Python 數據處理、AutoHotkey 操作自動化及批次處理程序，全面優化重複性行政操作流程',
     link: 'https://github.com/Tai-Ju/autohotkey-scripts'
+  },
+  {
+    id: 5,
+    title: '資訊科學與資料分析實作',
+    tags: ['PYTHON', 'DATA ANALYSIS', 'ACADEMIC PROJECT'],
+    description: '彙整資訊科學課程實作專案 (Introduction-to-Information-Science_cw)，涵蓋資料處理、基礎分析流程與程式實作能力',
+    link: 'https://github.com/Tai-Ju/Introduction-to-Information-Science_cw'
   }
 ]
 
