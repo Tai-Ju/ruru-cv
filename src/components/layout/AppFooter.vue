@@ -26,8 +26,10 @@ const handleContactClick = (type, url) => {
             GitHub
           </a>
           <a 
-            href="mailto:lk117868@gmail.com"
-            @click="handleContactClick('email')"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=lk117868@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            @click="handleContactClick('email', 'https://mail.google.com/mail/?view=cm&fs=1&to=lk117868@gmail.com')"
           >
             Email
           </a>
