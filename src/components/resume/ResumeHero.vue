@@ -1,8 +1,12 @@
 <script setup>
 import { ref } from 'vue'
+import html2canvas from 'html2canvas'
+import { jsPDF } from 'jspdf'
 import photoUrl from '../../assets/photo.jpg'
+import { trackDownload } from '../../utils/analytics'
 
 const isZoomed = ref(false)
+const isGeneratingPdf = ref(false)
 
 const openZoom = () => {
   isZoomed.value = true
@@ -10,6 +14,53 @@ const openZoom = () => {
 
 const closeZoom = () => {
   isZoomed.value = false
+}
+
+const downloadResumeAsPdf = async () => {
+  if (isGeneratingPdf.value) return
+
+  isGeneratingPdf.value = true
+  try {
+    const resumeElement = document.querySelector('.main-content')
+    if (!resumeElement) {
+      throw new Error('找不到履歷內容區塊')
+    }
+
+    const canvas = await html2canvas(resumeElement, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: '#ffffff'
+    })
+
+    const pdf = new jsPDF('p', 'mm', 'a4')
+    const pageWidth = pdf.internal.pageSize.getWidth()
+    const pageHeight = pdf.internal.pageSize.getHeight()
+    const imageWidth = pageWidth
+    const imageHeight = (canvas.height * imageWidth) / canvas.width
+    const imageData = canvas.toDataURL('image/jpeg', 0.95)
+
+    let heightLeft = imageHeight
+    let position = 0
+
+    pdf.addImage(imageData, 'JPEG', 0, position, imageWidth, imageHeight)
+    heightLeft -= pageHeight
+
+    while (heightLeft > 0) {
+      position = heightLeft - imageHeight
+      pdf.addPage()
+      pdf.addImage(imageData, 'JPEG', 0, position, imageWidth, imageHeight)
+      heightLeft -= pageHeight
+    }
+
+    const fileName = 'Tai-Ju-Liu-CV.pdf'
+    pdf.save(fileName)
+    trackDownload(fileName, 'pdf')
+  } catch (error) {
+    console.error('[PDF] 產生 PDF 失敗:', error)
+    alert('下載 PDF 失敗，請稍後再試。')
+  } finally {
+    isGeneratingPdf.value = false
+  }
 }
 </script>
 
@@ -25,7 +76,9 @@ const closeZoom = () => {
             以醫療領域專業為基礎，結合程式開發實務能力，致力於將臨床痛點轉化為創新技術解決方案。
           </p>
           <div class="hero-buttons">
-            <a href="#" class="btn btn-primary" download>下載履歷</a>
+            <button type="button" class="btn btn-primary" :disabled="isGeneratingPdf" @click="downloadResumeAsPdf">
+              {{ isGeneratingPdf ? 'PDF 產生中...' : '下載 PDF' }}
+            </button>
             <a href="https://github.com/Tai-Ju" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
