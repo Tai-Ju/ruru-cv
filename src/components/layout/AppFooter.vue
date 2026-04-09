@@ -2,11 +2,21 @@
 import { trackContactClick, trackOutboundLink } from '../../utils/analytics'
 
 const currentYear = new Date().getFullYear()
+const gmailComposeUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=lk117868@gmail.com'
+const mailtoFallback = 'mailto:lk117868@gmail.com'
 
 const handleContactClick = (type, url) => {
   trackContactClick(type)
   if (url) {
     trackOutboundLink(url, type)
+  }
+}
+
+const openGmailCompose = () => {
+  handleContactClick('email', gmailComposeUrl)
+  const newWindow = window.open(gmailComposeUrl, '_blank', 'noopener,noreferrer')
+  if (!newWindow) {
+    window.location.href = mailtoFallback
   }
 }
 </script>
@@ -27,9 +37,7 @@ const handleContactClick = (type, url) => {
           </a>
           <a 
             href="https://mail.google.com/mail/?view=cm&fs=1&to=lk117868@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            @click="handleContactClick('email', 'https://mail.google.com/mail/?view=cm&fs=1&to=lk117868@gmail.com')"
+            @click.prevent="openGmailCompose"
           >
             Email
           </a>
