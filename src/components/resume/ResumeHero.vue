@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import photoUrl from '../../assets/photo.jpg'
+import photoUrl from '../../../S__109355152.jpg'
 import { trackDownload } from '../../utils/analytics'
 
 const isZoomed = ref(false)
