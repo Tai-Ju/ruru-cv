@@ -1,5 +1,10 @@
 <script setup>
-const experiences = [
+import { computed } from 'vue'
+import { useLanguage } from '../../composables/useLanguage'
+
+const { currentLang } = useLanguage()
+
+const experiencesZh = [
   {
     id: 1,
     company: '馬偕紀念醫院',
@@ -24,12 +29,43 @@ const experiences = [
     ]
   }
 ]
+
+const experiencesEn = [
+  {
+    id: 1,
+    company: 'Mackay Memorial Hospital',
+    position: 'Clinical Pharmacy Technology Specialist',
+    period: '2025 - Present',
+    description:
+      'Lead smart pharmacy system development and digital transformation projects to improve medication workflow efficiency.',
+    achievements: [
+      'Built a Power BI dashboard for ADC performance analytics and inventory optimization using device log data.',
+      'Developed attendance and overtime automation workflow with Google Apps Script and Google Sheets.',
+      'Implemented paperless document retrieval process with Python data scripts and AutoHotkey automation.'
+    ]
+  },
+  {
+    id: 2,
+    company: 'Mackay Memorial Hospital',
+    position: 'Medical Education Administrator',
+    period: '2019 - 2025',
+    description:
+      'Maintained resident training systems and improved education administration workflows through digital tools.',
+    achievements: [
+      'Built an Excel VBA scheduling and duty-hour validation system with 100% compliance support.',
+      'Integrated KM and HR datasets to automate ETL workflow, improving processing efficiency by over 90%.'
+    ]
+  }
+]
+
+const sectionTitle = computed(() => (currentLang.value === 'en' ? 'Experience' : '工作經歷'))
+const experiences = computed(() => (currentLang.value === 'en' ? experiencesEn : experiencesZh))
 </script>
 
 <template>
   <section id="experience" class="experience-section">
     <div class="container">
-      <h2 class="section-title">工作經歷</h2>
+      <h2 class="section-title">{{ sectionTitle }}</h2>
       <div class="timeline">
         <div
           v-for="exp in experiences"

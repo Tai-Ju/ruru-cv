@@ -1,11 +1,12 @@
 <script setup>
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { trackEvent } from '../../utils/analytics'
+import { useLanguage } from '../../composables/useLanguage'
 
 const isMenuOpen = ref(false)
 const activeSection = ref('hero')
 const currentTheme = ref(localStorage.getItem('theme') || 'light')
-const currentLang = ref(localStorage.getItem('lang') || 'zh')
+const { currentLang, setLanguage } = useLanguage()
 
 const navItems = computed(() => {
   if (currentLang.value === 'en') {
@@ -45,8 +46,7 @@ const toggleTheme = () => {
 }
 
 const toggleLanguage = () => {
-  currentLang.value = currentLang.value === 'zh' ? 'en' : 'zh'
-  localStorage.setItem('lang', currentLang.value)
+  setLanguage(currentLang.value === 'zh' ? 'en' : 'zh')
   trackEvent('language_toggle', {
     language: currentLang.value
   })

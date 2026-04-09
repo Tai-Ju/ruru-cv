@@ -1,5 +1,10 @@
 <script setup>
-const education = [
+import { computed } from 'vue'
+import { useLanguage } from '../../composables/useLanguage'
+
+const { currentLang } = useLanguage()
+
+const educationZh = [
   {
     id: 1,
     school: '國立臺北護理健康大學',
@@ -28,37 +33,114 @@ const education = [
   }
 ]
 
-const certifications = [
+const certificationsZh = [
   'TQC+ Python 3 認證',
   '醫資管理師',
   '軟體應用丙級'
 ]
 
-const internationalExperience = [
+const internationalExperienceZh = [
   { location: '澳洲馬特醫院', type: '臨床見習', period: '2017/08' },
   { location: '中國蘇州慈濟', type: '實習交流', period: '2017/07' },
   { location: '英國坎伯里大學', type: '語言交換', period: '2014/06' }
 ]
 
-const training = [
+const trainingZh = [
   { title: '臺大資工系統訓練班', items: ['Node.js & MongoDB 後端開發 (2025)', 'Python 程式設計進階 (2021-2025)'] }
 ]
 
-const competitions = [
+const competitionsZh = [
   { title: 'AI 創新應用競賽', project: '藥品影像辨識系統', status: '2025 備賽中' },
   { title: 'Power BI 數據分析競賽', project: '智慧藥櫃分析平台', year: '2025' },
   { title: 'Power BI 數據分析競賽', project: 'Penny 教學整合平台', year: '2024' }
 ]
+
+const educationEn = [
+  {
+    id: 1,
+    school: 'National Taipei University of Nursing and Health Sciences',
+    degree: 'M.S. in Information Management',
+    period: '2025 - Present',
+    description:
+      'Focused on healthcare information systems, software development, and data analytics with cross-domain applications.',
+    achievements: [
+      'Completed coursework in system analysis and design, database management, and programming',
+      'Delivered multiple software project implementations',
+      'Participated in healthcare informatics research',
+      'Earned TQC+ Python 3 certification'
+    ]
+  },
+  {
+    id: 2,
+    school: 'Tzu Chi University',
+    degree: 'B.S. in Healthcare Administration',
+    period: '2013 - 2017',
+    description:
+      'Built a solid foundation in healthcare operations, quality management, and medical information systems.',
+    achievements: [
+      'Familiar with healthcare workflows and management practices',
+      'Experienced in healthcare information system applications',
+      'Completed hospital internships and project practice',
+      'Strengthened analytical and problem-solving abilities'
+    ]
+  }
+]
+
+const certificationsEn = ['TQC+ Python 3 Certification', 'Healthcare Informatics Manager', 'Software Application License']
+
+const internationalExperienceEn = [
+  { location: 'Mater Hospital, Australia', type: 'Clinical Observation', period: '2017/08' },
+  { location: 'Tzu Chi, Suzhou (China)', type: 'Internship Exchange', period: '2017/07' },
+  { location: 'Canterbury, UK', type: 'Language Exchange', period: '2014/06' }
+]
+
+const trainingEn = [
+  { title: 'NTU CS Professional Program', items: ['Node.js & MongoDB Backend Development (2025)', 'Advanced Python Programming (2021-2025)'] }
+]
+
+const competitionsEn = [
+  { title: 'AI Innovation Competition', project: 'Medication Image Recognition System', status: 'Preparing for 2025' },
+  { title: 'Power BI Analytics Competition', project: 'Smart ADC Analytics Platform', year: '2025' },
+  { title: 'Power BI Analytics Competition', project: 'Penny Teaching Integration Platform', year: '2024' }
+]
+
+const copy = computed(() => {
+  if (currentLang.value === 'en') {
+    return {
+      title: 'Education & Background',
+      eduTitle: 'Education',
+      certTitle: 'Certifications',
+      intlTitle: 'International Experience',
+      trainingTitle: 'Professional Training',
+      compTitle: 'Competitions'
+    }
+  }
+
+  return {
+    title: '學歷與經歷',
+    eduTitle: '學歷背景',
+    certTitle: '專業認證',
+    intlTitle: '國際經歷',
+    trainingTitle: '專業進修',
+    compTitle: '創新競賽'
+  }
+})
+
+const education = computed(() => (currentLang.value === 'en' ? educationEn : educationZh))
+const certifications = computed(() => (currentLang.value === 'en' ? certificationsEn : certificationsZh))
+const internationalExperience = computed(() => (currentLang.value === 'en' ? internationalExperienceEn : internationalExperienceZh))
+const training = computed(() => (currentLang.value === 'en' ? trainingEn : trainingZh))
+const competitions = computed(() => (currentLang.value === 'en' ? competitionsEn : competitionsZh))
 </script>
 
 <template>
   <section id="education" class="education-section">
     <div class="container">
-      <h2 class="section-title">學歷與經歷</h2>
+      <h2 class="section-title">{{ copy.title }}</h2>
 
       <!-- 學歷 -->
       <div class="education-main">
-        <h3 class="subsection-title">學歷背景</h3>
+        <h3 class="subsection-title">{{ copy.eduTitle }}</h3>
         <div class="education-grid">
           <div
             v-for="edu in education"
@@ -89,7 +171,7 @@ const competitions = [
       <div class="additional-info-grid">
         <!-- 專業認證 -->
         <div class="info-block">
-          <h3 class="subsection-title">專業認證</h3>
+          <h3 class="subsection-title">{{ copy.certTitle }}</h3>
           <div class="info-list">
             <div v-for="cert in certifications" :key="cert" class="info-item">
               <span class="info-icon">📜</span>
@@ -100,7 +182,7 @@ const competitions = [
 
         <!-- 國際經歷 -->
         <div class="info-block">
-          <h3 class="subsection-title">國際經歷</h3>
+          <h3 class="subsection-title">{{ copy.intlTitle }}</h3>
           <div class="info-list">
             <div v-for="exp in internationalExperience" :key="exp.location" class="info-item">
               <span class="info-icon">🌍</span>
@@ -114,7 +196,7 @@ const competitions = [
 
         <!-- 專業進修 -->
         <div class="info-block">
-          <h3 class="subsection-title">專業進修</h3>
+          <h3 class="subsection-title">{{ copy.trainingTitle }}</h3>
           <div class="info-list">
             <div v-for="train in training" :key="train.title" class="info-item-block">
               <span class="info-icon">📚</span>
@@ -130,7 +212,7 @@ const competitions = [
 
         <!-- 創新競賽 -->
         <div class="info-block">
-          <h3 class="subsection-title">創新競賽</h3>
+          <h3 class="subsection-title">{{ copy.compTitle }}</h3>
           <div class="info-list">
             <div v-for="comp in competitions" :key="comp.project" class="info-item">
               <span class="info-icon">🏆</span>

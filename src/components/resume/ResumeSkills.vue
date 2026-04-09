@@ -1,5 +1,10 @@
 <script setup>
-const skillCategories = [
+import { computed } from 'vue'
+import { useLanguage } from '../../composables/useLanguage'
+
+const { currentLang } = useLanguage()
+
+const skillCategoriesZh = [
   {
     title: '程式開發',
     skills: [
@@ -20,12 +25,37 @@ const skillCategories = [
     ]
   }
 ]
+
+const skillCategoriesEn = [
+  {
+    title: 'Programming',
+    skills: [
+      { name: 'Python', experience: 'TQC+ certified / Automation scripting' },
+      { name: 'VBA', experience: 'Excel automation system development' },
+      { name: 'JavaScript', experience: 'Vue.js / Node.js development' },
+      { name: 'Google Apps Script', experience: 'Google Sheets integration' },
+      { name: 'Node.js', experience: 'Backend API development' }
+    ]
+  },
+  {
+    title: 'Data & Tools',
+    skills: [
+      { name: 'Power BI', experience: 'Dashboard design / Data analytics' },
+      { name: 'Excel', experience: 'Advanced formulas / VBA development' },
+      { name: 'Git/GitHub', experience: 'Version control / Collaboration' },
+      { name: 'MongoDB', experience: 'NoSQL database operations' }
+    ]
+  }
+]
+
+const sectionTitle = computed(() => (currentLang.value === 'en' ? 'Skills' : '專業技能'))
+const skillCategories = computed(() => (currentLang.value === 'en' ? skillCategoriesEn : skillCategoriesZh))
 </script>
 
 <template>
   <section id="skills" class="skills-section">
     <div class="container">
-      <h2 class="section-title">專業技能</h2>
+      <h2 class="section-title">{{ sectionTitle }}</h2>
       <div class="skills-grid">
         <div
           v-for="category in skillCategories"

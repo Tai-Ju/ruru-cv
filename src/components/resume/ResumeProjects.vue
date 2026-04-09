@@ -1,6 +1,9 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { trackProjectClick, trackOutboundLink } from '../../utils/analytics'
+import { useLanguage } from '../../composables/useLanguage'
+
+const { currentLang } = useLanguage()
 
 const projects = [
   {
@@ -16,7 +19,8 @@ const projects = [
     tags: ['N8N', 'API INTEGRATION', 'JAVASCRIPT'],
     description: '整合 ScienceDirect 和 Web of Science API，自動化文獻檢索、去重與相關性評分 (literature-search-automation)',
     link: '',
-    privateNote: '此專案目前為私人版本，面試可提供展示或說明'
+    privateNote: '此專案目前為私人版本，面試可提供展示或說明',
+    privateNoteEn: 'Private project. Demo and details are available during interviews.'
   },
   {
     id: 3,
@@ -56,6 +60,12 @@ const filteredProjects = computed(() => {
   return projects.filter((project) => project.tags.includes(selectedTag.value))
 })
 
+const sectionTitle = computed(() => (currentLang.value === 'en' ? 'Projects' : '技術專案作品'))
+const projectLinkText = computed(() => (currentLang.value === 'en' ? 'View Project →' : '查看專案 →'))
+const allLabel = computed(() => (currentLang.value === 'en' ? 'ALL' : '全部'))
+
+const displayTags = computed(() => filterTags.value.map((tag) => (tag === 'ALL' ? allLabel.value : tag)))
+
 const handleProjectClick = (project) => {
   if (!project.link) return
   trackProjectClick(project.title)
@@ -66,17 +76,17 @@ const handleProjectClick = (project) => {
 <template>
   <section id="projects" class="projects-section">
     <div class="container">
-      <h2 class="section-title">技術專案作品</h2>
+      <h2 class="section-title">{{ sectionTitle }}</h2>
       <div class="project-filters">
         <button
-          v-for="tag in filterTags"
+          v-for="(tag, index) in filterTags"
           :key="tag"
           type="button"
           class="project-filter-btn"
           :class="{ active: selectedTag === tag }"
           @click="selectedTag = tag"
         >
-          {{ tag }}
+          {{ displayTags[index] }}
         </button>
       </div>
       <div class="projects-grid">
@@ -106,9 +116,9 @@ const handleProjectClick = (project) => {
             rel="noopener noreferrer"
             @click="handleProjectClick(project)"
           >
-            查看專案 →
+            {{ projectLinkText }}
           </a>
-          <p v-else class="project-note">{{ project.privateNote }}</p>
+          <p v-else class="project-note">{{ currentLang === 'en' ? project.privateNoteEn : project.privateNote }}</p>
         </div>
       </div>
     </div>
