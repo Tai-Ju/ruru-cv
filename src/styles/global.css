@@ -130,25 +130,66 @@ img {
   margin-top: var(--spacing-lg);
 }
 
-/* PDF 匯出時略微縮小排版，降低分頁裁切風險 */
-body.pdf-exporting {
-  font-size: 0.95rem;
-}
+/* 列印成 PDF 專用樣式：穩定、無動畫、降低分頁裁切 */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
 
-body.pdf-exporting .section-title {
-  margin-bottom: var(--spacing-sm);
-}
+  * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 
-body.pdf-exporting .container {
-  padding: 0 var(--spacing-sm);
-}
+  html,
+  body {
+    background: #fff !important;
+    color: #222 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 
-/* 避免主題區塊和卡片在 PDF 分頁時被切開 */
-body.pdf-exporting .resume-topic,
-body.pdf-exporting .timeline-item,
-body.pdf-exporting .project-card,
-body.pdf-exporting .education-item,
-body.pdf-exporting .info-block {
-  break-inside: avoid;
-  page-break-inside: avoid;
+  .app-header,
+  .app-footer,
+  .hero-buttons,
+  .photo-modal,
+  .close-button {
+    display: none !important;
+  }
+
+  .main-content {
+    zoom: 0.9;
+  }
+
+  .hero-text,
+  .hero-image {
+    opacity: 1 !important;
+  }
+
+  .timeline-item,
+  .project-card,
+  .education-item,
+  .info-block {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  #projects,
+  #education {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .additional-info-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: var(--spacing-sm) !important;
+  }
 }

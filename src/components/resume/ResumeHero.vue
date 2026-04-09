@@ -19,48 +19,35 @@ const downloadResumeAsPdf = async () => {
 
   isGeneratingPdf.value = true
   try {
-    const resumeElement = document.querySelector('.main-content')
-    if (!resumeElement) {
-      throw new Error('找不到履歷內容區塊')
+    const fileName = 'Tai-Ju-Liu-CV.pdf'
+    document.body.classList.add('pdf-print-mode')
+
+    const cleanup = () => {
+      document.body.classList.remove('pdf-print-mode')
+      isGeneratingPdf.value = false
     }
 
-    const fileName = 'Tai-Ju-Liu-CV.pdf'
-    const html2pdf = (await import('html2pdf.js')).default
+    window.addEventListener('afterprint', cleanup, { once: true })
 
-    document.body.classList.add('pdf-exporting')
+    setTimeout(() => {
+      window.print()
+      trackDownload(fileName, 'print-pdf')
+    }, 120)
 
-    await html2pdf()
-      .set({
-        margin: [8, 8, 8, 8],
-        filename: fileName,
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: {
-          scale: 1.6,
-          useCORS: true,
-          backgroundColor: '#ffffff',
-          scrollY: 0
-        },
-        jsPDF: {
-          unit: 'mm',
-          format: 'a4',
-          orientation: 'portrait',
-          compress: true
-        },
-        pagebreak: {
-          mode: ['css', 'legacy'],
-          avoid: ['.resume-topic', '.timeline-item', '.project-card', '.education-item', '.info-block']
-        }
-      })
-      .from(resumeElement)
-      .save()
-
-    trackDownload(fileName, 'pdf')
+    // 某些瀏覽器不觸發 afterprint，保底移除狀態
+    setTimeout(() => {
+      if (document.body.classList.contains('pdf-print-mode')) {
+        cleanup()
+      }
+    }, 3000)
+    return
   } catch (error) {
     console.error('[PDF] 產生 PDF 失敗:', error)
     alert('下載 PDF 失敗，請稍後再試。')
   } finally {
-    document.body.classList.remove('pdf-exporting')
-    isGeneratingPdf.value = false
+    if (!document.body.classList.contains('pdf-print-mode')) {
+      isGeneratingPdf.value = false
+    }
   }
 }
 </script>
@@ -78,7 +65,7 @@ const downloadResumeAsPdf = async () => {
           </p>
           <div class="hero-buttons">
             <button type="button" class="btn btn-primary" :disabled="isGeneratingPdf" @click="downloadResumeAsPdf">
-              {{ isGeneratingPdf ? 'PDF 產生中...' : '下載 PDF' }}
+              {{ isGeneratingPdf ? '準備列印中...' : '下載 PDF' }}
             </button>
             <a href="https://github.com/Tai-Ju" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
