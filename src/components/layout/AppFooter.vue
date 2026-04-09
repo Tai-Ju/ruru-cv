@@ -66,10 +66,10 @@ const copyPhoneNumber = async () => {
           <a
             href="#"
             class="copy-phone-link"
-            :title="isPhoneCopied ? '已複製' : `點擊複製 ${phoneNumber}`"
+            :title="isPhoneCopied ? '已複製電話' : '點擊複製電話'"
             @click.prevent="copyPhoneNumber"
           >
-            {{ isPhoneCopied ? '已複製電話' : `Phone ${phoneNumber}` }}
+            {{ isPhoneCopied ? '已複製電話' : 'Phone' }}
           </a>
         </div>
       </div>
