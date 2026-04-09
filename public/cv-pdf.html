@@ -9,7 +9,10 @@
   <body>
     <div class="toolbar">
       <h1>專用 PDF 版面（A4）</h1>
-      <button onclick="window.print()">下載 / 列印 PDF</button>
+      <div class="toolbar-actions">
+        <button type="button" onclick="downloadPdf()">下載 PDF</button>
+        <button type="button" class="secondary-btn" onclick="window.print()">列印</button>
+      </div>
     </div>
 
     <main class="pages">
@@ -169,5 +172,28 @@
         </div>
       </section>
     </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      function downloadPdf() {
+        const element = document.querySelector('.pages')
+        if (!element || !window.html2pdf) {
+          window.print()
+          return
+        }
+
+        window.html2pdf()
+          .set({
+            filename: 'Tai-Ju-Liu-CV.pdf',
+            margin: 0,
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', compress: true },
+            pagebreak: { mode: ['css', 'legacy'] }
+          })
+          .from(element)
+          .save()
+      }
+    </script>
   </body>
 </html>

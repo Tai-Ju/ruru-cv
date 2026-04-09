@@ -43,6 +43,20 @@ body {
   background: #a7778f;
 }
 
+.toolbar-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.toolbar .secondary-btn {
+  background: #ffffff;
+  color: #8f6479;
+}
+
+.toolbar .secondary-btn:hover {
+  background: #f7eef3;
+}
+
 .pages {
   width: 210mm;
   margin: 1rem auto 2rem;
