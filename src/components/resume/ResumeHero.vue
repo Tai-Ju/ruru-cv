@@ -44,34 +44,17 @@ const downloadResumeAsPdf = async () => {
   isGeneratingPdf.value = true
   try {
     const fileName = 'Tai-Ju-Liu-CV.pdf'
-    document.body.classList.add('pdf-print-mode')
-
-    const cleanup = () => {
-      document.body.classList.remove('pdf-print-mode')
-      isGeneratingPdf.value = false
+    const pdfPageUrl = '/cv-pdf.html'
+    const newWindow = window.open(pdfPageUrl, '_blank', 'noopener,noreferrer')
+    if (!newWindow) {
+      window.location.href = pdfPageUrl
     }
-
-    window.addEventListener('afterprint', cleanup, { once: true })
-
-    setTimeout(() => {
-      window.print()
-      trackDownload(fileName, 'print-pdf')
-    }, 120)
-
-    // 某些瀏覽器不觸發 afterprint，保底移除狀態
-    setTimeout(() => {
-      if (document.body.classList.contains('pdf-print-mode')) {
-        cleanup()
-      }
-    }, 3000)
-    return
+    trackDownload(fileName, 'print-layout-pdf')
   } catch (error) {
     console.error('[PDF] 產生 PDF 失敗:', error)
     alert('下載 PDF 失敗，請稍後再試。')
   } finally {
-    if (!document.body.classList.contains('pdf-print-mode')) {
-      isGeneratingPdf.value = false
-    }
+    isGeneratingPdf.value = false
   }
 }
 </script>
