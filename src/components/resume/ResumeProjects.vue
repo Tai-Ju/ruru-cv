@@ -1,4 +1,5 @@
 <script setup>
+import { computed, ref } from 'vue'
 import { trackProjectClick, trackOutboundLink } from '../../utils/analytics'
 
 const projects = [
@@ -40,6 +41,21 @@ const projects = [
   }
 ]
 
+const selectedTag = ref('ALL')
+
+const filterTags = computed(() => {
+  const tags = new Set(['ALL'])
+  projects.forEach((project) => {
+    project.tags.forEach((tag) => tags.add(tag))
+  })
+  return Array.from(tags)
+})
+
+const filteredProjects = computed(() => {
+  if (selectedTag.value === 'ALL') return projects
+  return projects.filter((project) => project.tags.includes(selectedTag.value))
+})
+
 const handleProjectClick = (project) => {
   if (!project.link) return
   trackProjectClick(project.title)
@@ -51,9 +67,21 @@ const handleProjectClick = (project) => {
   <section id="projects" class="projects-section">
     <div class="container">
       <h2 class="section-title">技術專案作品</h2>
+      <div class="project-filters">
+        <button
+          v-for="tag in filterTags"
+          :key="tag"
+          type="button"
+          class="project-filter-btn"
+          :class="{ active: selectedTag === tag }"
+          @click="selectedTag = tag"
+        >
+          {{ tag }}
+        </button>
+      </div>
       <div class="projects-grid">
         <div
-          v-for="project in projects"
+          v-for="project in filteredProjects"
           :key="project.id"
           class="project-card"
         >

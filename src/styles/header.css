@@ -35,9 +35,33 @@
   transition: var(--transition);
 }
 
+.nav-menu li a.active {
+  background-color: var(--bg-secondary);
+  color: var(--primary-color);
+}
+
 .nav-menu li a:hover {
   background-color: var(--bg-secondary);
   color: var(--secondary-color);
+}
+
+.toolbar-item {
+  display: flex;
+  align-items: center;
+}
+
+.toolbar-btn {
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-color);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.5rem;
+  font-weight: 600;
+  min-width: 2rem;
+}
+
+.toolbar-btn:hover {
+  border-color: var(--secondary-color);
 }
 
 .menu-toggle {
@@ -102,5 +126,14 @@
   .nav-menu li a {
     display: block;
     padding: var(--spacing-sm);
+  }
+
+  .toolbar-item {
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+
+  .toolbar-btn {
+    width: 100%;
   }
 }

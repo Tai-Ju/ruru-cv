@@ -7,6 +7,7 @@ import ResumeExperience from '../resume/ResumeExperience.vue'
 import ResumeSkills from '../resume/ResumeSkills.vue'
 import ResumeProjects from '../resume/ResumeProjects.vue'
 import ResumeEducation from '../resume/ResumeEducation.vue'
+import ResumeContact from '../resume/ResumeContact.vue'
 </script>
 
 <template>
@@ -19,6 +20,7 @@ import ResumeEducation from '../resume/ResumeEducation.vue'
       <ResumeSkills class="resume-topic" />
       <ResumeProjects class="resume-topic" />
       <ResumeEducation class="resume-topic" />
+      <ResumeContact class="resume-topic" />
     </main>
     <AppFooter />
   </div>
