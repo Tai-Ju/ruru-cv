@@ -39,8 +39,8 @@ const skillCategories = [
               :key="skill.name"
               class="skill-item"
             >
-              <div class="skill-name">{{ skill.name }}</div>
-              <div class="skill-experience">{{ skill.experience }}</div>
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-experience">{{ skill.experience }}</span>
             </div>
           </div>
         </div>

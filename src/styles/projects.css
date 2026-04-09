@@ -79,6 +79,12 @@
   border-bottom-color: var(--primary-color);
 }
 
+.project-note {
+  color: var(--text-light);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-xs);
+}
+
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;

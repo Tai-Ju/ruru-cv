@@ -14,7 +14,8 @@ const projects = [
     title: '學術文獻智能搜索系統',
     tags: ['N8N', 'API INTEGRATION', 'JAVASCRIPT'],
     description: '整合 ScienceDirect 和 Web of Science API，自動化文獻檢索、去重與相關性評分 (literature-search-automation)',
-    link: 'https://github.com/Tai-Ju/literature-search-automation'
+    link: '',
+    privateNote: '此專案目前為私人版本，面試可提供展示或說明'
   },
   {
     id: 3,
@@ -33,6 +34,7 @@ const projects = [
 ]
 
 const handleProjectClick = (project) => {
+  if (!project.link) return
   trackProjectClick(project.title)
   trackOutboundLink(project.link, project.title)
 }
@@ -62,6 +64,7 @@ const handleProjectClick = (project) => {
           </div>
           <p class="project-description">{{ project.description }}</p>
           <a
+            v-if="project.link"
             :href="project.link"
             class="project-link"
             target="_blank"
@@ -70,6 +73,7 @@ const handleProjectClick = (project) => {
           >
             查看專案 →
           </a>
+          <p v-else class="project-note">{{ project.privateNote }}</p>
         </div>
       </div>
     </div>
