@@ -33,6 +33,13 @@ const copy = computed(() => {
           <h3>{{ copy.quick }}</h3>
           <p>Email：<a href="mailto:lk117868@gmail.com">lk117868@gmail.com</a></p>
           <p>GitHub：<a href="https://github.com/Tai-Ju" target="_blank" rel="noopener noreferrer">@Tai-Ju</a></p>
+          <p>
+            Hugging Face：<a
+              href="https://huggingface.co/ruru0116"
+              target="_blank"
+              rel="noopener noreferrer"
+            >@ruru0116</a>
+          </p>
           <p class="contact-note">{{ copy.note }}</p>
         </div>
         <div class="contact-card">

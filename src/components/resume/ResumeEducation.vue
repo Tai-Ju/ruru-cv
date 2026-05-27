@@ -15,7 +15,7 @@ const educationZh = [
       '修習系統分析與設計、資料庫管理、程式設計等課程',
       '完成多項程式開發專案實作',
       '參與醫療資訊系統相關研究',
-      '取得 TQC+ Python 3 程式語言認證'
+      '論文研究方向：以本地部署 LLM 輔助藥事決策支援系統之研究'
     ]
   },
   {
@@ -67,7 +67,7 @@ const educationEn = [
       'Completed coursework in system analysis and design, database management, and programming',
       'Delivered multiple software project implementations',
       'Participated in healthcare informatics research',
-      'Earned TQC+ Python 3 certification'
+      'Research thesis: Locally deployed LLM to assist pharmacy clinical decision support systems'
     ]
   },
   {
