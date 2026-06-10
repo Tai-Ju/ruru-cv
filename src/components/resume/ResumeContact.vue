@@ -34,6 +34,13 @@ const copy = computed(() => {
           <p>Email：<a href="mailto:lk117868@gmail.com">lk117868@gmail.com</a></p>
           <p>GitHub：<a href="https://github.com/Tai-Ju" target="_blank" rel="noopener noreferrer">@Tai-Ju</a></p>
           <p>
+            LinkedIn：<a
+              href="https://www.linkedin.com/in/tai-ju-liu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >tai-ju-liu</a>
+          </p>
+          <p>
             Hugging Face：<a
               href="https://huggingface.co/ruru0116"
               target="_blank"

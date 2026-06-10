@@ -242,6 +242,13 @@
   }
 }
 
+@media (max-width: 768px) {
+  .hero-section {
+    padding: var(--spacing-lg) 0;
+    min-height: auto;
+  }
+}
+
 @media (max-width: 576px) {
   .hero-title {
     font-size: var(--font-size-2xl);

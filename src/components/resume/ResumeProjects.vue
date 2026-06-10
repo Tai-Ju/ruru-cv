@@ -8,6 +8,39 @@ const { currentLang } = useLanguage()
 const projects = [
   {
     id: 1,
+    title: '地端 LLM 用藥建議系統',
+    titleEn: 'Local LLM Medication Recommendation System',
+    tags: ['PYTHON', 'RAG', 'OLLAMA', 'CHROMADB', 'FLASK'],
+    description:
+      '基於本地 LLM 與 RAG 的用藥建議系統（drug-rag-pipeline），整合 FDA、PubMed、RxNorm 等 68,674 筆醫學資料，全程離線運行，支援四模型並行推論與 RAG 對照',
+    descriptionEn:
+      'Offline medication recommendation system using local LLMs and RAG (drug-rag-pipeline), built on 68,674 medical records from FDA, PubMed, and RxNorm with four-model parallel inference and RAG comparison.',
+    link: 'https://github.com/Tai-Ju/drug-rag-pipeline'
+  },
+  {
+    id: 2,
+    title: 'FHIR 電子處方箋系統',
+    titleEn: 'FHIR Electronic Prescription System',
+    tags: ['ELECTRON', 'REACT', 'TYPESCRIPT', 'FHIR'],
+    description:
+      '基於 TW Core 電子處方箋 Profile 的桌面應用（rx-fhir），支援 11 步驟處方建立、FHIR Bundle 查詢驗證與跨平台發布',
+    descriptionEn:
+      'Cross-platform desktop app (rx-fhir) for TW Core electronic prescriptions, with an 11-step creation wizard, FHIR Bundle query/validation, and multi-platform releases.',
+    link: 'https://github.com/swiftruru/rx-fhir'
+  },
+  {
+    id: 3,
+    title: '胸部 X 光 AI 偵測與分類',
+    titleEn: 'Chest X-ray AI Detection & Classification',
+    tags: ['PYTHON', 'YOLOV8', 'PYTORCH', 'COMPUTER VISION'],
+    description:
+      '胸部 X 光肺炎偵測與分類（chest-xray-ai），YOLOv8 mAP50 達 97.3%，並比較 LeNet-5 / AlexNet / VGG16 CNN 分類表現',
+    descriptionEn:
+      'Chest X-ray pneumonia detection and classification (chest-xray-ai) with YOLOv8 (mAP50 97.3%) and comparative CNN models (LeNet-5, AlexNet, VGG16).',
+    link: 'https://github.com/Tai-Ju/chest-xray-ai'
+  },
+  {
+    id: 4,
     title: 'LineBot OCR 醫療應用',
     titleEn: 'LineBot OCR for Healthcare',
     tags: ['JAVASCRIPT', 'LINE API', 'OCR'],
@@ -17,7 +50,7 @@ const projects = [
     link: 'https://github.com/Tai-Ju/linebot-ocr'
   },
   {
-    id: 2,
+    id: 5,
     title: '學術文獻智能搜索系統',
     titleEn: 'Academic Literature Smart Search',
     tags: ['N8N', 'API INTEGRATION', 'JAVASCRIPT'],
@@ -29,7 +62,7 @@ const projects = [
     privateNoteEn: 'Private project. Demo and details are available during interviews.'
   },
   {
-    id: 3,
+    id: 6,
     title: '藥劑部排班管理系統',
     titleEn: 'Pharmacy Shift Management System',
     tags: ['GOOGLE APPS SCRIPT', 'HTML', 'JAVASCRIPT'],
@@ -39,7 +72,7 @@ const projects = [
     link: 'https://github.com/Tai-Ju/gas-pharmacy-schedule-system'
   },
   {
-    id: 4,
+    id: 7,
     title: '行政流程自動化工具集',
     titleEn: 'Administrative Workflow Automation Toolkit',
     tags: ['PYTHON', 'JUPYTER', 'AUTOHOTKEY', 'BATCH'],
@@ -49,7 +82,7 @@ const projects = [
     link: 'https://github.com/Tai-Ju/autohotkey-scripts'
   },
   {
-    id: 5,
+    id: 8,
     title: '資訊科學與資料分析實作',
     titleEn: 'Information Science & Data Analysis Practice',
     tags: ['PYTHON', 'DATA ANALYSIS', 'ACADEMIC PROJECT'],

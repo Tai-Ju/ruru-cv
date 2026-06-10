@@ -79,6 +79,14 @@ const copyPhoneNumber = async () => {
           >
             GitHub
           </a>
+          <a
+            href="https://www.linkedin.com/in/tai-ju-liu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            @click="handleContactClick('linkedin', 'https://www.linkedin.com/in/tai-ju-liu/')"
+          >
+            LinkedIn
+          </a>
           <a 
             href="https://mail.google.com/mail/?view=cm&fs=1&to=lk117868@gmail.com"
             @click.prevent="openGmailCompose"

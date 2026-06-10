@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { trackEvent } from '../../utils/analytics'
 import { useLanguage } from '../../composables/useLanguage'
 
@@ -83,6 +83,10 @@ const updateActiveSection = () => {
   }
 }
 
+watch(isMenuOpen, (open) => {
+  document.body.style.overflow = open ? 'hidden' : ''
+})
+
 onMounted(() => {
   setTheme(currentTheme.value)
   updateActiveSection()
@@ -91,6 +95,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', updateActiveSection)
+  document.body.style.overflow = ''
 })
 </script>
 
