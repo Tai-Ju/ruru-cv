@@ -25,12 +25,16 @@
 }
 
 .category-title {
-  font-size: 1.1rem;
+  font-size: 0.75rem;
   margin-bottom: 0.45rem;
-  color: var(--primary-color);
+  color: var(--rose);
   text-align: left;
   padding-bottom: 0.35rem;
-  border-bottom: 1px solid var(--secondary-color);
+  border-bottom: 1px solid var(--hairline);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-weight: 600;
 }
 
 .skills-list {

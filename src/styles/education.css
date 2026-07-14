@@ -8,7 +8,7 @@
   color: var(--primary-color);
   margin-bottom: var(--spacing-lg);
   padding-bottom: var(--spacing-sm);
-  border-bottom: 2px solid var(--secondary-color);
+  border-bottom: 1px solid var(--hairline);
 }
 
 /* 學歷區塊 */
@@ -65,7 +65,7 @@
 
 .school {
   font-size: var(--font-size-base);
-  color: var(--secondary-color);
+  color: var(--rose);
   font-weight: 600;
 }
 
@@ -101,12 +101,13 @@
 }
 
 .achievements li::before {
-  content: '•';
+  content: '';
   position: absolute;
   left: 0;
-  color: var(--secondary-color);
-  font-weight: bold;
-  font-size: var(--font-size-lg);
+  top: 0.65em;
+  width: 10px;
+  height: 1px;
+  background: var(--rose);
 }
 
 /* 四個資訊區塊並排 */
@@ -195,7 +196,7 @@
   content: '·';
   position: absolute;
   left: 0;
-  color: var(--secondary-color);
+  color: var(--rose);
 }
 
 /* 響應式設計 */

@@ -30,9 +30,9 @@
 }
 
 .project-filter-btn.active {
-  border-color: var(--secondary-color);
-  background: rgba(184, 136, 158, 0.2);
-  color: var(--primary-color);
+  border-color: var(--rose);
+  background: rgba(162, 78, 96, 0.1);
+  color: var(--rose);
 }
 
 .project-card {
@@ -72,8 +72,8 @@
 
 .project-tag {
   font-size: var(--font-size-sm);
-  background-color: rgba(184, 136, 158, 0.15);
-  color: var(--primary-color);
+  background-color: rgba(162, 78, 96, 0.1);
+  color: var(--rose);
   padding: 4px 10px;
   border-radius: var(--radius-sm);
   font-weight: 600;
@@ -89,7 +89,7 @@
 }
 
 .project-link {
-  color: var(--secondary-color);
+  color: var(--rose);
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -99,8 +99,8 @@
 }
 
 .project-link:hover {
-  color: var(--primary-color);
-  border-bottom-color: var(--primary-color);
+  color: var(--rose-deep);
+  border-bottom-color: var(--rose-deep);
 }
 
 .project-note {

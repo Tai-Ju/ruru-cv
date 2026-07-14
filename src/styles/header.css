@@ -1,6 +1,8 @@
 .app-header {
-  background-color: var(--bg-color);
-  box-shadow: var(--shadow-sm);
+  background-color: color-mix(in srgb, var(--ivory) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hairline);
+  box-shadow: none;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -14,9 +16,11 @@
 }
 
 .logo h1 {
+  font-family: var(--font-serif);
   font-size: var(--font-size-xl);
-  color: var(--primary-color);
+  color: var(--ink);
   margin: 0;
+  letter-spacing: 0.06em;
 }
 
 .nav-menu {
@@ -27,8 +31,10 @@
 }
 
 .nav-menu li a {
-  color: var(--text-color);
+  color: var(--muted);
   font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
   cursor: pointer;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-sm);
@@ -36,13 +42,13 @@
 }
 
 .nav-menu li a.active {
-  background-color: var(--bg-secondary);
-  color: var(--primary-color);
+  background-color: transparent;
+  color: var(--rose);
 }
 
 .nav-menu li a:hover {
-  background-color: var(--bg-secondary);
-  color: var(--secondary-color);
+  background-color: transparent;
+  color: var(--rose);
 }
 
 .toolbar-item {

@@ -1,0 +1,187 @@
+{
+  "basics": {
+    "name": "劉玳如",
+    "nameLatin": "Tai-Ju Liu",
+    "title": "行政管理師｜醫療 × 資料工程",
+    "kicker": "Healthcare Administration · Software Development",
+    "summary": "馬偕紀念醫院藥劑部行政管理師。八年醫療機構歷練，結合資料工程與軟體開發能力，將醫療現場的複雜需求，轉化為嚴謹可靠的數位解決方案。",
+    "location": "台北，台灣"
+  },
+  "contact": [
+    {
+      "type": "email",
+      "label": "Email",
+      "display": "lulu@lufolio.dev",
+      "url": "mailto:lulu@lufolio.dev"
+    },
+    {
+      "type": "phone",
+      "label": "電話",
+      "display": "0909-213-395",
+      "url": "tel:+886909213395",
+      "pdfOnly": true
+    },
+    {
+      "type": "github",
+      "label": "GitHub",
+      "display": "github.com/Tai-Ju",
+      "url": "https://github.com/Tai-Ju"
+    },
+    {
+      "type": "huggingface",
+      "label": "Hugging Face",
+      "display": "huggingface.co/ruru0116",
+      "url": "https://huggingface.co/ruru0116"
+    },
+    {
+      "type": "linkedin",
+      "label": "LinkedIn",
+      "display": "linkedin.com/in/tai-ju-liu",
+      "url": "https://www.linkedin.com/in/tai-ju-liu/"
+    }
+  ],
+  "about": [
+    "我在醫療體系工作逾八年，先後任職於馬偕紀念醫院醫學教育部與藥劑部，對醫院的組織運作、法規環境與跨部門協作有深入的實務理解。這份領域知識，是我所有技術工作的根基。",
+    "過去數年，我系統性地建立了資料分析與軟體開發能力——從 SQL 資料管線、Power BI 商業智慧，到 Python 應用開發與大型語言模型的落地研究。我不做概念驗證式的展示，而是交付真正進入日常作業流程、被臨床與行政團隊持續使用的工具。",
+    "目前於國立臺北護理健康大學資訊管理研究所進修，研究本地端大型語言模型於藥事決策支援之應用，持續深化醫療資訊領域的專業縱深。"
+  ],
+  "experience": [
+    {
+      "position": "行政管理師",
+      "organization": "馬偕紀念醫院 · 藥劑部",
+      "start": "2023",
+      "end": "迄今",
+      "summary": "統籌部門行政管理，並主導資料分析與數位化專案，服務約 37 人之藥事團隊。",
+      "highlights": [
+        "規劃並建置全院抗生素管理儀表板，涵蓋 DOT、DID 用藥密度指標與 WHO AWaRe 分類，整合 Oracle 與 SQL Server 雙資料庫之自動化資料管線",
+        "開發 ICU 藥事照護管理工具，以 OCR 技術自動化擷取申報數據，大幅縮減人工作業時間",
+        "設計部門出勤管理系統架構（FastAPI、React、PostgreSQL），完成複雜班別規則之系統化"
+      ]
+    },
+    {
+      "position": "行政人員",
+      "organization": "馬偕紀念醫院 · 醫學教育部",
+      "start": "2018",
+      "end": "2023",
+      "summary": "負責醫學教育行政與教學品質管理，累積醫療機構治理、評鑑作業與跨部門協調之扎實基礎。",
+      "highlights": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "資料工程與分析",
+      "items": [
+        {
+          "name": "Power BI",
+          "detail": "DAX 進階量值、Power Query M、多來源資料管線"
+        },
+        {
+          "name": "SQL",
+          "detail": "Oracle、SQL Server 查詢設計與跨庫整合"
+        },
+        {
+          "name": "機器學習",
+          "detail": "迴歸、分群模型於醫療資料之應用"
+        }
+      ]
+    },
+    {
+      "category": "軟體開發",
+      "items": [
+        {
+          "name": "Python",
+          "detail": "應用開發、OCR 自動化、TQC+ 認證"
+        },
+        {
+          "name": "AI 應用",
+          "detail": "RAG 系統、LlamaIndex、本地端 LLM 部署評估"
+        },
+        {
+          "name": "Web 技術",
+          "detail": "FastAPI、Vue、React、Docker"
+        }
+      ]
+    },
+    {
+      "category": "醫療資訊",
+      "items": [
+        {
+          "name": "FHIR 標準",
+          "detail": "TW Core Profile 實作、全國聯測驗證經驗"
+        },
+        {
+          "name": "流程優化",
+          "detail": "BPMN 建模、流程探勘"
+        },
+        {
+          "name": "領域知識",
+          "detail": "醫務管理、藥事作業、評鑑與法規"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "藥事知識決策支援系統",
+      "period": "2025 — 2026",
+      "description": "本地端部署之 RAG 問答系統，以國際臨床指引為知識庫，完成多個開源模型之系統性評估，兼顧醫療資料隱私與回覆品質。碩士論文研究主題。",
+      "stack": [
+        "LlamaIndex",
+        "ChromaDB",
+        "Ollama",
+        "LangSmith"
+      ]
+    },
+    {
+      "name": "抗生素使用管理儀表板",
+      "period": "2025 — 2026",
+      "description": "整合雙資料庫之自動化監測平台，實作國際標準之用藥密度指標，供感染管制與藥事委員會決策使用，並建立完整資料字典以利長期維運。",
+      "stack": [
+        "Power BI",
+        "DAX",
+        "Power Query M",
+        "Oracle",
+        "SQL Server"
+      ]
+    },
+    {
+      "name": "FHIR 醫療資料交換工具",
+      "period": "2026",
+      "description": "桌面應用程式，實作 FHIR Bundle 之封裝與上傳，於 TWCAT 2026 台灣醫療資訊聯測完成 TW EMR Profile 合規驗證。",
+      "stack": [
+        "FHIR",
+        "Electron",
+        "OAuth 2.0"
+      ]
+    },
+    {
+      "name": "ICU 藥事照護管理工具",
+      "period": "2025",
+      "description": "自動化資料擷取管線，從掃描文件中辨識並結構化 ICU 照護與申報數據，打包為單機應用程式供部門同仁日常使用。",
+      "stack": [
+        "Python",
+        "Tesseract OCR",
+        "PyInstaller"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "資訊管理研究所 · 碩士",
+      "school": "國立臺北護理健康大學",
+      "meta": "預計 2027 年畢業",
+      "note": "研究方向：本地端大型語言模型於藥事決策支援系統之應用"
+    },
+    {
+      "degree": "醫務管理學系 · 學士",
+      "school": "",
+      "meta": "已畢業",
+      "note": ""
+    }
+  ],
+  "certifications": [
+    "醫資管理師（台灣醫學資訊學會）",
+    "TQC+ Python 3 程式語言認證",
+    "TWCAT 2026 台灣醫療資訊聯測參與"
+  ]
+}

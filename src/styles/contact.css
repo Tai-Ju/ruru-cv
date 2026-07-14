@@ -1,6 +1,7 @@
 .contact-section {
   padding: var(--spacing-xl) 0;
-  background: var(--bg-secondary);
+  background: linear-gradient(170deg, #F7EDF0 0%, var(--band-deep) 100%);
+  border-top: 1px solid var(--hairline);
 }
 
 .contact-grid {

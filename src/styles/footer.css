@@ -1,8 +1,9 @@
 .app-footer {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--band-deep);
+  color: var(--latin-muted);
   padding: var(--spacing-lg) 0;
-  margin-top: var(--spacing-xl);
+  margin-top: 0;
+  border-top: 1px solid var(--hairline);
 }
 
 .footer-content {
@@ -15,7 +16,9 @@
 
 .footer-content p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--latin-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
 }
 
 .social-links {
@@ -24,7 +27,7 @@
 }
 
 .social-links a {
-  color: white;
+  color: var(--muted);
   font-weight: 500;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-sm);
@@ -32,8 +35,8 @@
 }
 
 .social-links a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: var(--secondary-color);
+  background-color: rgba(162, 78, 96, 0.08);
+  color: var(--rose);
 }
 
 .copy-phone-link {

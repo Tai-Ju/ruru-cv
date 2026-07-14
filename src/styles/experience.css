@@ -15,8 +15,8 @@
   left: 20px;
   top: 0;
   bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, var(--secondary-color), var(--accent-color));
+  width: 1px;
+  background: var(--hairline);
 }
 
 .timeline-item {
@@ -27,14 +27,14 @@
 
 .timeline-marker {
   position: absolute;
-  left: 10px;
+  left: 14px;
   top: 0;
-  width: 22px;
-  height: 22px;
-  background-color: var(--secondary-color);
-  border: 4px solid var(--bg-secondary);
+  width: 12px;
+  height: 12px;
+  background-color: var(--rose);
+  border: 2px solid var(--bg-secondary);
   border-radius: 50%;
-  box-shadow: 0 0 0 4px var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(162, 78, 96, 0.25);
 }
 
 .timeline-content {
@@ -67,7 +67,7 @@
 
 .company {
   font-size: var(--font-size-lg);
-  color: var(--secondary-color);
+  color: var(--rose);
   font-weight: 600;
 }
 
@@ -99,16 +99,18 @@
 }
 
 .achievements li::before {
-  content: '✓';
+  content: '';
   position: absolute;
   left: 0;
-  color: var(--secondary-color);
-  font-weight: bold;
+  top: 0.65em;
+  width: 10px;
+  height: 1px;
+  background: var(--rose);
 }
 
 @media (max-width: 768px) {
   .timeline::before {
-    left: 10px;
+    left: 5px;
   }
 
   .timeline-item {

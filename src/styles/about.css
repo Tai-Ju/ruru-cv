@@ -18,9 +18,9 @@
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-  border-radius: 2px;
+  height: 2px;
+  background: var(--rose);
+  border-radius: 0;
 }
 
 .about-content {

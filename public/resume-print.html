@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<title>劉玳如 — 履歷</title>
+<style>
+  @page {
+    size: A4;
+    /* 底部保留 14mm 給頁尾頁碼，其餘 0 讓深藍頁首滿版出血 */
+    margin: 0 0 14mm 0;
+    @bottom-center {
+      content: "劉玳如 Tai-Ju Liu — " counter(page) " / " counter(pages);
+      font-family: 'Noto Sans TC', 'Noto Sans CJK TC', sans-serif;
+      font-size: 8pt; color: #A89AA0;
+    }
+  }
+  :root {
+    --band: #F5E9EC; --ivory: #FDFBFA;
+    --ink: #332B2F; --muted: #6E6066; --hairline: #ECDFE2; --rose: #A24E60;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans TC', 'Noto Sans CJK TC', sans-serif;
+    color: var(--ink); font-size: 9.5pt; line-height: 1.65; background: #fff;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* 頁首：深藍名片帶（僅第一頁） */
+  .head { background: var(--band); color: #2E2529; padding: 12mm 16mm 9mm; }
+  .head .kicker { font-size: 7.5pt; letter-spacing: 0.28em; text-transform: uppercase; color: var(--rose); margin-bottom: 4mm; }
+  .head h1 { font-family: 'Noto Serif TC', 'Noto Serif CJK TC', serif; font-size: 24pt; font-weight: 700; letter-spacing: 0.06em; line-height: 1.2; }
+  .head .latin { font-size: 10.5pt; font-style: italic; color: #96868C; letter-spacing: 0.1em; margin: 1mm 0 4mm; font-family: 'Noto Serif TC', 'Noto Serif CJK TC', serif; }
+  .head .title { font-size: 10pt; color: #4A3F44; margin-bottom: 5mm; }
+  .head .contact { border-top: 0.4pt solid rgba(162,78,96,0.3); padding-top: 3.5mm; font-size: 8.5pt; color: #55494E; display: flex; flex-wrap: wrap; gap: 1.5mm 7mm; }
+  .c-item { white-space: nowrap; }
+  .c-item b { font-weight: 500; color: var(--rose); margin-right: 1.5mm; }
+  .c-sep { margin: 0 3mm; color: rgba(251,250,247,0.3); }
+
+  /* 頁面規劃：明確指定分頁點，每個章節整體不可跨頁 */
+  .body { padding: 9mm 16mm 0; }
+  .page-2 { break-before: page; padding-top: 12mm; }
+  section { margin-bottom: 7mm; break-inside: avoid; }
+
+  /* 單頁內雙欄（不需跨頁，flex 安全） */
+  .duo { display: flex; gap: 9mm; }
+  .duo .main { flex: 1.5; }
+  .duo .side { flex: 1; }
+
+  h2 {
+    font-family: 'Noto Serif TC', 'Noto Serif CJK TC', serif;
+    font-size: 12pt; font-weight: 700; letter-spacing: 0.08em;
+    padding-bottom: 1.5mm; margin-bottom: 3.5mm; border-bottom: 0.6pt solid var(--hairline);
+  }
+  h2 .en { font-family: 'Noto Sans TC', 'Noto Sans CJK TC', sans-serif; font-size: 6.5pt; letter-spacing: 0.24em; text-transform: uppercase; color: var(--rose); font-weight: 500; margin-left: 2.5mm; }
+
+  .summary p { font-size: 9.5pt; text-align: justify; margin-bottom: 2.5mm; }
+
+  .entry { margin-bottom: 4.5mm; break-inside: avoid; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .entry h3 { font-family: 'Noto Serif TC', 'Noto Serif CJK TC', serif; font-size: 10.5pt; font-weight: 700; }
+  .dates { font-size: 8pt; color: var(--muted); letter-spacing: 0.06em; white-space: nowrap; }
+  .org { font-size: 8.5pt; color: var(--rose); letter-spacing: 0.04em; margin: 0.5mm 0 1.5mm; }
+  .entry p { font-size: 9pt; color: var(--muted); margin-bottom: 1.5mm; text-align: justify; }
+  .entry ul { list-style: none; }
+  .entry li { position: relative; padding-left: 5mm; margin-bottom: 1.2mm; font-size: 9pt; text-align: justify; }
+  .entry li::before { content: ''; position: absolute; left: 0; top: 2.6mm; width: 2.8mm; height: 0.4pt; background: var(--rose); }
+  .work .stack { font-size: 7.5pt; letter-spacing: 0.08em; color: var(--rose); text-transform: uppercase; }
+
+  .skills-3col { display: flex; gap: 7mm; }
+  .skills-3col .skill-group { flex: 1; }
+  .skill-group { margin-bottom: 3.5mm; }
+  .skill-group h4 { font-size: 7.5pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 600; margin-bottom: 1.5mm; }
+  .skill-row { font-size: 8.5pt; margin-bottom: 1mm; }
+  .skill-row b { font-weight: 600; display: block; }
+  .skill-row span { color: var(--muted); font-size: 8pt; }
+
+  .edu { margin-bottom: 3mm; }
+  .edu b { font-family: 'Noto Serif TC', 'Noto Serif CJK TC', serif; font-size: 9.5pt; }
+  .edu .meta { font-size: 8pt; color: var(--muted); }
+  .edu .note { font-size: 8pt; color: var(--muted); margin-top: 0.5mm; }
+
+  .certs { list-style: none; }
+  .certs li { position: relative; padding-left: 5mm; margin-bottom: 1.2mm; font-size: 8.5pt; }
+  .certs li::before { content: ''; position: absolute; left: 0; top: 2.4mm; width: 2.8mm; height: 0.4pt; background: var(--rose); }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="kicker">Healthcare Administration · Software Development</div>
+    <h1>劉玳如</h1>
+    <div class="latin">Tai-Ju Liu</div>
+    <div class="title">行政管理師｜醫療 × 資料工程　·　台北，台灣</div>
+    <div class="contact"><span class="c-item"><b>Email</b> <a href="mailto:lulu@lufolio.dev">lulu@lufolio.dev</a></span><span class="c-item"><b>電話</b> <a href="tel:+886909213395">0909-213-395</a></span><span class="c-item"><b>GitHub</b> <a href="https://github.com/Tai-Ju">github.com/Tai-Ju</a></span><span class="c-item"><b>Hugging Face</b> <a href="https://huggingface.co/ruru0116">huggingface.co/ruru0116</a></span><span class="c-item"><b>LinkedIn</b> <a href="https://www.linkedin.com/in/tai-ju-liu/">linkedin.com/in/tai-ju-liu</a></span></div>
+  </div>
+
+  <!-- 第 1 頁：簡介 ＋ 經歷 -->
+  <div class="body">
+    <section class="summary">
+      <h2>簡介<span class="en">Profile</span></h2>
+      <p>我在醫療體系工作逾八年，先後任職於馬偕紀念醫院醫學教育部與藥劑部，對醫院的組織運作、法規環境與跨部門協作有深入的實務理解。這份領域知識，是我所有技術工作的根基。</p><p>過去數年，我系統性地建立了資料分析與軟體開發能力——從 SQL 資料管線、Power BI 商業智慧，到 Python 應用開發與大型語言模型的落地研究。我不做概念驗證式的展示，而是交付真正進入日常作業流程、被臨床與行政團隊持續使用的工具。</p><p>目前於國立臺北護理健康大學資訊管理研究所進修，研究本地端大型語言模型於藥事決策支援之應用，持續深化醫療資訊領域的專業縱深。</p>
+    </section>
+    <section>
+      <h2>經歷<span class="en">Experience</span></h2>
+      
+    <div class="entry">
+      <div class="entry-head"><h3>行政管理師</h3><span class="dates">2023 — 迄今</span></div>
+      <div class="org">馬偕紀念醫院 · 藥劑部</div>
+      <p>統籌部門行政管理，並主導資料分析與數位化專案，服務約 37 人之藥事團隊。</p>
+      <ul><li>規劃並建置全院抗生素管理儀表板，涵蓋 DOT、DID 用藥密度指標與 WHO AWaRe 分類，整合 Oracle 與 SQL Server 雙資料庫之自動化資料管線</li><li>開發 ICU 藥事照護管理工具，以 OCR 技術自動化擷取申報數據，大幅縮減人工作業時間</li><li>設計部門出勤管理系統架構（FastAPI、React、PostgreSQL），完成複雜班別規則之系統化</li></ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><h3>行政人員</h3><span class="dates">2018 — 2023</span></div>
+      <div class="org">馬偕紀念醫院 · 醫學教育部</div>
+      <p>負責醫學教育行政與教學品質管理，累積醫療機構治理、評鑑作業與跨部門協調之扎實基礎。</p>
+      
+    </div>
+    </section>
+
+    <!-- 第 2 頁：專長 ＋ 專案實績 ＋ 學歷｜認證 -->
+    <div class="page-2">
+      <section>
+        <h2>專長<span class="en">Expertise</span></h2>
+        <div class="skills-3col">
+    <div class="skill-group">
+      <h4>資料工程與分析</h4>
+      <div class="skill-row"><b>Power BI</b><span>DAX 進階量值、Power Query M、多來源資料管線</span></div><div class="skill-row"><b>SQL</b><span>Oracle、SQL Server 查詢設計與跨庫整合</span></div><div class="skill-row"><b>機器學習</b><span>迴歸、分群模型於醫療資料之應用</span></div>
+    </div>
+    <div class="skill-group">
+      <h4>軟體開發</h4>
+      <div class="skill-row"><b>Python</b><span>應用開發、OCR 自動化、TQC+ 認證</span></div><div class="skill-row"><b>AI 應用</b><span>RAG 系統、LlamaIndex、本地端 LLM 部署評估</span></div><div class="skill-row"><b>Web 技術</b><span>FastAPI、Vue、React、Docker</span></div>
+    </div>
+    <div class="skill-group">
+      <h4>醫療資訊</h4>
+      <div class="skill-row"><b>FHIR 標準</b><span>TW Core Profile 實作、全國聯測驗證經驗</span></div><div class="skill-row"><b>流程優化</b><span>BPMN 建模、流程探勘</span></div><div class="skill-row"><b>領域知識</b><span>醫務管理、藥事作業、評鑑與法規</span></div>
+    </div></div>
+      </section>
+      <section>
+        <h2>專案實績<span class="en">Selected Work</span></h2>
+        
+    <div class="entry work">
+      <div class="entry-head"><h3>藥事知識決策支援系統</h3><span class="dates">2025 — 2026</span></div>
+      <p>本地端部署之 RAG 問答系統，以國際臨床指引為知識庫，完成多個開源模型之系統性評估，兼顧醫療資料隱私與回覆品質。碩士論文研究主題。</p>
+      <div class="stack">LlamaIndex · ChromaDB · Ollama · LangSmith</div>
+    </div>
+    <div class="entry work">
+      <div class="entry-head"><h3>抗生素使用管理儀表板</h3><span class="dates">2025 — 2026</span></div>
+      <p>整合雙資料庫之自動化監測平台，實作國際標準之用藥密度指標，供感染管制與藥事委員會決策使用，並建立完整資料字典以利長期維運。</p>
+      <div class="stack">Power BI · DAX · Power Query M · Oracle · SQL Server</div>
+    </div>
+    <div class="entry work">
+      <div class="entry-head"><h3>FHIR 醫療資料交換工具</h3><span class="dates">2026</span></div>
+      <p>桌面應用程式，實作 FHIR Bundle 之封裝與上傳，於 TWCAT 2026 台灣醫療資訊聯測完成 TW EMR Profile 合規驗證。</p>
+      <div class="stack">FHIR · Electron · OAuth 2.0</div>
+    </div>
+    <div class="entry work">
+      <div class="entry-head"><h3>ICU 藥事照護管理工具</h3><span class="dates">2025</span></div>
+      <p>自動化資料擷取管線，從掃描文件中辨識並結構化 ICU 照護與申報數據，打包為單機應用程式供部門同仁日常使用。</p>
+      <div class="stack">Python · Tesseract OCR · PyInstaller</div>
+    </div>
+      </section>
+      <div class="duo">
+        <section class="main">
+          <h2>學歷<span class="en">Education</span></h2>
+          
+    <div class="edu">
+      <b>資訊管理研究所 · 碩士</b>
+      <div class="meta">國立臺北護理健康大學 · 預計 2027 年畢業</div>
+      <div class="note">研究方向：本地端大型語言模型於藥事決策支援系統之應用</div>
+    </div>
+    <div class="edu">
+      <b>醫務管理學系 · 學士</b>
+      <div class="meta">已畢業</div>
+      
+    </div>
+        </section>
+        <section class="side">
+          <h2>專業認證<span class="en">Certifications</span></h2>
+          <ul class="certs"><li>醫資管理師（台灣醫學資訊學會）</li><li>TQC+ Python 3 程式語言認證</li><li>TWCAT 2026 台灣醫療資訊聯測參與</li></ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
