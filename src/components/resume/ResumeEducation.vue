@@ -8,35 +8,25 @@ const educationZh = [
   {
     id: 1,
     school: '國立臺北護理健康大學',
-    degree: '資訊管理系 碩士班',
-    period: '2025 - 在學中',
-    description: '專注於醫療資訊系統、軟體開發與數據分析領域，結合醫療專業背景進行跨領域研究。',
-    achievements: [
-      '修習系統分析與設計、資料庫管理、程式設計等課程',
-      '完成多項程式開發專案實作',
-      '參與醫療資訊系統相關研究',
-      '論文研究方向：以本地部署 LLM 輔助藥事決策支援系統之研究'
-    ]
+    degree: '資訊管理研究所 · 碩士',
+    period: '預計 2027 年畢業',
+    description: '研究方向：本地端大型語言模型於藥事決策支援系統之應用',
+    achievements: []
   },
   {
     id: 2,
     school: '慈濟大學',
-    degree: '醫務管理系 學士',
-    period: '2013 - 2017',
-    description: '學習醫務管理、醫療品質管理、醫療資訊系統等專業課程，建立紮實的醫療領域知識基礎。',
-    achievements: [
-      '熟悉醫療作業流程與管理制度',
-      '學習醫療資訊系統操作與應用',
-      '參與醫院實習與專案實作',
-      '培養問題分析與解決能力'
-    ]
+    degree: '醫務管理學系 · 學士',
+    period: '已畢業',
+    description: '',
+    achievements: []
   }
 ]
 
 const certificationsZh = [
-  'TQC+ Python 3 認證',
-  '醫資管理師',
-  '軟體應用丙級'
+  '醫資管理師（台灣醫學資訊學會）',
+  'TQC+ Python 3 程式語言認證',
+  'TWCAT 2026 台灣醫療資訊聯測參與'
 ]
 
 const internationalExperienceZh = [
@@ -49,44 +39,30 @@ const trainingZh = [
   { title: '臺大資工系統訓練班', items: ['Node.js & MongoDB 後端開發 (2025)', 'Python 程式設計進階 (2021-2025)'] }
 ]
 
-const competitionsZh = [
-  { title: 'AI 創新應用競賽', project: '藥品影像辨識系統', status: '2025 備賽中' },
-  { title: 'Power BI 數據分析競賽', project: '智慧藥櫃分析平台', year: '2025' },
-  { title: 'Power BI 數據分析競賽', project: 'Penny 教學整合平台', year: '2024' }
-]
-
 const educationEn = [
   {
     id: 1,
     school: 'National Taipei University of Nursing and Health Sciences',
     degree: 'M.S. in Information Management',
-    period: '2025 - Present',
-    description:
-      'Focused on healthcare information systems, software development, and data analytics with cross-domain applications.',
-    achievements: [
-      'Completed coursework in system analysis and design, database management, and programming',
-      'Delivered multiple software project implementations',
-      'Participated in healthcare informatics research',
-      'Research thesis: Locally deployed LLM to assist pharmacy clinical decision support systems'
-    ]
+    period: 'Expected 2027',
+    description: 'Research focus: On-premise large language models for pharmacy decision support systems',
+    achievements: []
   },
   {
     id: 2,
     school: 'Tzu Chi University',
     degree: 'B.S. in Healthcare Administration',
-    period: '2013 - 2017',
-    description:
-      'Built a solid foundation in healthcare operations, quality management, and medical information systems.',
-    achievements: [
-      'Familiar with healthcare workflows and management practices',
-      'Experienced in healthcare information system applications',
-      'Completed hospital internships and project practice',
-      'Strengthened analytical and problem-solving abilities'
-    ]
+    period: 'Graduated',
+    description: '',
+    achievements: []
   }
 ]
 
-const certificationsEn = ['TQC+ Python 3 Certification', 'Healthcare Informatics Manager', 'Software Application License']
+const certificationsEn = [
+  'Healthcare Informatics Manager (TAMI)',
+  'TQC+ Python 3 Certification',
+  'TWCAT 2026 Taiwan Healthcare Connectathon'
+]
 
 const internationalExperienceEn = [
   { location: 'Mater Hospital, Australia', type: 'Clinical Observation', period: '2017/08' },
@@ -98,12 +74,6 @@ const trainingEn = [
   { title: 'NTU CS Professional Program', items: ['Node.js & MongoDB Backend Development (2025)', 'Advanced Python Programming (2021-2025)'] }
 ]
 
-const competitionsEn = [
-  { title: 'AI Innovation Competition', project: 'Medication Image Recognition System', status: 'Preparing for 2025' },
-  { title: 'Power BI Analytics Competition', project: 'Smart ADC Analytics Platform', year: '2025' },
-  { title: 'Power BI Analytics Competition', project: 'Penny Teaching Integration Platform', year: '2024' }
-]
-
 const copy = computed(() => {
   if (currentLang.value === 'en') {
     return {
@@ -111,18 +81,16 @@ const copy = computed(() => {
       eduTitle: 'Education',
       certTitle: 'Certifications',
       intlTitle: 'International Experience',
-      trainingTitle: 'Professional Training',
-      compTitle: 'Competitions'
+      trainingTitle: 'Professional Training'
     }
   }
 
   return {
-    title: '學歷與經歷',
-    eduTitle: '學歷背景',
+    title: '學歷與背景',
+    eduTitle: '學歷',
     certTitle: '專業認證',
     intlTitle: '國際經歷',
-    trainingTitle: '專業進修',
-    compTitle: '創新競賽'
+    trainingTitle: '專業進修'
   }
 })
 
@@ -130,7 +98,6 @@ const education = computed(() => (currentLang.value === 'en' ? educationEn : edu
 const certifications = computed(() => (currentLang.value === 'en' ? certificationsEn : certificationsZh))
 const internationalExperience = computed(() => (currentLang.value === 'en' ? internationalExperienceEn : internationalExperienceZh))
 const training = computed(() => (currentLang.value === 'en' ? trainingEn : trainingZh))
-const competitions = computed(() => (currentLang.value === 'en' ? competitionsEn : competitionsZh))
 </script>
 
 <template>
@@ -138,7 +105,6 @@ const competitions = computed(() => (currentLang.value === 'en' ? competitionsEn
     <div class="container">
       <h2 class="section-title">{{ copy.title }}</h2>
 
-      <!-- 學歷 -->
       <div class="education-main">
         <h3 class="subsection-title">{{ copy.eduTitle }}</h3>
         <div class="education-grid">
@@ -156,8 +122,8 @@ const competitions = computed(() => (currentLang.value === 'en' ? competitionsEn
                 </div>
                 <span class="period">{{ edu.period }}</span>
               </div>
-              <p class="description">{{ edu.description }}</p>
-              <ul class="achievements">
+              <p v-if="edu.description" class="description">{{ edu.description }}</p>
+              <ul v-if="edu.achievements.length" class="achievements">
                 <li v-for="(achievement, index) in edu.achievements" :key="index">
                   {{ achievement }}
                 </li>
@@ -167,9 +133,7 @@ const competitions = computed(() => (currentLang.value === 'en' ? competitionsEn
         </div>
       </div>
 
-      <!-- 四個區塊並排 -->
       <div class="additional-info-grid">
-        <!-- 專業認證 -->
         <div class="info-block">
           <h3 class="subsection-title">{{ copy.certTitle }}</h3>
           <div class="info-list">
@@ -180,7 +144,6 @@ const competitions = computed(() => (currentLang.value === 'en' ? competitionsEn
           </div>
         </div>
 
-        <!-- 國際經歷 -->
         <div class="info-block">
           <h3 class="subsection-title">{{ copy.intlTitle }}</h3>
           <div class="info-list">
@@ -194,7 +157,6 @@ const competitions = computed(() => (currentLang.value === 'en' ? competitionsEn
           </div>
         </div>
 
-        <!-- 專業進修 -->
         <div class="info-block">
           <h3 class="subsection-title">{{ copy.trainingTitle }}</h3>
           <div class="info-list">
@@ -205,20 +167,6 @@ const competitions = computed(() => (currentLang.value === 'en' ? competitionsEn
                 <ul class="info-sublist">
                   <li v-for="item in train.items" :key="item">{{ item }}</li>
                 </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 創新競賽 -->
-        <div class="info-block">
-          <h3 class="subsection-title">{{ copy.compTitle }}</h3>
-          <div class="info-list">
-            <div v-for="comp in competitions" :key="comp.project" class="info-item">
-              <span class="info-icon">🏆</span>
-              <div class="info-details">
-                <div class="info-text">{{ comp.title }}</div>
-                <div class="info-subtitle">{{ comp.project }} ({{ comp.status || comp.year }})</div>
               </div>
             </div>
           </div>

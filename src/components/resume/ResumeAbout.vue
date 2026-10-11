@@ -9,9 +9,9 @@ const copy = computed(() => {
     return {
       title: 'About Me',
       paragraphs: [
-        'I am Tai-Ju Liu with over 6 years of administration experience in medical centers. I am currently pursuing a Master degree in Information Management at National Taipei University of Nursing and Health Sciences.',
-        'I focus on solving real workflow pain points with technology and have built practical projects such as a Power BI ADC dashboard, a VBA scheduling automation system, and a LineBot OCR application.',
-        'With TQC+ Python certification and cross-domain experience, I bring both healthcare domain understanding and software execution capability.'
+        'I have worked in healthcare for over eight years, first in Medical Education and now in the Pharmacy Department at Mackay Memorial Hospital. This domain knowledge of hospital operations, regulation, and cross-team collaboration underpins all of my technical work.',
+        'In recent years I have built systematic capability in data analysis and software development—from SQL pipelines and Power BI to Python applications and applied large language models. I focus on tools that enter daily workflows and stay in use by clinical and administrative teams.',
+        'I am currently pursuing a Master of Information Management at National Taipei University of Nursing and Health Sciences, researching on-premise LLMs for pharmacy decision support.'
       ]
     }
   }
@@ -19,9 +19,9 @@ const copy = computed(() => {
   return {
     title: '關於我',
     paragraphs: [
-      '我是劉玳如 (Tai-Ju Liu)，擁有 6 年以上醫學中心行政管理經驗，目前就讀國立臺北護理健康大學資訊管理碩士班，正積極將醫務管理專業與軟體開發能力結合。',
-      '我深信技術的價值在於解決實際問題。擅長將臨床作業痛點轉化為技術解決方案，成功建構 Power BI 智慧藥櫃監控儀表板、VBA 自動化排班系統、LineBot OCR 應用等創新專案。',
-      '已取得 TQC+ Python 3 程式語言認證，熟練多種開發工具與技術。我相信跨領域的背景是我的優勢，讓我能以使用者的角度思考，開發出更貼近需求的解決方案。'
+      '我在醫療體系工作逾八年，先後任職於馬偕紀念醫院醫學教育部與藥劑部，對醫院的組織運作、法規環境與跨部門協作有深入的實務理解。這份領域知識，是我所有技術工作的根基。',
+      '過去數年，我系統性地建立了資料分析與軟體開發能力——從 SQL 資料管線、Power BI 商業智慧，到 Python 應用開發與大型語言模型的落地研究。我不做概念驗證式的展示，而是交付真正進入日常作業流程、被臨床與行政團隊持續使用的工具。',
+      '目前於國立臺北護理健康大學資訊管理研究所進修，研究本地端大型語言模型於藥事決策支援之應用，持續深化醫療資訊領域的專業縱深。'
     ]
   }
 })

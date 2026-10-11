@@ -4,8 +4,8 @@ import { computed, ref } from 'vue'
 import { useLanguage } from '../../composables/useLanguage'
 
 const currentYear = new Date().getFullYear()
-const gmailComposeUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=lk117868@gmail.com'
-const mailtoFallback = 'mailto:lk117868@gmail.com'
+const gmailComposeUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=lulu@lufolio.dev'
+const mailtoFallback = 'mailto:lulu@lufolio.dev'
 const phoneNumber = '0909-213-395'
 const isPhoneCopied = ref(false)
 const { currentLang } = useLanguage()
@@ -88,7 +88,7 @@ const copyPhoneNumber = async () => {
             LinkedIn
           </a>
           <a 
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=lk117868@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=lulu@lufolio.dev"
             @click.prevent="openGmailCompose"
           >
             {{ copy.email }}

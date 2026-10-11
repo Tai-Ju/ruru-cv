@@ -31,7 +31,7 @@ const copy = computed(() => {
       <div class="contact-grid">
         <div class="contact-card">
           <h3>{{ copy.quick }}</h3>
-          <p>Email：<a href="mailto:lk117868@gmail.com">lk117868@gmail.com</a></p>
+          <p>Email：<a href="mailto:lulu@lufolio.dev">lulu@lufolio.dev</a></p>
           <p>GitHub：<a href="https://github.com/Tai-Ju" target="_blank" rel="noopener noreferrer">@Tai-Ju</a></p>
           <p>
             LinkedIn：<a

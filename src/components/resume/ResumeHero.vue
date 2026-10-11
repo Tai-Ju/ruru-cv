@@ -11,18 +11,18 @@ const copy = computed(() => {
   if (currentLang.value === 'en') {
     return {
       title: "Hi, I'm",
-      subtitle: 'Healthcare Administration × Software Development',
+      subtitle: 'Healthcare Administration · Software Development',
       description:
-        'With over 6 years of experience in medical center administration, I am actively transitioning into software development and building practical solutions for real healthcare workflows.',
+        'Administrative Specialist at Mackay Memorial Hospital Pharmacy Department. With eight years in healthcare institutions, I combine data engineering and software development to turn complex clinical needs into reliable digital solutions.',
       download: 'Download PDF'
     }
   }
 
   return {
     title: '你好，我是',
-    subtitle: '醫務管理 × 軟體開發',
+    subtitle: '行政管理師｜醫療 × 資料工程',
     description:
-      '擁有 6 年以上醫學中心行政管理經驗，正積極轉型為軟體開發人才。以醫療領域專業為基礎，結合程式開發實務能力，致力於將臨床痛點轉化為創新技術解決方案。',
+      '馬偕紀念醫院藥劑部行政管理師。八年醫療機構歷練，結合資料工程與軟體開發能力，將醫療現場的複雜需求，轉化為嚴謹可靠的數位解決方案。',
     download: '下載 PDF'
   }
 })
@@ -35,16 +35,10 @@ const closeZoom = () => {
   isZoomed.value = false
 }
 
+const resumePdfUrl = `${import.meta.env.BASE_URL}resume.pdf`
+
 const downloadResumeAsPdf = () => {
-  const fileName = 'Tai-Ju-Liu-CV.pdf'
-  const link = document.createElement('a')
-  link.href = '/resume.pdf'
-  link.download = fileName
-  link.rel = 'noopener'
-  document.body.appendChild(link)
-  link.click()
-  document.body.removeChild(link)
-  trackDownload(fileName, 'resume-pdf')
+  trackDownload('Tai-Ju-Liu-CV.pdf', 'resume-pdf')
 }
 </script>
 
@@ -57,9 +51,14 @@ const downloadResumeAsPdf = () => {
           <p class="hero-subtitle">{{ copy.subtitle }}</p>
           <p class="hero-description">{{ copy.description }}</p>
           <div class="hero-buttons">
-            <button type="button" class="btn btn-primary" @click="downloadResumeAsPdf">
+            <a
+              class="btn btn-primary"
+              :href="resumePdfUrl"
+              download="Tai-Ju-Liu-CV.pdf"
+              @click="downloadResumeAsPdf"
+            >
               {{ copy.download }}
-            </button>
+            </a>
             <a href="https://github.com/Tai-Ju" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
@@ -75,7 +74,6 @@ const downloadResumeAsPdf = () => {
       </div>
     </div>
 
-    <!-- 照片放大模態框 -->
     <Transition name="zoom-fade">
       <div v-if="isZoomed" class="photo-modal" @click="closeZoom">
         <div class="modal-content">
