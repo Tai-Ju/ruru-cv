@@ -47,6 +47,17 @@ const projects = [
     descriptionEn:
       'Automated scheduling tool for shift rules, attendance lookup, and overtime calculation, replacing manual payroll workflows.',
     link: 'https://github.com/Tai-Ju/gas-pharmacy-schedule-system'
+  },
+  {
+    id: 5,
+    title: '調閱單電子化自動處理系統',
+    titleEn: 'Automated Chart Request Digitization System',
+    tags: ['AUTOHOTKEY', 'PYTHON', 'AUTOMATION', 'BATCH'],
+    description:
+      '以 AutoHotkey + Python 打造端到端自動化流程：自動攔截醫令系統 Print-to-PDF 對話框並命名儲存、一鍵合併當日檔案、定時清理與本機／網路雙重備份。將紙本調閱作業轉為近乎零手動的電子化流程，自動化率達 95%，零額外軟體成本落地於臨床藥學日常作業。',
+    descriptionEn:
+      'End-to-end automation with AutoHotkey and Python: auto-capture Print-to-PDF dialogs with naming, one-key daily merge, scheduled cleanup, and dual local/network backup. Turned paper chart-request workflows into a near hands-free digital process (~95% automation) at zero extra software cost.',
+    link: 'https://github.com/Tai-Ju/autohotkey-scripts'
   }
 ]
 

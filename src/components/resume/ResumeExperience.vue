@@ -32,7 +32,8 @@ const experiencesZh = [
       'FHIR 電子處方箋系統｜Electron · React · TypeScript：依 TW Core EMR-IG 2.5 實作 FHIR R4 電子處方箋完整 Profile',
       'ADC 智慧藥櫃數據分析｜Power BI：分析逾 30 萬筆 ADC Log，建立庫存成效視覺化儀表板，支援藥品補給決策',
       '住院藥局排班系統｜Google Apps Script · Google Sheets：自動化排班、出勤查詢與加班費試算，降低薪資核算錯誤率',
-      '學術文獻自動化系統｜n8n · ScienceDirect／Web of Science API：建立自動化文獻蒐集與去重流程'
+      '學術文獻自動化系統｜n8n · ScienceDirect／Web of Science API：建立自動化文獻蒐集與去重流程',
+      '調閱單電子化自動處理系統｜AutoHotkey · Python：端到端自動化 Print-to-PDF、合併、清理與雙重備份，自動化率約 95%'
     ]
   },
   {
@@ -76,7 +77,8 @@ const experiencesEn = [
       'FHIR e-prescription desktop app with Electron, React, and TypeScript aligned to TW Core EMR-IG 2.5.',
       'ADC smart-cabinet analytics in Power BI over 300k+ log records to support replenishment decisions.',
       'Pharmacy scheduling automation with Google Apps Script and Sheets for shifts, attendance, and overtime calculation.',
-      'Literature automation pipeline with n8n and ScienceDirect / Web of Science APIs.'
+      'Literature automation pipeline with n8n and ScienceDirect / Web of Science APIs.',
+      'Chart-request digitization automation with AutoHotkey and Python: Print-to-PDF capture, merge, cleanup, and dual backup (~95% automation).'
     ]
   },
   {

@@ -73,7 +73,8 @@
         "FHIR 電子處方箋系統｜Electron · React · TypeScript：依 TW Core EMR-IG 2.5 實作 FHIR R4 電子處方箋完整 Profile",
         "ADC 智慧藥櫃數據分析｜Power BI：分析逾 30 萬筆 ADC Log，建立庫存成效視覺化儀表板，支援藥品補給決策",
         "住院藥局排班系統｜Google Apps Script · Google Sheets：自動化排班、出勤查詢與加班費試算，降低薪資核算錯誤率",
-        "學術文獻自動化系統｜n8n · ScienceDirect／Web of Science API：建立自動化文獻蒐集與去重流程"
+        "學術文獻自動化系統｜n8n · ScienceDirect／Web of Science API：建立自動化文獻蒐集與去重流程",
+        "調閱單電子化自動處理系統｜AutoHotkey · Python：端到端自動化 Print-to-PDF、合併、清理與雙重備份，自動化率約 95%"
       ]
     },
     {
@@ -129,7 +130,7 @@
         },
         {
           "name": "自動化流程",
-          "detail": "Google Apps Script、n8n、OCR 應用"
+          "detail": "AutoHotkey、Python、Google Apps Script、n8n、OCR"
         },
         {
           "name": "領域知識",
@@ -177,6 +178,17 @@
       "stack": [
         "Google Apps Script",
         "Google Sheets"
+      ]
+    },
+    {
+      "name": "調閱單電子化自動處理系統",
+      "period": "2025",
+      "description": "以 AutoHotkey + Python 打造端到端自動化流程：自動攔截醫令系統 Print-to-PDF 對話框並命名儲存、一鍵合併當日檔案、定時清理與本機／網路雙重備份。將紙本調閱作業轉為近乎零手動的電子化流程，自動化率達 95%，零額外軟體成本落地於臨床藥學日常作業。",
+      "stack": [
+        "AutoHotkey",
+        "Python",
+        "Batch",
+        "Automation"
       ]
     }
   ],

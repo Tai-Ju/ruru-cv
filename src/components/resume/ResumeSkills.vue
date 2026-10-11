@@ -25,7 +25,7 @@ const skillCategoriesZh = [
     title: '醫療資訊',
     skills: [
       { name: 'FHIR / HL7', experience: 'TW Core EMR-IG、電子處方箋、HIS 介接' },
-      { name: '自動化流程', experience: 'Google Apps Script、n8n、OCR 應用' },
+      { name: '自動化流程', experience: 'AutoHotkey、Python、Google Apps Script、n8n、OCR' },
       { name: '領域知識', experience: '醫務管理、藥事作業、評鑑與法規' }
     ]
   }
@@ -52,7 +52,7 @@ const skillCategoriesEn = [
     title: 'Health Informatics',
     skills: [
       { name: 'FHIR / HL7', experience: 'TW Core EMR-IG, e-prescriptions, HIS integration' },
-      { name: 'Automation', experience: 'Google Apps Script, n8n, OCR applications' },
+      { name: 'Automation', experience: 'AutoHotkey, Python, Google Apps Script, n8n, OCR' },
       { name: 'Domain Knowledge', experience: 'Healthcare admin, pharmacy operations, accreditation' }
     ]
   }
