@@ -9,9 +9,9 @@ const copy = computed(() => {
     return {
       title: 'About Me',
       paragraphs: [
-        'I have worked in healthcare for over eight years, first in Medical Education and now in the Pharmacy Department at Mackay Memorial Hospital. This domain knowledge of hospital operations, regulation, and cross-team collaboration underpins all of my technical work.',
-        'In recent years I have built systematic capability in data analysis and software development—from SQL pipelines and Power BI to Python applications and applied large language models. I focus on tools that enter daily workflows and stay in use by clinical and administrative teams.',
-        'I am currently pursuing a Master of Information Management at National Taipei University of Nursing and Health Sciences, researching on-premise LLMs for pharmacy decision support.'
+        'I am a backend engineer at Tri-Service General Hospital, contributing to the Healthy Taiwan Deep Cultivation Program. I design and develop clinic-side digital services—including e-prescriptions, virtual NHI cards, and AI-assisted tools—covering RESTful APIs, database architecture, FHIR/HL7 exchange, and integration with NHIA, MOHW platforms, and HIS systems.',
+        'Previously I spent six years at Mackay Memorial Hospital in medical education administration and pharmacy technical development, building deep understanding of hospital operations, regulation, and cross-team collaboration.',
+        'I am pursuing an M.S. in Information Management at National Taipei University of Nursing and Health Sciences, researching on-premise LLM medication recommendation systems.'
       ]
     }
   }
@@ -19,9 +19,9 @@ const copy = computed(() => {
   return {
     title: '關於我',
     paragraphs: [
-      '我在醫療體系工作逾八年，先後任職於馬偕紀念醫院醫學教育部與藥劑部，對醫院的組織運作、法規環境與跨部門協作有深入的實務理解。這份領域知識，是我所有技術工作的根基。',
-      '過去數年，我系統性地建立了資料分析與軟體開發能力——從 SQL 資料管線、Power BI 商業智慧，到 Python 應用開發與大型語言模型的落地研究。我不做概念驗證式的展示，而是交付真正進入日常作業流程、被臨床與行政團隊持續使用的工具。',
-      '目前於國立臺北護理健康大學資訊管理研究所進修，研究本地端大型語言模型於藥事決策支援之應用，持續深化醫療資訊領域的專業縱深。'
+      '現任三軍總醫院後端工程師，參與健康台灣深耕計畫，負責診所端數位應用服務（電子處方箋、虛擬健保卡、AI 輔助工具等）之後端系統設計與開發，涵蓋 RESTful API、資料庫架構、FHIR／HL7 醫療資料交換，以及與健保署、衛福部平台及 HIS 系統之介接。',
+      '此前於馬偕紀念醫院累積六年行政管理與技術開發實務，從醫學教育行政到藥劑部技術開發，對醫院組織運作、法規環境與跨部門協作有深入理解。這份領域知識，是我所有技術工作的根基。',
+      '目前於國立臺北護理健康大學資訊管理研究所進修，研究地端 LLM 用藥建議系統，持續把醫療 domain knowledge 轉化為可落地的技術解法。'
     ]
   }
 })

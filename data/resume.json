@@ -2,10 +2,10 @@
   "basics": {
     "name": "劉玳如",
     "nameLatin": "Tai-Ju Liu",
-    "title": "行政管理師｜醫療 × 資料工程",
-    "kicker": "Healthcare Administration · Software Development",
-    "summary": "馬偕紀念醫院藥劑部行政管理師。八年醫療機構歷練，結合資料工程與軟體開發能力，將醫療現場的複雜需求，轉化為嚴謹可靠的數位解決方案。",
-    "location": "台北，台灣"
+    "title": "後端工程師｜醫療 × 資料工程",
+    "kicker": "Healthcare · Data Engineering · RAG",
+    "summary": "現任三軍總醫院後端工程師，參與健康台灣深耕計畫，負責診所端數位應用服務之後端系統設計與開發。此前具備六年馬偕紀念醫院行政管理與技術開發實務，研究地端 LLM 用藥建議系統，擅於橋接醫療現場需求與技術開發。",
+    "location": "新北市三重區"
   },
   "contact": [
     {
@@ -41,64 +41,82 @@
     }
   ],
   "about": [
-    "我在醫療體系工作逾八年，先後任職於馬偕紀念醫院醫學教育部與藥劑部，對醫院的組織運作、法規環境與跨部門協作有深入的實務理解。這份領域知識，是我所有技術工作的根基。",
-    "過去數年，我系統性地建立了資料分析與軟體開發能力——從 SQL 資料管線、Power BI 商業智慧，到 Python 應用開發與大型語言模型的落地研究。我不做概念驗證式的展示，而是交付真正進入日常作業流程、被臨床與行政團隊持續使用的工具。",
-    "目前於國立臺北護理健康大學資訊管理研究所進修，研究本地端大型語言模型於藥事決策支援之應用，持續深化醫療資訊領域的專業縱深。"
+    "現任三軍總醫院後端工程師，參與健康台灣深耕計畫，負責診所端數位應用服務（電子處方箋、虛擬健保卡、AI 輔助工具等）之後端系統設計與開發，涵蓋 RESTful API、資料庫架構、FHIR／HL7 醫療資料交換，以及與健保署、衛福部平台及 HIS 系統之介接。",
+    "此前於馬偕紀念醫院累積六年行政管理與技術開發實務，從醫學教育行政到藥劑部技術開發，對醫院組織運作、法規環境與跨部門協作有深入理解。這份領域知識，是我所有技術工作的根基。",
+    "目前於國立臺北護理健康大學資訊管理研究所進修，研究地端 LLM 用藥建議系統，持續把醫療 domain knowledge 轉化為可落地的技術解法。"
   ],
   "experience": [
     {
-      "position": "行政管理師",
-      "organization": "馬偕紀念醫院 · 藥劑部",
-      "start": "2023",
+      "position": "後端工程師",
+      "organization": "三軍總醫院",
+      "start": "2026/8",
       "end": "迄今",
-      "summary": "統籌部門行政管理，並主導資料分析與數位化專案，服務約 37 人之藥事團隊。",
+      "summary": "參與健康台灣深耕計畫，負責診所端數位應用服務之後端系統設計、開發與維護。",
       "highlights": [
-        "規劃並建置全院抗生素管理儀表板，涵蓋 DOT、DID 用藥密度指標與 WHO AWaRe 分類，整合 Oracle 與 SQL Server 雙資料庫之自動化資料管線",
-        "開發 ICU 藥事照護管理工具，以 OCR 技術自動化擷取申報數據，大幅縮減人工作業時間",
-        "設計部門出勤管理系統架構（FastAPI、React、PostgreSQL），完成複雜班別規則之系統化"
+        "配合健康台灣深耕計畫，負責診所端數位應用服務（電子處方箋、虛擬健保卡、AI 輔助工具等）之後端系統設計、開發與維護",
+        "依據技術規格與使用者需求，規劃並實作系統架構、RESTful API 及資料庫結構，確保服務穩定性、擴充性與效能",
+        "負責與健保署、衛福部相關平台及醫院／診所 HIS 系統之介接，處理 FHIR、HL7 等醫療資料交換",
+        "撰寫及維護技術文件（API 規格書、系統架構圖、資料流程說明），配合技術文件審查並依意見修訂",
+        "執行單元測試、整合測試與技術驗證，依結果與使用者回饋進行問題排除、功能調整與效能優化",
+        "落實資訊安全及個人資料保護規範，建置權限控管、資料加密、存取稽核日誌等安全機制",
+        "配合專案經理回報開發進度，參與需求訪談與技術會議，協助跨單位（醫院、診所、系統廠商）技術溝通協調"
       ]
     },
     {
-      "position": "行政人員",
-      "organization": "馬偕紀念醫院 · 醫學教育部",
-      "start": "2018",
-      "end": "2023",
-      "summary": "負責醫學教育行政與教學品質管理，累積醫療機構治理、評鑑作業與跨部門協調之扎實基礎。",
+      "position": "技術員｜藥劑部技術開發",
+      "organization": "馬偕紀念醫院 · 藥劑部",
+      "start": "2025/1",
+      "end": "2026/8",
+      "summary": "於醫療場域主導多項技術開發與數據分析專案，涵蓋 AI/LLM、資料工程、系統開發與醫療資訊標準整合。",
+      "highlights": [
+        "地端 LLM 用藥建議系統｜Python · Ollama · ChromaDB · RAG：整合 LLaMA3／Qwen3／Gemma3 與向量資料庫，支援中英混合查詢，全程離線運行",
+        "FHIR 電子處方箋系統｜Electron · React · TypeScript：依 TW Core EMR-IG 2.5 實作 FHIR R4 電子處方箋完整 Profile",
+        "ADC 智慧藥櫃數據分析｜Power BI：分析逾 30 萬筆 ADC Log，建立庫存成效視覺化儀表板，支援藥品補給決策",
+        "住院藥局排班系統｜Google Apps Script · Google Sheets：自動化排班、出勤查詢與加班費試算，降低薪資核算錯誤率",
+        "學術文獻自動化系統｜n8n · ScienceDirect／Web of Science API：建立自動化文獻蒐集與去重流程"
+      ]
+    },
+    {
+      "position": "管理師｜醫學教育行政",
+      "organization": "馬偕紀念醫院",
+      "start": "2019/8",
+      "end": "2025/1",
+      "summary": "歷任醫學教育部、內科部、婦產部、神經外科管理師，負責住院醫師教學排程、師資培育行政協調、醫院評鑑數據整合（TMAC／ACGME-I）及跨部門教學量能分析。",
       "highlights": []
     }
   ],
   "skills": [
     {
-      "category": "資料工程與分析",
+      "category": "後端與系統開發",
       "items": [
         {
-          "name": "Power BI",
-          "detail": "DAX 進階量值、Power Query M、多來源資料管線"
+          "name": "Python / Django",
+          "detail": "醫療應用系統、資料庫設計、API 串接"
         },
         {
-          "name": "SQL",
-          "detail": "Oracle、SQL Server 查詢設計與跨庫整合"
+          "name": "RESTful API",
+          "detail": "系統架構規劃、規格文件與跨平台介接"
         },
         {
-          "name": "機器學習",
-          "detail": "迴歸、分群模型於醫療資料之應用"
+          "name": "Web 技術",
+          "detail": "React、TypeScript、Electron、Docker、Git"
         }
       ]
     },
     {
-      "category": "軟體開發",
+      "category": "AI 與資料工程",
       "items": [
         {
-          "name": "Python",
-          "detail": "應用開發、OCR 自動化、TQC+ 認證"
+          "name": "RAG / Local LLM",
+          "detail": "Ollama、ChromaDB、地端用藥建議系統"
         },
         {
-          "name": "AI 應用",
-          "detail": "RAG 系統、LlamaIndex、本地端 LLM 部署評估"
+          "name": "Power BI",
+          "detail": "醫療數據儀表板、ADC Log 分析"
         },
         {
-          "name": "Web 技術",
-          "detail": "FastAPI、Vue、React、Docker"
+          "name": "資料科學",
+          "detail": "pandas、scikit-learn、機器學習應用"
         }
       ]
     },
@@ -106,12 +124,12 @@
       "category": "醫療資訊",
       "items": [
         {
-          "name": "FHIR 標準",
-          "detail": "TW Core Profile 實作、全國聯測驗證經驗"
+          "name": "FHIR / HL7",
+          "detail": "TW Core EMR-IG、電子處方箋、HIS 介接"
         },
         {
-          "name": "流程優化",
-          "detail": "BPMN 建模、流程探勘"
+          "name": "自動化流程",
+          "detail": "Google Apps Script、n8n、OCR 應用"
         },
         {
           "name": "領域知識",
@@ -122,66 +140,63 @@
   ],
   "projects": [
     {
-      "name": "藥事知識決策支援系統",
+      "name": "地端 LLM 用藥建議系統",
       "period": "2025 — 2026",
-      "description": "本地端部署之 RAG 問答系統，以國際臨床指引為知識庫，完成多個開源模型之系統性評估，兼顧醫療資料隱私與回覆品質。碩士論文研究主題。",
-      "stack": [
-        "LlamaIndex",
-        "ChromaDB",
-        "Ollama",
-        "LangSmith"
-      ]
-    },
-    {
-      "name": "抗生素使用管理儀表板",
-      "period": "2025 — 2026",
-      "description": "整合雙資料庫之自動化監測平台，實作國際標準之用藥密度指標，供感染管制與藥事委員會決策使用，並建立完整資料字典以利長期維運。",
-      "stack": [
-        "Power BI",
-        "DAX",
-        "Power Query M",
-        "Oracle",
-        "SQL Server"
-      ]
-    },
-    {
-      "name": "FHIR 醫療資料交換工具",
-      "period": "2026",
-      "description": "桌面應用程式，實作 FHIR Bundle 之封裝與上傳，於 TWCAT 2026 台灣醫療資訊聯測完成 TW EMR Profile 合規驗證。",
-      "stack": [
-        "FHIR",
-        "Electron",
-        "OAuth 2.0"
-      ]
-    },
-    {
-      "name": "ICU 藥事照護管理工具",
-      "period": "2025",
-      "description": "自動化資料擷取管線，從掃描文件中辨識並結構化 ICU 照護與申報數據，打包為單機應用程式供部門同仁日常使用。",
+      "description": "整合 LLaMA3／Qwen3／Gemma3 與 ChromaDB，建立 RAG 架構用藥查詢系統；資料來源涵蓋 FDA Label、PubMed、RxNorm，支援中英混合查詢，全程離線運行。碩士論文研究主題。",
       "stack": [
         "Python",
-        "Tesseract OCR",
-        "PyInstaller"
+        "Ollama",
+        "ChromaDB",
+        "RAG"
+      ]
+    },
+    {
+      "name": "FHIR 電子處方箋系統",
+      "period": "2026",
+      "description": "桌面應用程式，依據台灣衛福部 TW Core EMR-IG 2.5 規範，實作 FHIR R4 電子處方箋完整 Profile（Bundle-EP／Composition-EP／MedicationRequest-EP）。",
+      "stack": [
+        "Electron",
+        "React",
+        "TypeScript",
+        "FHIR"
+      ]
+    },
+    {
+      "name": "ADC 智慧藥櫃數據分析",
+      "period": "2025 — 2026",
+      "description": "分析逾 30 萬筆 ADC Log 數據，建立庫存成效視覺化儀表板，支援藥品補給決策。",
+      "stack": [
+        "Power BI",
+        "DAX"
+      ]
+    },
+    {
+      "name": "住院藥局排班系統",
+      "period": "2025 — 2026",
+      "description": "開發自動化排班工具，實作班別規則設定、出勤記錄查詢與加班費自動試算，取代人工計算流程。",
+      "stack": [
+        "Google Apps Script",
+        "Google Sheets"
       ]
     }
   ],
   "education": [
     {
-      "degree": "資訊管理研究所 · 碩士",
+      "degree": "資訊管理學系 · 碩士",
       "school": "國立臺北護理健康大學",
-      "meta": "預計 2027 年畢業",
-      "note": "研究方向：本地端大型語言模型於藥事決策支援系統之應用"
+      "meta": "2025/9 — 2027/6（就讀中）",
+      "note": "研究方向：地端 LLM 用藥建議系統"
     },
     {
-      "degree": "醫務管理學系 · 學士",
-      "school": "",
-      "meta": "已畢業",
+      "degree": "醫務管理系 · 四技",
+      "school": "慈濟大學",
+      "meta": "2014/9 — 2017/6",
       "note": ""
     }
   ],
   "certifications": [
-    "醫資管理師（台灣醫學資訊學會）",
-    "TQC+ Python 3 程式語言認證",
-    "TWCAT 2026 台灣醫療資訊聯測參與"
+    "醫學資訊管理師（社團法人台灣醫學資訊學會｜醫資證（管）1052 字第 538 號）",
+    "AI 應用規劃師 - 初級能力鑑定（iPAS 經濟部產業人才能力鑑定）",
+    "TQC 資訊科技 Python（TQC-DK）"
   ]
 }

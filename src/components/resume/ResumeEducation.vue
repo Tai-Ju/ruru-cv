@@ -8,25 +8,25 @@ const educationZh = [
   {
     id: 1,
     school: '國立臺北護理健康大學',
-    degree: '資訊管理研究所 · 碩士',
-    period: '預計 2027 年畢業',
-    description: '研究方向：本地端大型語言模型於藥事決策支援系統之應用',
+    degree: '資訊管理學系 · 碩士',
+    period: '2025/9 — 2027/6（就讀中）',
+    description: '研究方向：地端 LLM 用藥建議系統',
     achievements: []
   },
   {
     id: 2,
     school: '慈濟大學',
-    degree: '醫務管理學系 · 學士',
-    period: '已畢業',
+    degree: '醫務管理系 · 四技',
+    period: '2014/9 — 2017/6',
     description: '',
     achievements: []
   }
 ]
 
 const certificationsZh = [
-  '醫資管理師（台灣醫學資訊學會）',
-  'TQC+ Python 3 程式語言認證',
-  'TWCAT 2026 台灣醫療資訊聯測參與'
+  '醫學資訊管理師（社團法人台灣醫學資訊學會｜醫資證（管）1052 字第 538 號）',
+  'AI 應用規劃師 - 初級能力鑑定（iPAS 經濟部產業人才能力鑑定）',
+  'TQC 資訊科技 Python（TQC-DK）'
 ]
 
 const internationalExperienceZh = [
@@ -44,24 +44,24 @@ const educationEn = [
     id: 1,
     school: 'National Taipei University of Nursing and Health Sciences',
     degree: 'M.S. in Information Management',
-    period: 'Expected 2027',
-    description: 'Research focus: On-premise large language models for pharmacy decision support systems',
+    period: '2025/9 — 2027/6 (In progress)',
+    description: 'Research focus: On-premise LLM medication recommendation system',
     achievements: []
   },
   {
     id: 2,
     school: 'Tzu Chi University',
     degree: 'B.S. in Healthcare Administration',
-    period: 'Graduated',
+    period: '2014/9 — 2017/6',
     description: '',
     achievements: []
   }
 ]
 
 const certificationsEn = [
-  'Healthcare Informatics Manager (TAMI)',
-  'TQC+ Python 3 Certification',
-  'TWCAT 2026 Taiwan Healthcare Connectathon'
+  'Healthcare Informatics Manager (TAMI · Cert. No. 1052-538)',
+  'AI Application Planner — Elementary (iPAS, MOEA)',
+  'TQC Information Technology Python (TQC-DK)'
 ]
 
 const internationalExperienceEn = [

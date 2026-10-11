@@ -11,18 +11,18 @@ const copy = computed(() => {
   if (currentLang.value === 'en') {
     return {
       title: "Hi, I'm",
-      subtitle: 'Healthcare Administration · Software Development',
+      subtitle: 'Backend Engineer · Healthcare × Data Engineering',
       description:
-        'Administrative Specialist at Mackay Memorial Hospital Pharmacy Department. With eight years in healthcare institutions, I combine data engineering and software development to turn complex clinical needs into reliable digital solutions.',
+        'Backend engineer at Tri-Service General Hospital, working on the Healthy Taiwan Deep Cultivation Program. With six years of hospital practice and applied RAG experience, I bridge clinical needs and technical delivery.',
       download: 'Download PDF'
     }
   }
 
   return {
     title: '你好，我是',
-    subtitle: '行政管理師｜醫療 × 資料工程',
+    subtitle: '後端工程師｜醫療 × 資料工程',
     description:
-      '馬偕紀念醫院藥劑部行政管理師。八年醫療機構歷練，結合資料工程與軟體開發能力，將醫療現場的複雜需求，轉化為嚴謹可靠的數位解決方案。',
+      '現任三軍總醫院後端工程師，參與健康台灣深耕計畫。此前具備六年馬偕紀念醫院實務，研究地端 LLM 用藥建議系統，擅於橋接醫療現場需求與技術開發。',
     download: '下載 PDF'
   }
 })

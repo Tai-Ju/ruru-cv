@@ -7,22 +7,41 @@ const { currentLang } = useLanguage()
 const experiencesZh = [
   {
     id: 1,
-    company: '馬偕紀念醫院 · 藥劑部',
-    position: '行政管理師',
-    period: '2023 — 迄今',
-    description: '統籌部門行政管理，並主導資料分析與數位化專案，服務約 37 人之藥事團隊。',
+    company: '三軍總醫院',
+    position: '後端工程師',
+    period: '2026/8 — 迄今',
+    description: '參與健康台灣深耕計畫，負責診所端數位應用服務之後端系統設計、開發與維護。',
     achievements: [
-      '規劃並建置全院抗生素管理儀表板，涵蓋 DOT、DID 用藥密度指標與 WHO AWaRe 分類，整合 Oracle 與 SQL Server 雙資料庫之自動化資料管線',
-      '開發 ICU 藥事照護管理工具，以 OCR 技術自動化擷取申報數據，大幅縮減人工作業時間',
-      '設計部門出勤管理系統架構（FastAPI、React、PostgreSQL），完成複雜班別規則之系統化'
+      '配合健康台灣深耕計畫，負責診所端數位應用服務（電子處方箋、虛擬健保卡、AI 輔助工具等）之後端系統設計、開發與維護',
+      '依據技術規格與使用者需求，規劃並實作系統架構、RESTful API 及資料庫結構，確保服務穩定性、擴充性與效能',
+      '負責與健保署、衛福部相關平台及醫院／診所 HIS 系統之介接，處理 FHIR、HL7 等醫療資料交換',
+      '撰寫及維護技術文件（API 規格書、系統架構圖、資料流程說明），配合技術文件審查並依意見修訂',
+      '執行單元測試、整合測試與技術驗證，依結果與使用者回饋進行問題排除、功能調整與效能優化',
+      '落實資訊安全及個人資料保護規範，建置權限控管、資料加密、存取稽核日誌等安全機制',
+      '配合專案經理回報開發進度，參與需求訪談與技術會議，協助跨單位（醫院、診所、系統廠商）技術溝通協調'
     ]
   },
   {
     id: 2,
-    company: '馬偕紀念醫院 · 醫學教育部',
-    position: '行政人員',
-    period: '2018 — 2023',
-    description: '負責醫學教育行政與教學品質管理，累積醫療機構治理、評鑑作業與跨部門協調之扎實基礎。',
+    company: '馬偕紀念醫院 · 藥劑部',
+    position: '技術員｜藥劑部技術開發',
+    period: '2025/1 — 2026/8',
+    description: '於醫療場域主導多項技術開發與數據分析專案，涵蓋 AI/LLM、資料工程、系統開發與醫療資訊標準整合。',
+    achievements: [
+      '地端 LLM 用藥建議系統｜Python · Ollama · ChromaDB · RAG：整合 LLaMA3／Qwen3／Gemma3 與向量資料庫，支援中英混合查詢，全程離線運行',
+      'FHIR 電子處方箋系統｜Electron · React · TypeScript：依 TW Core EMR-IG 2.5 實作 FHIR R4 電子處方箋完整 Profile',
+      'ADC 智慧藥櫃數據分析｜Power BI：分析逾 30 萬筆 ADC Log，建立庫存成效視覺化儀表板，支援藥品補給決策',
+      '住院藥局排班系統｜Google Apps Script · Google Sheets：自動化排班、出勤查詢與加班費試算，降低薪資核算錯誤率',
+      '學術文獻自動化系統｜n8n · ScienceDirect／Web of Science API：建立自動化文獻蒐集與去重流程'
+    ]
+  },
+  {
+    id: 3,
+    company: '馬偕紀念醫院',
+    position: '管理師｜醫學教育行政',
+    period: '2019/8 — 2025/1',
+    description:
+      '歷任醫學教育部、內科部、婦產部、神經外科管理師，負責住院醫師教學排程、師資培育行政協調、醫院評鑑數據整合（TMAC／ACGME-I）及跨部門教學量能分析。',
     achievements: []
   }
 ]
@@ -30,24 +49,43 @@ const experiencesZh = [
 const experiencesEn = [
   {
     id: 1,
-    company: 'Mackay Memorial Hospital · Pharmacy Department',
-    position: 'Administrative Specialist',
-    period: '2023 — Present',
+    company: 'Tri-Service General Hospital',
+    position: 'Backend Engineer',
+    period: '2026/8 — Present',
     description:
-      'Lead departmental administration and digital projects for a pharmacy team of about 37 people.',
+      'Contribute to the Healthy Taiwan Deep Cultivation Program, designing and maintaining backend systems for clinic-side digital services.',
     achievements: [
-      'Designed and built a hospital-wide antimicrobial stewardship dashboard covering DOT, DID, and WHO AWaRe, with automated pipelines across Oracle and SQL Server.',
-      'Developed an ICU pharmacy care tool using OCR to automate claim data capture and reduce manual work.',
-      'Designed a departmental attendance system architecture (FastAPI, React, PostgreSQL) to systematize complex shift rules.'
+      'Design, develop, and maintain backend services for clinic digital applications such as e-prescriptions, virtual NHI cards, and AI-assisted tools.',
+      'Plan and implement system architecture, RESTful APIs, and database structures for stability, scalability, and performance.',
+      'Integrate with NHIA, MOHW platforms, and hospital/clinic HIS systems using FHIR and HL7 standards.',
+      'Write and maintain technical documentation including API specs, architecture diagrams, and data-flow descriptions.',
+      'Perform unit/integration testing and technical validation; fix issues and optimize based on feedback.',
+      'Implement information security and personal-data protection controls such as access control, encryption, and audit logs.',
+      'Report progress to the project manager and support cross-organization technical coordination.'
     ]
   },
   {
     id: 2,
-    company: 'Mackay Memorial Hospital · Department of Medical Education',
-    position: 'Administrative Staff',
-    period: '2018 — 2023',
+    company: 'Mackay Memorial Hospital · Pharmacy Department',
+    position: 'Technical Specialist · Pharmacy Tech Development',
+    period: '2025/1 — 2026/8',
     description:
-      'Managed medical education administration and teaching quality, building a solid foundation in hospital governance, accreditation, and cross-department coordination.',
+      'Led technical development and analytics projects across AI/LLM, data engineering, systems, and health-informatics standards.',
+    achievements: [
+      'On-premise LLM medication recommendation system with Python, Ollama, ChromaDB, and RAG; offline bilingual query support.',
+      'FHIR e-prescription desktop app with Electron, React, and TypeScript aligned to TW Core EMR-IG 2.5.',
+      'ADC smart-cabinet analytics in Power BI over 300k+ log records to support replenishment decisions.',
+      'Pharmacy scheduling automation with Google Apps Script and Sheets for shifts, attendance, and overtime calculation.',
+      'Literature automation pipeline with n8n and ScienceDirect / Web of Science APIs.'
+    ]
+  },
+  {
+    id: 3,
+    company: 'Mackay Memorial Hospital',
+    position: 'Administrator · Medical Education',
+    period: '2019/8 — 2025/1',
+    description:
+      'Served Medical Education, Internal Medicine, OB/GYN, and Neurosurgery units; managed resident teaching schedules, faculty development, accreditation data (TMAC/ACGME-I), and cross-department teaching capacity analysis.',
     achievements: []
   }
 ]

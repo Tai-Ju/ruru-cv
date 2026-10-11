@@ -8,51 +8,45 @@ const { currentLang } = useLanguage()
 const projects = [
   {
     id: 1,
-    title: '藥事知識決策支援系統',
-    titleEn: 'Pharmacy Knowledge Decision Support System',
-    period: '2025 — 2026',
-    tags: ['LLAMAINDEX', 'CHROMADB', 'OLLAMA', 'LANGSMITH'],
+    title: '地端 LLM 用藥建議系統',
+    titleEn: 'On-premise LLM Medication Recommendation',
+    tags: ['PYTHON', 'OLLAMA', 'CHROMADB', 'RAG'],
     description:
-      '本地端部署之 RAG 問答系統，以國際臨床指引為知識庫，完成多個開源模型之系統性評估，兼顧醫療資料隱私與回覆品質。碩士論文研究主題。',
+      '整合 LLaMA3／Qwen3／Gemma3 與 ChromaDB，建立 RAG 架構用藥查詢系統；資料來源涵蓋 FDA Label、PubMed、RxNorm，支援中英混合查詢，全程離線運行。碩士論文研究主題。',
     descriptionEn:
-      'On-premise RAG Q&A system grounded in international clinical guidelines, with systematic evaluation of open-source models while protecting healthcare data privacy. Master thesis research topic.',
+      'RAG medication query system with LLaMA3/Qwen3/Gemma3 and ChromaDB; sources include FDA Label, PubMed, and RxNorm with offline bilingual queries. Master thesis topic.',
     link: 'https://github.com/Tai-Ju/drug-rag-pipeline'
   },
   {
     id: 2,
-    title: '抗生素使用管理儀表板',
-    titleEn: 'Antimicrobial Stewardship Dashboard',
-    period: '2025 — 2026',
-    tags: ['POWER BI', 'DAX', 'ORACLE', 'SQL SERVER'],
+    title: 'FHIR 電子處方箋系統',
+    titleEn: 'FHIR Electronic Prescription System',
+    tags: ['ELECTRON', 'REACT', 'TYPESCRIPT', 'FHIR'],
     description:
-      '整合雙資料庫之自動化監測平台，實作國際標準之用藥密度指標，供感染管制與藥事委員會決策使用，並建立完整資料字典以利長期維運。',
+      '桌面應用程式，依據台灣衛福部 TW Core EMR-IG 2.5 規範，實作 FHIR R4 電子處方箋完整 Profile（Bundle-EP／Composition-EP／MedicationRequest-EP）。',
     descriptionEn:
-      'Automated dual-database monitoring platform implementing international antimicrobial density metrics for infection control and pharmacy committee decisions, with a full data dictionary for long-term operations.',
-    link: ''
-  },
-  {
-    id: 3,
-    title: 'FHIR 醫療資料交換工具',
-    titleEn: 'FHIR Healthcare Data Exchange Tool',
-    period: '2026',
-    tags: ['FHIR', 'ELECTRON', 'OAUTH 2.0'],
-    description:
-      '桌面應用程式，實作 FHIR Bundle 之封裝與上傳，於 TWCAT 2026 台灣醫療資訊聯測完成 TW EMR Profile 合規驗證。',
-    descriptionEn:
-      'Desktop application for FHIR Bundle packaging and upload, validated against TW EMR Profile at TWCAT 2026 Taiwan Healthcare Connectathon.',
+      'Desktop app implementing full FHIR R4 e-prescription profiles per TW Core EMR-IG 2.5 (Bundle-EP / Composition-EP / MedicationRequest-EP).',
     link: 'https://github.com/swiftruru/rx-fhir'
   },
   {
-    id: 4,
-    title: 'ICU 藥事照護管理工具',
-    titleEn: 'ICU Pharmacy Care Management Tool',
-    period: '2025',
-    tags: ['PYTHON', 'TESSERACT OCR', 'PYINSTALLER'],
-    description:
-      '自動化資料擷取管線，從掃描文件中辨識並結構化 ICU 照護與申報數據，打包為單機應用程式供部門同仁日常使用。',
+    id: 3,
+    title: 'ADC 智慧藥櫃數據分析',
+    titleEn: 'ADC Smart Cabinet Analytics',
+    tags: ['POWER BI', 'DAX'],
+    description: '分析逾 30 萬筆 ADC Log 數據，建立庫存成效視覺化儀表板，支援藥品補給決策。',
     descriptionEn:
-      'Automated extraction pipeline that recognizes and structures ICU care and claim data from scanned documents, packaged as a standalone app for daily departmental use.',
+      'Analyzed 300k+ ADC log records in Power BI to build inventory-effectiveness dashboards supporting replenishment decisions.',
     link: ''
+  },
+  {
+    id: 4,
+    title: '住院藥局排班系統',
+    titleEn: 'Inpatient Pharmacy Scheduling System',
+    tags: ['GOOGLE APPS SCRIPT', 'GOOGLE SHEETS'],
+    description: '開發自動化排班工具，實作班別規則設定、出勤記錄查詢與加班費自動試算，取代人工計算流程。',
+    descriptionEn:
+      'Automated scheduling tool for shift rules, attendance lookup, and overtime calculation, replacing manual payroll workflows.',
+    link: 'https://github.com/Tai-Ju/gas-pharmacy-schedule-system'
   }
 ]
 

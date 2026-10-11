@@ -6,26 +6,26 @@ const { currentLang } = useLanguage()
 
 const skillCategoriesZh = [
   {
-    title: '資料工程與分析',
+    title: '後端與系統開發',
     skills: [
-      { name: 'Power BI', experience: 'DAX 進階量值、Power Query M、多來源資料管線' },
-      { name: 'SQL', experience: 'Oracle、SQL Server 查詢設計與跨庫整合' },
-      { name: '機器學習', experience: '迴歸、分群模型於醫療資料之應用' }
+      { name: 'Python / Django', experience: '醫療應用系統、資料庫設計、API 串接' },
+      { name: 'RESTful API', experience: '系統架構規劃、規格文件與跨平台介接' },
+      { name: 'Web 技術', experience: 'React、TypeScript、Electron、Docker、Git' }
     ]
   },
   {
-    title: '軟體開發',
+    title: 'AI 與資料工程',
     skills: [
-      { name: 'Python', experience: '應用開發、OCR 自動化、TQC+ 認證' },
-      { name: 'AI 應用', experience: 'RAG 系統、LlamaIndex、本地端 LLM 部署評估' },
-      { name: 'Web 技術', experience: 'FastAPI、Vue、React、Docker' }
+      { name: 'RAG / Local LLM', experience: 'Ollama、ChromaDB、地端用藥建議系統' },
+      { name: 'Power BI', experience: '醫療數據儀表板、ADC Log 分析' },
+      { name: '資料科學', experience: 'pandas、scikit-learn、機器學習應用' }
     ]
   },
   {
     title: '醫療資訊',
     skills: [
-      { name: 'FHIR 標準', experience: 'TW Core Profile 實作、全國聯測驗證經驗' },
-      { name: '流程優化', experience: 'BPMN 建模、流程探勘' },
+      { name: 'FHIR / HL7', experience: 'TW Core EMR-IG、電子處方箋、HIS 介接' },
+      { name: '自動化流程', experience: 'Google Apps Script、n8n、OCR 應用' },
       { name: '領域知識', experience: '醫務管理、藥事作業、評鑑與法規' }
     ]
   }
@@ -33,27 +33,27 @@ const skillCategoriesZh = [
 
 const skillCategoriesEn = [
   {
-    title: 'Data Engineering & Analytics',
+    title: 'Backend & Systems',
     skills: [
-      { name: 'Power BI', experience: 'Advanced DAX, Power Query M, multi-source pipelines' },
-      { name: 'SQL', experience: 'Oracle & SQL Server query design and cross-database integration' },
-      { name: 'Machine Learning', experience: 'Regression and clustering on healthcare data' }
+      { name: 'Python / Django', experience: 'Healthcare apps, database design, API integration' },
+      { name: 'RESTful API', experience: 'Architecture planning, specs, and cross-platform integration' },
+      { name: 'Web Technologies', experience: 'React, TypeScript, Electron, Docker, Git' }
     ]
   },
   {
-    title: 'Software Development',
+    title: 'AI & Data Engineering',
     skills: [
-      { name: 'Python', experience: 'Application development, OCR automation, TQC+ certified' },
-      { name: 'AI Applications', experience: 'RAG systems, LlamaIndex, on-premise LLM evaluation' },
-      { name: 'Web Technologies', experience: 'FastAPI, Vue, React, Docker' }
+      { name: 'RAG / Local LLM', experience: 'Ollama, ChromaDB, on-premise medication systems' },
+      { name: 'Power BI', experience: 'Healthcare dashboards and ADC log analytics' },
+      { name: 'Data Science', experience: 'pandas, scikit-learn, applied machine learning' }
     ]
   },
   {
     title: 'Health Informatics',
     skills: [
-      { name: 'FHIR', experience: 'TW Core Profile implementation and national connectathon validation' },
-      { name: 'Process Optimization', experience: 'BPMN modeling and process mining' },
-      { name: 'Domain Knowledge', experience: 'Healthcare admin, pharmacy operations, accreditation & regulation' }
+      { name: 'FHIR / HL7', experience: 'TW Core EMR-IG, e-prescriptions, HIS integration' },
+      { name: 'Automation', experience: 'Google Apps Script, n8n, OCR applications' },
+      { name: 'Domain Knowledge', experience: 'Healthcare admin, pharmacy operations, accreditation' }
     ]
   }
 ]
