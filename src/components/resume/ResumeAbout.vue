@@ -9,7 +9,7 @@ const copy = computed(() => {
     return {
       title: 'About Me',
       paragraphs: [
-        'I am a backend engineer at Tri-Service General Hospital, contributing to the Healthy Taiwan Deep Cultivation Program. I design and develop clinic-side digital services—including e-prescriptions, virtual NHI cards, and AI-assisted tools—covering RESTful APIs, database architecture, FHIR/HL7 exchange, and integration with NHIA, MOHW platforms, and HIS systems.',
+        'I work as an AI engineer at Tri-Service General Hospital on the Healthy Taiwan Deep Cultivation Program. I turn complex healthcare data into explainable model outputs and visual insights, and ship clinic-side digital services and AI-assisted tools—covering RESTful APIs, database architecture, FHIR/HL7, and integration with NHIA, MOHW platforms, and HIS systems.',
         'Previously I spent six years at Mackay Memorial Hospital in medical education administration and pharmacy technical development, building deep understanding of hospital operations, regulation, and cross-team collaboration.',
         'I am pursuing an M.S. in Information Management at National Taipei University of Nursing and Health Sciences, researching on-premise LLM medication recommendation systems.'
       ]
@@ -19,7 +19,7 @@ const copy = computed(() => {
   return {
     title: '關於我',
     paragraphs: [
-      '現任三軍總醫院後端工程師，參與健康台灣深耕計畫，負責診所端數位應用服務（電子處方箋、虛擬健保卡、AI 輔助工具等）之後端系統設計與開發，涵蓋 RESTful API、資料庫架構、FHIR／HL7 醫療資料交換，以及與健保署、衛福部平台及 HIS 系統之介接。',
+      '現任 AI 工程師，於三軍總醫院參與健康台灣深耕計畫。專注將複雜醫療數據轉化為可解釋的模型結果與視覺化洞察，並負責診所端數位應用與 AI 輔助工具之後端落地（RESTful API、資料庫架構、FHIR／HL7，以及健保署、衛福部平台與 HIS 介接）。',
       '此前於馬偕紀念醫院累積六年行政管理與技術開發實務，從醫學教育行政到藥劑部技術開發，對醫院組織運作、法規環境與跨部門協作有深入理解。這份領域知識，是我所有技術工作的根基。',
       '目前於國立臺北護理健康大學資訊管理研究所進修，研究地端 LLM 用藥建議系統，持續把醫療 domain knowledge 轉化為可落地的技術解法。'
     ]

@@ -2,9 +2,9 @@
   "basics": {
     "name": "劉玳如",
     "nameLatin": "Tai-Ju Liu",
-    "title": "後端工程師｜醫療 × 資料工程",
-    "kicker": "Healthcare · Data Engineering · RAG",
-    "summary": "現任三軍總醫院後端工程師，參與健康台灣深耕計畫，負責診所端數位應用服務之後端系統設計與開發。此前具備六年馬偕紀念醫院行政管理與技術開發實務，研究地端 LLM 用藥建議系統，擅於橋接醫療現場需求與技術開發。",
+    "title": "AI 工程師｜醫療 × 機器學習",
+    "kicker": "AI Engineer · Healthcare · RAG",
+    "summary": "現任 AI 工程師。專注將複雜醫療原始數據轉化為可解釋的模型結果與視覺化洞察，結合 RAG／機器學習與量化、質化分析，支援智慧醫療與管理決策。於三軍總醫院參與健康台灣深耕計畫，此前具備六年馬偕紀念醫院實務。",
     "location": "新北市三重區"
   },
   "contact": [

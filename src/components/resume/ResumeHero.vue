@@ -11,18 +11,18 @@ const copy = computed(() => {
   if (currentLang.value === 'en') {
     return {
       title: "Hi, I'm",
-      subtitle: 'Backend Engineer · Healthcare × Data Engineering',
+      subtitle: 'AI Engineer · Healthcare × Machine Learning',
       description:
-        'Backend engineer at Tri-Service General Hospital, working on the Healthy Taiwan Deep Cultivation Program. With six years of hospital practice and applied RAG experience, I bridge clinical needs and technical delivery.',
+        'AI / backend engineer at Tri-Service General Hospital. I turn complex healthcare data into explainable model outputs and visual insights, and ship RAG / ML solutions that support digital health decisions.',
       download: 'Download PDF'
     }
   }
 
   return {
     title: '你好，我是',
-    subtitle: '後端工程師｜醫療 × 資料工程',
+    subtitle: 'AI 工程師｜醫療 × 機器學習',
     description:
-      '現任三軍總醫院後端工程師，參與健康台灣深耕計畫。此前具備六年馬偕紀念醫院實務，研究地端 LLM 用藥建議系統，擅於橋接醫療現場需求與技術開發。',
+      '現任 AI 工程師。專注將複雜醫療數據轉化為可解釋的模型結果與視覺化洞察，結合 RAG／機器學習支援智慧醫療決策；於三軍總醫院參與健康台灣深耕計畫，此前具備六年馬偕醫院實務。',
     download: '下載 PDF'
   }
 })
