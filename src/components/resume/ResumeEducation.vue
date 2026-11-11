@@ -18,25 +18,19 @@ const educationZh = [
     school: '慈濟大學',
     degree: '醫務管理系 · 四技',
     period: '2014/9 — 2017/6',
-    description: '',
+    description: '海外經歷：澳洲馬特醫院臨床見習、中國蘇州慈濟實習交流、英國坎伯里大學語言交換',
     achievements: []
   }
 ]
 
 const certificationsZh = [
-  '醫學資訊管理師（社團法人台灣醫學資訊學會｜醫資證（管）1052 字第 538 號）',
   'AI 應用規劃師 - 初級能力鑑定（iPAS 經濟部產業人才能力鑑定）',
+  '醫學資訊管理師（社團法人台灣醫學資訊學會｜醫資證（管）1052 字第 538 號）',
   'TQC 資訊科技 Python（TQC-DK）'
 ]
 
-const internationalExperienceZh = [
-  { location: '澳洲馬特醫院', type: '臨床見習', period: '2017/08' },
-  { location: '中國蘇州慈濟', type: '實習交流', period: '2017/07' },
-  { location: '英國坎伯里大學', type: '語言交換', period: '2014/06' }
-]
-
 const trainingZh = [
-  { title: '臺大資工系統訓練班', items: ['Node.js & MongoDB 後端開發 (2025)', 'Python 程式設計進階 (2021-2025)'] }
+  { title: '臺大資工系統訓練班', items: ['Node.js & MongoDB 後端開發 (2025)', 'Python 程式設計系列課程 (2021-2025)'] }
 ]
 
 const educationEn = [
@@ -53,25 +47,19 @@ const educationEn = [
     school: 'Tzu Chi University',
     degree: 'B.S. in Healthcare Administration',
     period: '2014/9 — 2017/6',
-    description: '',
+    description: 'Overseas: clinical observation at Mater Hospital (Australia), internship exchange at Tzu Chi Suzhou (China), language exchange in Canterbury (UK)',
     achievements: []
   }
 ]
 
 const certificationsEn = [
-  'Healthcare Informatics Manager (TAMI · Cert. No. 1052-538)',
   'AI Application Planner — Elementary (iPAS, MOEA)',
+  'Healthcare Informatics Manager (TAMI · Cert. No. 1052-538)',
   'TQC Information Technology Python (TQC-DK)'
 ]
 
-const internationalExperienceEn = [
-  { location: 'Mater Hospital, Australia', type: 'Clinical Observation', period: '2017/08' },
-  { location: 'Tzu Chi, Suzhou (China)', type: 'Internship Exchange', period: '2017/07' },
-  { location: 'Canterbury, UK', type: 'Language Exchange', period: '2014/06' }
-]
-
 const trainingEn = [
-  { title: 'NTU CS Professional Program', items: ['Node.js & MongoDB Backend Development (2025)', 'Advanced Python Programming (2021-2025)'] }
+  { title: 'NTU CS Professional Program', items: ['Node.js & MongoDB Backend Development (2025)', 'Python Programming Course Series (2021-2025)'] }
 ]
 
 const copy = computed(() => {
@@ -80,7 +68,6 @@ const copy = computed(() => {
       title: 'Education & Background',
       eduTitle: 'Education',
       certTitle: 'Certifications',
-      intlTitle: 'International Experience',
       trainingTitle: 'Professional Training'
     }
   }
@@ -89,14 +76,12 @@ const copy = computed(() => {
     title: '學歷與背景',
     eduTitle: '學歷',
     certTitle: '專業認證',
-    intlTitle: '國際經歷',
     trainingTitle: '專業進修'
   }
 })
 
 const education = computed(() => (currentLang.value === 'en' ? educationEn : educationZh))
 const certifications = computed(() => (currentLang.value === 'en' ? certificationsEn : certificationsZh))
-const internationalExperience = computed(() => (currentLang.value === 'en' ? internationalExperienceEn : internationalExperienceZh))
 const training = computed(() => (currentLang.value === 'en' ? trainingEn : trainingZh))
 </script>
 
@@ -144,18 +129,6 @@ const training = computed(() => (currentLang.value === 'en' ? trainingEn : train
           </div>
         </div>
 
-        <div class="info-block">
-          <h3 class="subsection-title">{{ copy.intlTitle }}</h3>
-          <div class="info-list">
-            <div v-for="exp in internationalExperience" :key="exp.location" class="info-item">
-              <span class="info-icon">🌍</span>
-              <div class="info-details">
-                <div class="info-text">{{ exp.location }}</div>
-                <div class="info-subtitle">{{ exp.type }} ({{ exp.period }})</div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div class="info-block">
           <h3 class="subsection-title">{{ copy.trainingTitle }}</h3>
