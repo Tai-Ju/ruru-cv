@@ -1,123 +1,115 @@
 /* 全局重置與基礎樣式 */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 :root {
-  /* 柔霧玫瑰配色（對齊 website-final-blush） */
-  --rose: #A24E60;
-  --rose-deep: #8E4254;
-  --band: #F5E9EC;
-  --band-deep: #F0E0E5;
-  --ivory: #FDFBFA;
-  --ink: #332B2F;
-  --muted: #6E6066;
-  --hairline: #ECDFE2;
-  --latin-muted: #96868C;
+  /* 柔霧玫瑰配色 */
+  --paper: #FDF8F6;
+  --surface: #FFFFFF;
+  --blush: #F8EAEB;
+  --petal: #EFD6DB;
+  --rose: #A8475F;
+  --rose-deep: #8A364C;
+  --on-rose: #FFFFFF;
+  --ink: #35222B;
+  --ink-soft: #57434C;
+  --muted: #806B74;
+  --line: #EAD9DC;
+  --plum: #3B2531;
+  --plum-raised: #4A303D;
+  --on-plum: #FBF1F2;
+  --on-plum-muted: #DCC3CA;
+  --on-plum-accent: #F4BBC7;
 
-  --primary-color: var(--rose);
-  --secondary-color: var(--rose-deep);
-  --accent-color: var(--band);
-  --text-color: var(--ink);
-  --text-light: var(--muted);
-  --bg-color: var(--ivory);
-  --bg-secondary: var(--band);
-  --border-color: var(--hairline);
+  --font-serif: 'Fraunces', 'Noto Serif TC', 'Noto Serif CJK TC', 'Songti TC', Georgia, serif;
+  --font-sans: 'Figtree', 'Noto Sans TC', 'Noto Sans CJK TC', -apple-system, 'PingFang TC', 'Microsoft JhengHei', 'Segoe UI', sans-serif;
 
-  --font-serif: 'Noto Serif TC', 'Source Serif 4', Georgia, serif;
-  --font-sans: 'Noto Sans TC', -apple-system, 'PingFang TC', 'Segoe UI', sans-serif;
+  /* 字級 */
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.25rem;
 
-  /* 間距 */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
 
-  /* 字體大小 */
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.5rem;
-  --font-size-2xl: 2rem;
-  --font-size-3xl: 2.5rem;
-
-  /* 陰影 */
-  --shadow-sm: 0 1px 3px rgba(51, 43, 47, 0.06);
-  --shadow-md: 0 4px 12px rgba(51, 43, 47, 0.08);
-  --shadow-lg: 0 10px 28px rgba(51, 43, 47, 0.1);
-
-  /* 圓角 */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-
-  /* 過渡效果 */
-  --transition: all 0.3s ease;
+  --page-width: 1120px;
+  --page-gutter: 2rem;
+  --section-space: 5.5rem;
+  --when-col: 11.5rem;
 }
 
 body.dark-theme {
-  --primary-color: #c47888;
-  --secondary-color: #a24e60;
-  --accent-color: #3a2c32;
-  --text-color: #f5ecef;
-  --text-light: #c4b4b9;
-  --bg-color: #1a1517;
-  --bg-secondary: #241c20;
-  --border-color: #3d3035;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.6);
+  --paper: #1B1317;
+  --surface: #261A21;
+  --blush: #22171D;
+  --petal: #3B2832;
+  --rose: #E79CAE;
+  --rose-deep: #F4BBC7;
+  --on-rose: #2A1820;
+  --ink: #F7EDEF;
+  --ink-soft: #DFCDD3;
+  --muted: #B6A1A9;
+  --line: #402F37;
+  --plum: #2E1F27;
+  --plum-raised: #3B2832;
+}
+
+html {
+  scroll-padding-top: 4.5rem;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: var(--font-sans);
+  font-size: var(--text-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--text-color);
-  background-color: var(--bg-color);
-  line-height: 1.85;
+  color: var(--ink);
+  background-color: var(--paper);
+  line-height: 1.8;
+  overflow-x: hidden;
 }
 
 ::selection {
   background: var(--rose);
-  color: #fff;
+  color: var(--on-rose);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
-  line-height: 1.3;
-  margin-bottom: var(--spacing-sm);
-  color: var(--primary-color);
-}
-
-h1 {
-  font-size: var(--font-size-3xl);
-}
-
-h2 {
-  font-size: var(--font-size-2xl);
-}
-
-h3 {
-  font-size: var(--font-size-xl);
+  line-height: 1.35;
+  color: var(--ink);
+  text-wrap: balance;
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--rose);
   text-decoration: none;
-  transition: var(--transition);
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--secondary-color);
+  color: var(--rose-deep);
 }
 
 button {
   cursor: pointer;
-  transition: var(--transition);
+  font-family: inherit;
 }
 
 img {
@@ -125,40 +117,153 @@ img {
   height: auto;
 }
 
+ul,
+ol {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--rose);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 /* 容器 */
 .container {
-  max-width: 1200px;
+  max-width: calc(var(--page-width) + var(--page-gutter) * 2);
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 var(--page-gutter);
 }
 
-/* 工具類別 */
-.text-center {
-  text-align: center;
+/* 分隔符號保留在文字內容中，僅視覺上隱藏 */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
-.mb-sm {
-  margin-bottom: var(--spacing-sm);
+/* 各區塊共用骨架 */
+.resume-topic:not(.hero-section) {
+  padding: var(--section-space) 0;
 }
 
-.mb-md {
-  margin-bottom: var(--spacing-md);
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  margin-bottom: 2.75rem;
 }
 
-.mb-lg {
-  margin-bottom: var(--spacing-lg);
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
 }
 
-.mt-sm {
-  margin-top: var(--spacing-sm);
+/* 時間在左、內容在右的條列（工作經歷、學歷共用） */
+.ledger-item {
+  display: grid;
+  grid-template-columns: var(--when-col) minmax(0, 1fr);
 }
 
-.mt-md {
-  margin-top: var(--spacing-md);
+.ledger-when {
+  padding-top: 0.3rem;
+  padding-right: 1.5rem;
 }
 
-.mt-lg {
-  margin-top: var(--spacing-lg);
+.period {
+  font-family: var(--font-serif);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+.ledger-body {
+  position: relative;
+  padding-left: 2.5rem;
+  padding-bottom: 3rem;
+  border-left: 1px solid var(--line);
+}
+
+.ledger-item:last-child .ledger-body {
+  padding-bottom: 0;
+}
+
+.ledger-body::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 0.7rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--rose);
+}
+
+.ledger-item.is-current .ledger-body::before {
+  background: var(--rose);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--rose) 16%, transparent);
+}
+
+.ledger-item.is-current .period {
+  color: var(--rose);
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --when-col: 9.5rem;
+  }
+}
+
+@media (max-width: 820px) {
+  :root {
+    --page-gutter: 1.25rem;
+    --section-space: 3.5rem;
+    --text-2xl: 1.75rem;
+  }
+
+  .section-title {
+    margin-bottom: 2rem;
+    gap: 1rem;
+  }
+
+  .ledger-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ledger-when {
+    padding: 0 0 0.25rem 1.5rem;
+    border-left: 1px solid var(--line);
+  }
+
+  .ledger-body {
+    padding-left: 1.5rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .ledger-body::before {
+    top: -1.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* 列印成 PDF 專用樣式：穩定、無動畫、降低分頁裁切 */
@@ -176,14 +281,15 @@ img {
   html,
   body {
     background: #fff !important;
-    color: #222 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
+  .app-header,
   .photo-modal,
   .close-button,
   .hero-buttons,
+  .project-filters,
   .btn {
     display: none !important;
   }
@@ -192,26 +298,11 @@ img {
     zoom: 0.84;
   }
 
-  .hero-text,
-  .hero-image {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .timeline-item,
+  .ledger-item,
   .project-card,
-  .education-item,
+  .skill-category,
   .info-block {
     break-inside: avoid !important;
     page-break-inside: avoid !important;
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-
-  .additional-info-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: var(--spacing-sm) !important;
   }
 }

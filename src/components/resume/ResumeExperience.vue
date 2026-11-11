@@ -92,32 +92,52 @@ const experiencesEn = [
 ]
 
 const sectionTitle = computed(() => (currentLang.value === 'en' ? 'Experience' : '工作經歷'))
-const experiences = computed(() => (currentLang.value === 'en' ? experiencesEn : experiencesZh))
+
+// 「名稱｜技術：說明」格式的條列拆成三段，方便掃讀；格式不符者維持原樣
+const parseAchievement = (text) => {
+  const match = text.match(/^([^｜：]+)(｜)([^：]+)(：)(.+)$/)
+  if (!match) return { text }
+  return { text, name: match[1], sep1: match[2], stack: match[3], sep2: match[4], detail: match[5] }
+}
+
+const experiences = computed(() =>
+  (currentLang.value === 'en' ? experiencesEn : experiencesZh).map((exp) => {
+    const items = exp.achievements.map(parseAchievement)
+    return { ...exp, items, isStructured: items.length > 0 && items.every((item) => item.name) }
+  })
+)
 </script>
 
 <template>
   <section id="experience" class="experience-section">
     <div class="container">
       <h2 class="section-title">{{ sectionTitle }}</h2>
-      <div class="timeline">
+      <div class="ledger">
         <div
-          v-for="exp in experiences"
+          v-for="(exp, expIndex) in experiences"
           :key="exp.id"
-          class="timeline-item"
+          class="ledger-item"
+          :class="{ 'is-current': expIndex === 0, 'is-brief': !exp.items.length }"
         >
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
+          <div class="ledger-when">
+            <span class="period">{{ exp.period }}</span>
+          </div>
+          <div class="ledger-body">
             <div class="experience-header">
-              <div>
-                <h3 class="position">{{ exp.position }}</h3>
-                <h4 class="company">{{ exp.company }}</h4>
-              </div>
-              <span class="period">{{ exp.period }}</span>
+              <h3 class="position">{{ exp.position }}</h3>
+              <h4 class="company">{{ exp.company }}</h4>
             </div>
             <p class="description">{{ exp.description }}</p>
-            <ul v-if="exp.achievements.length" class="achievements">
-              <li v-for="(achievement, index) in exp.achievements" :key="index">
-                {{ achievement }}
+            <ul v-if="exp.items.length" class="achievements" :class="{ 'is-structured': exp.isStructured }">
+              <li v-for="(item, index) in exp.items" :key="index">
+                <template v-if="exp.isStructured">
+                  <strong class="ach-name">{{ item.name }}</strong>
+                  <span class="visually-hidden">{{ item.sep1 }}</span>
+                  <span class="ach-stack">{{ item.stack }}</span>
+                  <span class="visually-hidden">{{ item.sep2 }}</span>
+                  <span class="ach-detail">{{ item.detail }}</span>
+                </template>
+                <template v-else>{{ item.text }}</template>
               </li>
             </ul>
           </div>

@@ -92,20 +92,20 @@ const training = computed(() => (currentLang.value === 'en' ? trainingEn : train
 
       <div class="education-main">
         <h3 class="subsection-title">{{ copy.eduTitle }}</h3>
-        <div class="education-grid">
+        <div class="ledger">
           <div
-            v-for="edu in education"
+            v-for="(edu, eduIndex) in education"
             :key="edu.id"
-            class="education-item"
+            class="ledger-item"
+            :class="{ 'is-current': eduIndex === 0 }"
           >
-            <div class="education-icon">🎓</div>
-            <div class="education-details">
+            <div class="ledger-when">
+              <span class="period">{{ edu.period }}</span>
+            </div>
+            <div class="ledger-body">
               <div class="education-header">
-                <div>
-                  <h4 class="degree">{{ edu.degree }}</h4>
-                  <h5 class="school">{{ edu.school }}</h5>
-                </div>
-                <span class="period">{{ edu.period }}</span>
+                <h4 class="degree">{{ edu.degree }}</h4>
+                <h5 class="school">{{ edu.school }}</h5>
               </div>
               <p v-if="edu.description" class="description">{{ edu.description }}</p>
               <ul v-if="edu.achievements.length" class="achievements">
@@ -123,18 +123,15 @@ const training = computed(() => (currentLang.value === 'en' ? trainingEn : train
           <h3 class="subsection-title">{{ copy.certTitle }}</h3>
           <div class="info-list">
             <div v-for="cert in certifications" :key="cert" class="info-item">
-              <span class="info-icon">📜</span>
               <span class="info-text">{{ cert }}</span>
             </div>
           </div>
         </div>
 
-
         <div class="info-block">
           <h3 class="subsection-title">{{ copy.trainingTitle }}</h3>
           <div class="info-list">
             <div v-for="train in training" :key="train.title" class="info-item-block">
-              <span class="info-icon">📚</span>
               <div class="info-details">
                 <div class="info-text">{{ train.title }}</div>
                 <ul class="info-sublist">

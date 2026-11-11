@@ -1,36 +1,33 @@
-.about-section {
-  padding: var(--spacing-xl) 0;
-  background-color: var(--bg-color);
-}
-
-.section-title {
-  text-align: center;
-  font-size: var(--font-size-2xl);
-  margin-bottom: var(--spacing-xl);
-  position: relative;
-  padding-bottom: var(--spacing-sm);
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 2px;
-  background: var(--rose);
-  border-radius: 0;
-}
-
-.about-content {
-  max-width: 900px;
-  margin: 0 auto;
+/* 第一段是定位，放大成引言；其餘兩段並排為補充 */
+.about-text {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.25rem 3.5rem;
 }
 
 .about-text p {
-  margin-bottom: var(--spacing-md);
-  line-height: 1.8;
-  color: var(--text-light);
-  font-size: var(--font-size-base);
+  color: var(--ink-soft);
+  font-size: var(--text-base);
+  line-height: 1.95;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.about-text p:first-child {
+  grid-column: 1 / -1;
+  max-width: 30em;
+  padding-top: 0;
+  border-top: none;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.2vw, 1.625rem);
+  font-weight: 500;
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+@media (max-width: 820px) {
+  .about-text {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
 }

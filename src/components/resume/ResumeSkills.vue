@@ -68,9 +68,10 @@ const skillCategories = computed(() => (currentLang.value === 'en' ? skillCatego
       <h2 class="section-title">{{ sectionTitle }}</h2>
       <div class="skills-grid">
         <div
-          v-for="category in skillCategories"
+          v-for="(category, categoryIndex) in skillCategories"
           :key="category.title"
           class="skill-category"
+          :class="{ 'is-primary': categoryIndex === 0 }"
         >
           <h3 class="category-title">{{ category.title }}</h3>
           <div class="skills-list">

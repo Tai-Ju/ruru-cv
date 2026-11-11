@@ -113,10 +113,11 @@ const handleProjectClick = (project) => {
         </button>
       </div>
       <div class="projects-grid">
-        <div
+        <article
           v-for="project in filteredProjects"
           :key="project.id"
           class="project-card"
+          :class="{ 'is-featured': project.id === 1 }"
         >
           <div class="project-header">
             <h3 class="project-title">{{ currentLang === 'en' ? project.titleEn : project.title }}</h3>
@@ -130,19 +131,21 @@ const handleProjectClick = (project) => {
               </span>
             </div>
           </div>
-          <p class="project-description">{{ currentLang === 'en' ? project.descriptionEn : project.description }}</p>
-          <a
-            v-if="project.link"
-            :href="project.link"
-            class="project-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            @click="handleProjectClick(project)"
-          >
-            {{ projectLinkText }}
-          </a>
-          <p v-else class="project-note">{{ privateNote }}</p>
-        </div>
+          <div class="project-body">
+            <p class="project-description">{{ currentLang === 'en' ? project.descriptionEn : project.description }}</p>
+            <a
+              v-if="project.link"
+              :href="project.link"
+              class="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              @click="handleProjectClick(project)"
+            >
+              {{ projectLinkText }}
+            </a>
+            <p v-else class="project-note">{{ privateNote }}</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>

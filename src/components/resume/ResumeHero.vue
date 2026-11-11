@@ -27,6 +27,15 @@ const copy = computed(() => {
   }
 })
 
+// 定位句拆成「職稱」與「專長領域」兩層呈現；分隔符號仍保留在文字內容中
+const subtitleParts = computed(() => {
+  const match = copy.value.subtitle.match(/^(.*?)(｜| · )(.*)$/)
+  if (!match) {
+    return { role: copy.value.subtitle, separator: '', focus: '' }
+  }
+  return { role: match[1], separator: match[2], focus: match[3] }
+})
+
 const openZoom = () => {
   isZoomed.value = true
 }
@@ -48,7 +57,11 @@ const downloadResumeAsPdf = () => {
       <div class="hero-content">
         <div class="hero-text">
           <h1 class="hero-title">{{ copy.title }} <span class="highlight">劉玳如</span></h1>
-          <p class="hero-subtitle">{{ copy.subtitle }}</p>
+          <p class="hero-subtitle">
+            <span class="hero-role">{{ subtitleParts.role }}</span>
+            <span v-if="subtitleParts.separator" class="visually-hidden">{{ subtitleParts.separator }}</span>
+            <span v-if="subtitleParts.focus" class="hero-focus">{{ subtitleParts.focus }}</span>
+          </p>
           <p class="hero-description">{{ copy.description }}</p>
           <div class="hero-buttons">
             <a

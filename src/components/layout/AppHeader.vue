@@ -107,7 +107,7 @@ onUnmounted(() => {
           <h1>Tai-Ju Liu</h1>
         </div>
 
-        <button class="menu-toggle" @click="toggleMenu" :class="{ active: isMenuOpen }">
+        <button class="menu-toggle" @click="toggleMenu" :class="{ active: isMenuOpen }" aria-label="Menu" :aria-expanded="isMenuOpen">
           <span></span>
           <span></span>
           <span></span>
@@ -115,7 +115,7 @@ onUnmounted(() => {
 
         <ul class="nav-menu" :class="{ active: isMenuOpen }">
           <li v-for="item in navItems" :key="item.id">
-            <a :class="{ active: activeSection === item.id }" @click="scrollToSection(item.id)">{{ item.label }}</a>
+            <a :href="`#${item.id}`" :class="{ active: activeSection === item.id }" @click.prevent="scrollToSection(item.id)">{{ item.label }}</a>
           </li>
           <li class="toolbar-item">
             <button class="toolbar-btn" @click="toggleLanguage">{{ currentLang === 'zh' ? 'EN' : '中' }}</button>
