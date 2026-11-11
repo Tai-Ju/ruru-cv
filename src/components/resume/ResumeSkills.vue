@@ -6,54 +6,54 @@ const { currentLang } = useLanguage()
 
 const skillCategoriesZh = [
   {
-    title: '後端與系統開發',
+    title: 'AI 與 LLM',
     skills: [
-      { name: 'Python / Django', experience: '醫療應用系統、資料庫設計、API 串接' },
-      { name: 'RESTful API', experience: '系統架構規劃、規格文件與跨平台介接' },
-      { name: 'Web 技術', experience: 'React、TypeScript、Electron、Docker、Git' }
+      { name: 'RAG / 地端 LLM', experience: 'Ollama、ChromaDB、離線部署' },
+      { name: '模型整合', experience: 'LLaMA3、Qwen3、Gemma3 多模型串接' },
+      { name: 'Python 資料處理', experience: 'pandas、scikit-learn' }
     ]
   },
   {
-    title: 'AI 與資料工程',
+    title: '後端與系統串接',
     skills: [
-      { name: 'RAG / Local LLM', experience: 'Ollama、ChromaDB、地端用藥建議系統' },
-      { name: 'Power BI', experience: '醫療數據儀表板、ADC Log 分析' },
-      { name: '資料科學', experience: 'pandas、scikit-learn、機器學習應用' }
+      { name: 'Python / Django', experience: 'RESTful API、資料庫設計' },
+      { name: 'FHIR / HL7', experience: '電子處方箋、健保署與 HIS 介接' },
+      { name: 'Web 與工具', experience: 'React、TypeScript、Docker、Git' }
     ]
   },
   {
-    title: '醫療資訊',
+    title: '醫療領域',
     skills: [
-      { name: 'FHIR / HL7', experience: 'TW Core EMR-IG、電子處方箋、HIS 介接' },
-      { name: '自動化流程', experience: 'AutoHotkey、Python、Google Apps Script、n8n、OCR' },
-      { name: '領域知識', experience: '醫務管理、藥事作業、評鑑與法規' }
+      { name: '醫院流程', experience: '醫務管理、藥事作業' },
+      { name: '評鑑與法規', experience: 'TMAC／ACGME-I 評鑑、個資規範' },
+      { name: '流程自動化', experience: 'Python、AutoHotkey' }
     ]
   }
 ]
 
 const skillCategoriesEn = [
   {
-    title: 'Backend & Systems',
+    title: 'AI & LLM',
     skills: [
-      { name: 'Python / Django', experience: 'Healthcare apps, database design, API integration' },
-      { name: 'RESTful API', experience: 'Architecture planning, specs, and cross-platform integration' },
-      { name: 'Web Technologies', experience: 'React, TypeScript, Electron, Docker, Git' }
+      { name: 'RAG / Local LLM', experience: 'Ollama, ChromaDB, offline deployment' },
+      { name: 'Model Integration', experience: 'LLaMA3, Qwen3, Gemma3 multi-model setup' },
+      { name: 'Python Data Work', experience: 'pandas, scikit-learn' }
     ]
   },
   {
-    title: 'AI & Data Engineering',
+    title: 'Backend & Integration',
     skills: [
-      { name: 'RAG / Local LLM', experience: 'Ollama, ChromaDB, on-premise medication systems' },
-      { name: 'Power BI', experience: 'Healthcare dashboards and ADC log analytics' },
-      { name: 'Data Science', experience: 'pandas, scikit-learn, applied machine learning' }
+      { name: 'Python / Django', experience: 'RESTful APIs, database design' },
+      { name: 'FHIR / HL7', experience: 'E-prescriptions, NHIA and HIS integration' },
+      { name: 'Web & Tooling', experience: 'React, TypeScript, Docker, Git' }
     ]
   },
   {
-    title: 'Health Informatics',
+    title: 'Healthcare Domain',
     skills: [
-      { name: 'FHIR / HL7', experience: 'TW Core EMR-IG, e-prescriptions, HIS integration' },
-      { name: 'Automation', experience: 'AutoHotkey, Python, Google Apps Script, n8n, OCR' },
-      { name: 'Domain Knowledge', experience: 'Healthcare admin, pharmacy operations, accreditation' }
+      { name: 'Hospital Operations', experience: 'Healthcare admin, pharmacy workflows' },
+      { name: 'Accreditation & Compliance', experience: 'TMAC / ACGME-I, personal-data rules' },
+      { name: 'Workflow Automation', experience: 'Python, AutoHotkey' }
     ]
   }
 ]
