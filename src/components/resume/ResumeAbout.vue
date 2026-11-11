@@ -9,9 +9,9 @@ const copy = computed(() => {
     return {
       title: 'About Me',
       paragraphs: [
-        'I am an AI engineer at Tri-Service General Hospital on the Healthy Taiwan Deep Cultivation Program. I focus on building and deploying healthcare AI—on-premise LLM/RAG, computer vision, and AI-assisted services—plus the APIs and FHIR/HL7 integrations needed to put them into production.',
-        'Previously I spent six years at Mackay Memorial Hospital, which gives me domain context to turn clinical needs into working models and systems—not just dashboards.',
-        'I am pursuing an M.S. in Information Management at National Taipei University of Nursing and Health Sciences, researching on-premise LLM medication recommendation systems.'
+        'I work on the Healthy Taiwan Deep Cultivation Program at Tri-Service General Hospital, building the backend for clinic-side e-prescription and virtual NHI card services: API and database design, FHIR data exchange, and integration with NHIA and MOHW platforms.',
+        'Before switching to engineering I spent six years at Mackay Memorial Hospital, first in medical education administration and then in the pharmacy department, where I started writing my own tools: a scheduling system, chart-request automation, and dispensing-cabinet analytics. That background makes me ask who will use a system, and in what situation, before I build it.',
+        'I am also pursuing an M.S. in Information Management at National Taipei University of Nursing and Health Sciences. My thesis is an on-premise LLM medication recommendation system built on RAG.'
       ]
     }
   }
@@ -19,9 +19,9 @@ const copy = computed(() => {
   return {
     title: '關於我',
     paragraphs: [
-      '現任 AI 工程師，於三軍總醫院參與健康台灣深耕計畫。專注建置與部署醫療 AI——地端 LLM／RAG、電腦視覺，以及 AI 輔助工具的工程化落地（含 RESTful API、FHIR／HL7、HIS／健保署介接），而不是傳統報表分析。',
-      '此前於馬偕紀念醫院累積六年實務，讓我能把臨床與行政需求直接轉成可運行的模型與系統。這份領域知識，是我做 AI 落地的根基。',
-      '目前於國立臺北護理健康大學資訊管理研究所進修，研究地端 LLM 用藥建議系統，持續把醫療 domain knowledge 轉化為可部署的 AI 解法。'
+      '目前在三軍總醫院參與健康台灣深耕計畫，負責診所端電子處方箋與虛擬健保卡模組的後端開發，日常工作包括 API 與資料庫設計、FHIR 資料交換，以及和健保署、衛福部平台的介接。',
+      '轉職前在馬偕紀念醫院待了六年。前五年多做醫學教育行政，後來到藥劑部，開始自己寫工具解決現場問題，排班系統、調閱單自動化、藥櫃數據分析都是那時候做出來的。也因為這段經歷，我寫系統時會先想清楚：誰在用、在什麼情況下用。',
+      '目前在國立臺北護理健康大學資訊管理研究所進修，論文做的是地端部署的 LLM 用藥建議系統（RAG），希望把 AI 用在醫院真的用得上的地方。'
     ]
   }
 })

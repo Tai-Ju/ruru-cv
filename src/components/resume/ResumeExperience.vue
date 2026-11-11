@@ -10,15 +10,14 @@ const experiencesZh = [
     company: '三軍總醫院',
     position: '後端工程師',
     period: '2026/8 — 迄今',
-    description: '參與健康台灣深耕計畫，負責診所端數位應用服務之後端系統設計、開發與維護。',
+    description: '參與健康台灣深耕計畫，負責診所端數位服務的後端開發與維護。',
     achievements: [
-      '配合健康台灣深耕計畫，負責診所端數位應用服務（電子處方箋、虛擬健保卡、AI 輔助工具等）之後端系統設計、開發與維護',
-      '依據技術規格與使用者需求，規劃並實作系統架構、RESTful API 及資料庫結構，確保服務穩定性、擴充性與效能',
-      '負責與健保署、衛福部相關平台及醫院／診所 HIS 系統之介接，處理 FHIR、HL7 等醫療資料交換',
-      '撰寫及維護技術文件（API 規格書、系統架構圖、資料流程說明），配合技術文件審查並依意見修訂',
-      '執行單元測試、整合測試與技術驗證，依結果與使用者回饋進行問題排除、功能調整與效能優化',
-      '落實資訊安全及個人資料保護規範，建置權限控管、資料加密、存取稽核日誌等安全機制',
-      '配合專案經理回報開發進度，參與需求訪談與技術會議，協助跨單位（醫院、診所、系統廠商）技術溝通協調'
+      '負責電子處方箋、虛擬健保卡等診所端服務的後端開發，包含 RESTful API 與資料庫設計',
+      '處理 FHIR／HL7 資料交換，介接健保署、衛福部平台及醫院／診所 HIS',
+      '撰寫 API 規格書、系統架構圖與資料流程文件，並依審查意見修訂',
+      '負責單元測試與整合測試，依測試結果和使用者回饋除錯、調整功能',
+      '依資安與個資規範實作權限控管、資料加密與存取稽核紀錄',
+      '參與需求訪談與技術會議，協調醫院、診所與系統廠商之間的技術對接'
     ]
   },
   {
@@ -26,14 +25,14 @@ const experiencesZh = [
     company: '馬偕紀念醫院 · 藥劑部',
     position: '技術員｜藥劑部技術開發',
     period: '2025/1 — 2026/8',
-    description: '於醫療場域主導多項技術開發與數據分析專案，涵蓋 AI/LLM、資料工程、系統開發與醫療資訊標準整合。',
+    description: '在藥劑部從現場問題出發，自己動手開發工具與系統，範圍從流程自動化、排班系統到 LLM 應用。',
     achievements: [
-      '地端 LLM 用藥建議系統｜Python · Ollama · ChromaDB · RAG：整合 LLaMA3／Qwen3／Gemma3 與向量資料庫，支援中英混合查詢，全程離線運行',
-      'FHIR 電子處方箋系統｜Electron · React · TypeScript：依 TW Core EMR-IG 2.5 實作 FHIR R4 電子處方箋完整 Profile',
-      'ADC 智慧藥櫃數據分析｜Power BI：分析逾 30 萬筆 ADC Log，建立庫存成效視覺化儀表板，支援藥品補給決策',
-      '住院藥局排班系統｜Google Apps Script · Google Sheets：自動化排班、出勤查詢與加班費試算，降低薪資核算錯誤率',
-      '學術文獻自動化系統｜n8n · ScienceDirect／Web of Science API：建立自動化文獻蒐集與去重流程',
-      '調閱單電子化自動處理系統｜AutoHotkey · Python：端到端自動化 Print-to-PDF、合併、清理與雙重備份，自動化率約 95%'
+      'FHIR 電子處方箋系統｜Electron · React · TypeScript：依 TW Core EMR-IG 2.5 實作 FHIR R4 電子處方箋 Profile',
+      '地端 LLM 用藥建議系統｜Python · Ollama · ChromaDB：以 RAG 架構串接多個開源模型，可中英混合查詢，完全離線運行',
+      '住院藥局排班系統｜Google Apps Script：排班、出勤查詢與加班費試算自動化，減少人工核算錯誤',
+      '調閱單電子化｜AutoHotkey · Python：把每天的列印、合併、備份流程自動化，約 95% 不需人工處理',
+      'ADC 智慧藥櫃數據分析｜Power BI：整理逾 30 萬筆 ADC Log，做成庫存儀表板供補藥決策參考',
+      '文獻自動蒐集流程｜n8n：串接 ScienceDirect／Web of Science API，自動抓取並去除重複文獻'
     ]
   },
   {
@@ -42,7 +41,7 @@ const experiencesZh = [
     position: '管理師｜醫學教育行政',
     period: '2019/8 — 2025/1',
     description:
-      '歷任醫學教育部、內科部、婦產部、神經外科管理師，負責住院醫師教學排程、師資培育行政協調、醫院評鑑數據整合（TMAC／ACGME-I）及跨部門教學量能分析。',
+      '先後支援醫學教育部、內科部、婦產部與神經外科，負責住院醫師教學排程、師資培育行政、評鑑資料整理（TMAC／ACGME-I）與教學量能統計。',
     achievements: []
   }
 ]
@@ -71,14 +70,14 @@ const experiencesEn = [
     position: 'Technical Specialist · Pharmacy Tech Development',
     period: '2025/1 — 2026/8',
     description:
-      'Led technical development and analytics projects across AI/LLM, data engineering, systems, and health-informatics standards.',
+      'Built tools and systems in the pharmacy department, starting from problems I saw on the floor: workflow automation, scheduling, and LLM applications.',
     achievements: [
-      'On-premise LLM medication recommendation system with Python, Ollama, ChromaDB, and RAG; offline bilingual query support.',
-      'FHIR e-prescription desktop app with Electron, React, and TypeScript aligned to TW Core EMR-IG 2.5.',
-      'ADC smart-cabinet analytics in Power BI over 300k+ log records to support replenishment decisions.',
-      'Pharmacy scheduling automation with Google Apps Script and Sheets for shifts, attendance, and overtime calculation.',
-      'Literature automation pipeline with n8n and ScienceDirect / Web of Science APIs.',
-      'Chart-request digitization automation with AutoHotkey and Python: Print-to-PDF capture, merge, cleanup, and dual backup (~95% automation).'
+      'FHIR e-prescription desktop app (Electron, React, TypeScript) implementing FHIR R4 profiles per TW Core EMR-IG 2.5.',
+      'On-premise LLM medication recommendation system (Python, Ollama, ChromaDB) using RAG; bilingual queries, fully offline.',
+      'Inpatient pharmacy scheduling tool (Google Apps Script) for shifts, attendance, and overtime calculation.',
+      'Chart-request automation (AutoHotkey, Python) covering daily printing, merging, and backup; about 95% of steps now run without manual work.',
+      'ADC dispensing-cabinet analytics in Power BI over 300k+ log records to support restocking decisions.',
+      'Literature collection pipeline with n8n and the ScienceDirect / Web of Science APIs, with automatic de-duplication.'
     ]
   },
   {
