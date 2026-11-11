@@ -11,18 +11,18 @@ const copy = computed(() => {
   if (currentLang.value === 'en') {
     return {
       title: "Hi, I'm",
-      subtitle: 'Backend Engineer · Health Informatics · FHIR',
+      subtitle: 'AI Engineer · Healthcare AI · Local LLM',
       description:
-        'Backend engineer at Tri-Service General Hospital, working on e-prescription and virtual NHI card services. Six years inside hospitals before that, so I know where real users get stuck once a system goes live.',
+        'I build AI that hospitals can actually use. My thesis is an on-premise LLM medication system, and at Tri-Service General Hospital I build the backend for e-prescription and virtual NHI card services. Six years inside hospitals taught me where real users get stuck.',
       download: 'Download PDF'
     }
   }
 
   return {
     title: '你好，我是',
-    subtitle: '後端工程師｜醫療資訊 · FHIR · 地端 LLM',
+    subtitle: 'AI 工程師｜醫療 AI · 地端 LLM · RAG',
     description:
-      '在三軍總醫院做電子處方箋與虛擬健保卡的後端開發。之前在醫院做了六年行政與系統開發，很清楚系統上線後，現場的人會卡在哪裡。',
+      '專注把 AI 用進醫院的工程師。碩士論文做地端 LLM 用藥建議系統，目前在三軍總醫院負責電子處方箋與虛擬健保卡的後端開發。之前在醫院做了六年，很清楚系統上線後，現場的人會卡在哪裡。',
     download: '下載 PDF'
   }
 })

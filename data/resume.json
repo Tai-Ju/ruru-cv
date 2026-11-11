@@ -2,9 +2,9 @@
   "basics": {
     "name": "劉玳如",
     "nameLatin": "Tai-Ju Liu",
-    "title": "後端工程師｜醫療資訊 · FHIR · 地端 LLM",
-    "kicker": "Backend Engineer · Health Informatics · FHIR",
-    "summary": "在三軍總醫院做電子處方箋與虛擬健保卡的後端開發。之前在醫院做了六年行政與系統開發，很清楚系統上線後，現場的人會卡在哪裡。",
+    "title": "AI 工程師｜醫療 AI · 地端 LLM · RAG",
+    "kicker": "AI Engineer · Healthcare AI · Local LLM",
+    "summary": "專注把 AI 用進醫院的工程師。碩士論文做地端 LLM 用藥建議系統，目前在三軍總醫院負責電子處方箋與虛擬健保卡的後端開發。之前在醫院做了六年，很清楚系統上線後，現場的人會卡在哪裡。",
     "location": "新北市三重區"
   },
   "contact": [
@@ -41,9 +41,9 @@
     }
   ],
   "about": [
-    "目前在三軍總醫院參與健康台灣深耕計畫，負責診所端電子處方箋與虛擬健保卡模組的後端開發，日常工作包括 API 與資料庫設計、FHIR 資料交換，以及和健保署、衛福部平台的介接。",
-    "轉職前在馬偕紀念醫院待了六年。前五年多做醫學教育行政，後來到藥劑部，開始自己寫工具解決現場問題，排班系統、調閱單自動化、藥櫃數據分析都是那時候做出來的。也因為這段經歷，我寫系統時會先想清楚：誰在用、在什麼情況下用。",
-    "目前在國立臺北護理健康大學資訊管理研究所進修，論文做的是地端部署的 LLM 用藥建議系統（RAG），希望把 AI 用在醫院真的用得上的地方。"
+    "我想做的是醫院真的用得上的 AI。碩士論文做的是地端部署的 LLM 用藥建議系統：以 RAG 架構串接開源模型與藥品資料，全程離線運行，資料不必送出院外。",
+    "目前在三軍總醫院參與健康台灣深耕計畫，負責診所端電子處方箋與虛擬健保卡模組的後端開發，包括 API 與資料庫設計、FHIR 資料交換，以及和健保署、衛福部平台的介接。AI 要在醫院上線，最後都得接上這些系統。",
+    "轉職前在馬偕紀念醫院待了六年，前五年多做醫學教育行政，後來到藥劑部開始自己寫工具解決現場問題。這段經歷讓我做系統前會先想清楚：誰在用、在什麼情況下用。"
   ],
   "experience": [
     {
@@ -66,10 +66,10 @@
       "organization": "馬偕紀念醫院 · 藥劑部",
       "start": "2025/1",
       "end": "2026/8",
-      "summary": "在藥劑部從現場問題出發，自己動手開發工具與系統，範圍從流程自動化、排班系統到 LLM 應用。",
+      "summary": "在藥劑部從現場問題出發，自己動手開發工具與系統，範圍從 LLM 應用、流程自動化到排班系統。",
       "highlights": [
-        "FHIR 電子處方箋系統｜Electron · React · TypeScript：依 TW Core EMR-IG 2.5 實作 FHIR R4 電子處方箋 Profile",
         "地端 LLM 用藥建議系統｜Python · Ollama · ChromaDB：以 RAG 架構串接多個開源模型，可中英混合查詢，完全離線運行",
+        "FHIR 電子處方箋系統｜Electron · React · TypeScript：依 TW Core EMR-IG 2.5 實作 FHIR R4 電子處方箋 Profile",
         "住院藥局排班系統｜Google Apps Script：排班、出勤查詢與加班費試算自動化，減少人工核算錯誤",
         "調閱單電子化｜AutoHotkey · Python：把每天的列印、合併、備份流程自動化，約 95% 不需人工處理",
         "ADC 智慧藥櫃數據分析｜Power BI：整理逾 30 萬筆 ADC Log，做成庫存儀表板供補藥決策參考",
@@ -140,17 +140,6 @@
   ],
   "projects": [
     {
-      "name": "FHIR 電子處方箋系統",
-      "period": "2026",
-      "description": "依衛福部 TW Core EMR-IG 2.5 開發的桌面應用程式，實作 FHIR R4 電子處方箋的 Bundle-EP、Composition-EP、MedicationRequest-EP 等 Profile。",
-      "stack": [
-        "Electron",
-        "React",
-        "TypeScript",
-        "FHIR"
-      ]
-    },
-    {
       "name": "地端 LLM 用藥建議系統",
       "period": "2025 — 2026",
       "description": "碩士論文題目。以 RAG 架構串接 LLaMA3、Qwen3、Gemma3 與 ChromaDB，資料來源包括 FDA 藥品仿單、PubMed 與 RxNorm，可中英混合查詢。全程離線運行，資料不必送出院外。",
@@ -159,6 +148,17 @@
         "Ollama",
         "ChromaDB",
         "RAG"
+      ]
+    },
+    {
+      "name": "FHIR 電子處方箋系統",
+      "period": "2026",
+      "description": "依衛福部 TW Core EMR-IG 2.5 開發的桌面應用程式，實作 FHIR R4 電子處方箋的 Bundle-EP、Composition-EP、MedicationRequest-EP 等 Profile。",
+      "stack": [
+        "Electron",
+        "React",
+        "TypeScript",
+        "FHIR"
       ]
     },
     {

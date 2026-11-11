@@ -25,10 +25,10 @@ const experiencesZh = [
     company: '馬偕紀念醫院 · 藥劑部',
     position: '技術員｜藥劑部技術開發',
     period: '2025/1 — 2026/8',
-    description: '在藥劑部從現場問題出發，自己動手開發工具與系統，範圍從流程自動化、排班系統到 LLM 應用。',
+    description: '在藥劑部從現場問題出發，自己動手開發工具與系統，範圍從 LLM 應用、流程自動化到排班系統。',
     achievements: [
-      'FHIR 電子處方箋系統｜Electron · React · TypeScript：依 TW Core EMR-IG 2.5 實作 FHIR R4 電子處方箋 Profile',
       '地端 LLM 用藥建議系統｜Python · Ollama · ChromaDB：以 RAG 架構串接多個開源模型，可中英混合查詢，完全離線運行',
+      'FHIR 電子處方箋系統｜Electron · React · TypeScript：依 TW Core EMR-IG 2.5 實作 FHIR R4 電子處方箋 Profile',
       '住院藥局排班系統｜Google Apps Script：排班、出勤查詢與加班費試算自動化，減少人工核算錯誤',
       '調閱單電子化｜AutoHotkey · Python：把每天的列印、合併、備份流程自動化，約 95% 不需人工處理',
       'ADC 智慧藥櫃數據分析｜Power BI：整理逾 30 萬筆 ADC Log，做成庫存儀表板供補藥決策參考',
@@ -70,10 +70,10 @@ const experiencesEn = [
     position: 'Technical Specialist · Pharmacy Tech Development',
     period: '2025/1 — 2026/8',
     description:
-      'Built tools and systems in the pharmacy department, starting from problems I saw on the floor: workflow automation, scheduling, and LLM applications.',
+      'Built tools and systems in the pharmacy department, starting from problems I saw on the floor: LLM applications, workflow automation, and scheduling.',
     achievements: [
-      'FHIR e-prescription desktop app (Electron, React, TypeScript) implementing FHIR R4 profiles per TW Core EMR-IG 2.5.',
       'On-premise LLM medication recommendation system (Python, Ollama, ChromaDB) using RAG; bilingual queries, fully offline.',
+      'FHIR e-prescription desktop app (Electron, React, TypeScript) implementing FHIR R4 profiles per TW Core EMR-IG 2.5.',
       'Inpatient pharmacy scheduling tool (Google Apps Script) for shifts, attendance, and overtime calculation.',
       'Chart-request automation (AutoHotkey, Python) covering daily printing, merging, and backup; about 95% of steps now run without manual work.',
       'ADC dispensing-cabinet analytics in Power BI over 300k+ log records to support restocking decisions.',

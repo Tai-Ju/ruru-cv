@@ -8,17 +8,6 @@ const { currentLang } = useLanguage()
 const projects = [
   {
     id: 1,
-    title: 'FHIR 電子處方箋系統',
-    titleEn: 'FHIR Electronic Prescription System',
-    tags: ['ELECTRON', 'REACT', 'TYPESCRIPT', 'FHIR'],
-    description:
-      '依衛福部 TW Core EMR-IG 2.5 開發的桌面應用程式，實作 FHIR R4 電子處方箋的 Bundle-EP、Composition-EP、MedicationRequest-EP 等 Profile。',
-    descriptionEn:
-      'Desktop app built to TW Core EMR-IG 2.5, implementing FHIR R4 e-prescription profiles such as Bundle-EP, Composition-EP, and MedicationRequest-EP.',
-    link: 'https://github.com/swiftruru/rx-fhir'
-  },
-  {
-    id: 2,
     title: '地端 LLM 用藥建議系統',
     titleEn: 'On-premise LLM Medication Recommendation',
     tags: ['PYTHON', 'OLLAMA', 'CHROMADB', 'RAG'],
@@ -27,6 +16,17 @@ const projects = [
     descriptionEn:
       'Master thesis project. A RAG system connecting LLaMA3, Qwen3, and Gemma3 with ChromaDB, drawing on FDA labels, PubMed, and RxNorm. Supports mixed Chinese/English queries and runs fully offline, so data never leaves the hospital.',
     link: 'https://github.com/Tai-Ju/drug-rag-pipeline'
+  },
+  {
+    id: 2,
+    title: 'FHIR 電子處方箋系統',
+    titleEn: 'FHIR Electronic Prescription System',
+    tags: ['ELECTRON', 'REACT', 'TYPESCRIPT', 'FHIR'],
+    description:
+      '依衛福部 TW Core EMR-IG 2.5 開發的桌面應用程式，實作 FHIR R4 電子處方箋的 Bundle-EP、Composition-EP、MedicationRequest-EP 等 Profile。',
+    descriptionEn:
+      'Desktop app built to TW Core EMR-IG 2.5, implementing FHIR R4 e-prescription profiles such as Bundle-EP, Composition-EP, and MedicationRequest-EP.',
+    link: 'https://github.com/swiftruru/rx-fhir'
   },
   {
     id: 3,
