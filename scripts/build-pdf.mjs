@@ -62,14 +62,15 @@ function renderHTML(d) {
 <style>
   @page {
     size: A4;
-    /* 底部保留 14mm 給頁尾頁碼，其餘 0 讓深藍頁首滿版出血 */
-    margin: 0 0 14mm 0;
+    /* 底部保留 14mm 給頁尾頁碼；第 2 頁起上方留 12mm，第 1 頁頁首滿版出血 */
+    margin: 12mm 0 14mm 0;
     @bottom-center {
       content: "${esc(d.basics.name)} ${esc(d.basics.nameLatin)} — " counter(page) " / " counter(pages);
       font-family: 'Noto Sans TC', 'Noto Sans CJK TC', sans-serif;
       font-size: 8pt; color: #A89AA0;
     }
   }
+  @page :first { margin-top: 0; }
   :root {
     --band: #F5E9EC; --ivory: #FDFBFA;
     --ink: #332B2F; --muted: #6E6066; --hairline: #ECDFE2; --rose: #A24E60;
@@ -82,23 +83,25 @@ function renderHTML(d) {
   a { color: inherit; text-decoration: none; }
 
   /* 頁首：深藍名片帶（僅第一頁） */
-  .head { background: var(--band); color: #2E2529; padding: 12mm 16mm 9mm; }
-  .head .kicker { font-size: 7.5pt; letter-spacing: 0.28em; text-transform: uppercase; color: var(--rose); margin-bottom: 4mm; }
+  .head { background: var(--band); color: #2E2529; padding: 10mm 16mm 7mm; }
+  .head .kicker { font-size: 7.5pt; letter-spacing: 0.28em; text-transform: uppercase; color: var(--rose); margin-bottom: 3mm; }
   .head h1 { font-family: 'Noto Serif TC', 'Noto Serif CJK TC', serif; font-size: 24pt; font-weight: 700; letter-spacing: 0.06em; line-height: 1.2; }
   .head .latin { font-size: 10.5pt; font-style: italic; color: #96868C; letter-spacing: 0.1em; margin: 1mm 0 4mm; font-family: 'Noto Serif TC', 'Noto Serif CJK TC', serif; }
-  .head .title { font-size: 10pt; color: #4A3F44; margin-bottom: 5mm; }
+  .head .title { font-size: 10pt; color: #4A3F44; margin-bottom: 4mm; }
   .head .contact { border-top: 0.4pt solid rgba(162,78,96,0.3); padding-top: 3.5mm; font-size: 8.5pt; color: #55494E; display: flex; flex-wrap: wrap; gap: 1.5mm 7mm; }
   .c-item { white-space: nowrap; }
   .c-item b { font-weight: 500; color: var(--rose); margin-right: 1.5mm; }
   .c-sep { margin: 0 3mm; color: rgba(251,250,247,0.3); }
 
   /* 頁面規劃：明確指定分頁點，每個章節整體不可跨頁 */
-  .body { padding: 9mm 16mm 0; }
-  .page-2 { break-before: page; padding-top: 12mm; }
-  section { margin-bottom: 7mm; break-inside: avoid; }
+  .body { padding: 7mm 16mm 0; }
+  .page-2 { }
+  section { margin-bottom: 4.5mm; }
+  h2 { break-after: avoid; }
+  .skills-3col { break-inside: avoid; }
 
   /* 單頁內雙欄（不需跨頁，flex 安全） */
-  .duo { display: flex; gap: 9mm; }
+  .duo { display: grid; grid-template-columns: 1.5fr 1fr; gap: 9mm; }
   .duo .main { flex: 1.5; }
   .duo .side { flex: 1; }
 
@@ -109,16 +112,16 @@ function renderHTML(d) {
   }
   h2 .en { font-family: 'Noto Sans TC', 'Noto Sans CJK TC', sans-serif; font-size: 6.5pt; letter-spacing: 0.24em; text-transform: uppercase; color: var(--rose); font-weight: 500; margin-left: 2.5mm; }
 
-  .summary p { font-size: 9.5pt; text-align: justify; margin-bottom: 2.5mm; }
+  .summary p { font-size: 9.2pt; text-align: justify; margin-bottom: 2mm; }
 
-  .entry { margin-bottom: 4.5mm; break-inside: avoid; }
+  .entry { margin-bottom: 3mm; break-inside: avoid; }
   .entry-head { display: flex; justify-content: space-between; align-items: baseline; }
   .entry h3 { font-family: 'Noto Serif TC', 'Noto Serif CJK TC', serif; font-size: 10.5pt; font-weight: 700; }
   .dates { font-size: 8pt; color: var(--muted); letter-spacing: 0.06em; white-space: nowrap; }
   .org { font-size: 8.5pt; color: var(--rose); letter-spacing: 0.04em; margin: 0.5mm 0 1.5mm; }
-  .entry p { font-size: 9pt; color: var(--muted); margin-bottom: 1.5mm; text-align: justify; }
+  .entry p { font-size: 8.7pt; color: var(--muted); margin-bottom: 1.5mm; text-align: justify; }
   .entry ul { list-style: none; }
-  .entry li { position: relative; padding-left: 5mm; margin-bottom: 1.2mm; font-size: 9pt; text-align: justify; }
+  .entry li { position: relative; padding-left: 5mm; margin-bottom: 0.8mm; font-size: 8.7pt; text-align: justify; }
   .entry li::before { content: ''; position: absolute; left: 0; top: 2.6mm; width: 2.8mm; height: 0.4pt; background: var(--rose); }
   .work .stack { font-size: 7.5pt; letter-spacing: 0.08em; color: var(--rose); text-transform: uppercase; }
 
@@ -195,9 +198,9 @@ console.log('✓ HTML 已產生：', htmlPath)
 
 if (process.argv.includes('--html-only')) process.exit(0)
 
-/* Puppeteer 輸出 PDF（在你的 Mac 上執行） */
+/* Puppeteer 輸出 PDF（未安裝 puppeteer 時可設 CHROME_PATH 改用 puppeteer-core） */
 const puppeteer = await import('puppeteer').then(m => m.default)
-const browser = await puppeteer.launch()
+const browser = await puppeteer.launch(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH, args: ['--no-sandbox'] } : {})
 const page = await browser.newPage()
 await page.goto('file://' + htmlPath, { waitUntil: 'networkidle0' })
 await page.pdf({

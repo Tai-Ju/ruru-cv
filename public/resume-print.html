@@ -6,14 +6,15 @@
 <style>
   @page {
     size: A4;
-    /* 底部保留 14mm 給頁尾頁碼，其餘 0 讓深藍頁首滿版出血 */
-    margin: 0 0 14mm 0;
+    /* 底部保留 14mm 給頁尾頁碼；第 2 頁起上方留 12mm，第 1 頁頁首滿版出血 */
+    margin: 12mm 0 14mm 0;
     @bottom-center {
       content: "劉玳如 Tai-Ju Liu — " counter(page) " / " counter(pages);
       font-family: 'Noto Sans TC', 'Noto Sans CJK TC', sans-serif;
       font-size: 8pt; color: #A89AA0;
     }
   }
+  @page :first { margin-top: 0; }
   :root {
     --band: #F5E9EC; --ivory: #FDFBFA;
     --ink: #332B2F; --muted: #6E6066; --hairline: #ECDFE2; --rose: #A24E60;
@@ -26,23 +27,25 @@
   a { color: inherit; text-decoration: none; }
 
   /* 頁首：深藍名片帶（僅第一頁） */
-  .head { background: var(--band); color: #2E2529; padding: 12mm 16mm 9mm; }
-  .head .kicker { font-size: 7.5pt; letter-spacing: 0.28em; text-transform: uppercase; color: var(--rose); margin-bottom: 4mm; }
+  .head { background: var(--band); color: #2E2529; padding: 10mm 16mm 7mm; }
+  .head .kicker { font-size: 7.5pt; letter-spacing: 0.28em; text-transform: uppercase; color: var(--rose); margin-bottom: 3mm; }
   .head h1 { font-family: 'Noto Serif TC', 'Noto Serif CJK TC', serif; font-size: 24pt; font-weight: 700; letter-spacing: 0.06em; line-height: 1.2; }
   .head .latin { font-size: 10.5pt; font-style: italic; color: #96868C; letter-spacing: 0.1em; margin: 1mm 0 4mm; font-family: 'Noto Serif TC', 'Noto Serif CJK TC', serif; }
-  .head .title { font-size: 10pt; color: #4A3F44; margin-bottom: 5mm; }
+  .head .title { font-size: 10pt; color: #4A3F44; margin-bottom: 4mm; }
   .head .contact { border-top: 0.4pt solid rgba(162,78,96,0.3); padding-top: 3.5mm; font-size: 8.5pt; color: #55494E; display: flex; flex-wrap: wrap; gap: 1.5mm 7mm; }
   .c-item { white-space: nowrap; }
   .c-item b { font-weight: 500; color: var(--rose); margin-right: 1.5mm; }
   .c-sep { margin: 0 3mm; color: rgba(251,250,247,0.3); }
 
   /* 頁面規劃：明確指定分頁點，每個章節整體不可跨頁 */
-  .body { padding: 9mm 16mm 0; }
-  .page-2 { break-before: page; padding-top: 12mm; }
-  section { margin-bottom: 7mm; break-inside: avoid; }
+  .body { padding: 7mm 16mm 0; }
+  .page-2 { }
+  section { margin-bottom: 4.5mm; }
+  h2 { break-after: avoid; }
+  .skills-3col { break-inside: avoid; }
 
   /* 單頁內雙欄（不需跨頁，flex 安全） */
-  .duo { display: flex; gap: 9mm; }
+  .duo { display: grid; grid-template-columns: 1.5fr 1fr; gap: 9mm; }
   .duo .main { flex: 1.5; }
   .duo .side { flex: 1; }
 
@@ -53,16 +56,16 @@
   }
   h2 .en { font-family: 'Noto Sans TC', 'Noto Sans CJK TC', sans-serif; font-size: 6.5pt; letter-spacing: 0.24em; text-transform: uppercase; color: var(--rose); font-weight: 500; margin-left: 2.5mm; }
 
-  .summary p { font-size: 9.5pt; text-align: justify; margin-bottom: 2.5mm; }
+  .summary p { font-size: 9.2pt; text-align: justify; margin-bottom: 2mm; }
 
-  .entry { margin-bottom: 4.5mm; break-inside: avoid; }
+  .entry { margin-bottom: 3mm; break-inside: avoid; }
   .entry-head { display: flex; justify-content: space-between; align-items: baseline; }
   .entry h3 { font-family: 'Noto Serif TC', 'Noto Serif CJK TC', serif; font-size: 10.5pt; font-weight: 700; }
   .dates { font-size: 8pt; color: var(--muted); letter-spacing: 0.06em; white-space: nowrap; }
   .org { font-size: 8.5pt; color: var(--rose); letter-spacing: 0.04em; margin: 0.5mm 0 1.5mm; }
-  .entry p { font-size: 9pt; color: var(--muted); margin-bottom: 1.5mm; text-align: justify; }
+  .entry p { font-size: 8.7pt; color: var(--muted); margin-bottom: 1.5mm; text-align: justify; }
   .entry ul { list-style: none; }
-  .entry li { position: relative; padding-left: 5mm; margin-bottom: 1.2mm; font-size: 9pt; text-align: justify; }
+  .entry li { position: relative; padding-left: 5mm; margin-bottom: 0.8mm; font-size: 8.7pt; text-align: justify; }
   .entry li::before { content: ''; position: absolute; left: 0; top: 2.6mm; width: 2.8mm; height: 0.4pt; background: var(--rose); }
   .work .stack { font-size: 7.5pt; letter-spacing: 0.08em; color: var(--rose); text-transform: uppercase; }
 
@@ -86,10 +89,10 @@
 </head>
 <body>
   <div class="head">
-    <div class="kicker">Healthcare Administration · Software Development</div>
+    <div class="kicker">AI Engineer · Healthcare AI · Local LLM</div>
     <h1>劉玳如</h1>
     <div class="latin">Tai-Ju Liu</div>
-    <div class="title">行政管理師｜醫療 × 資料工程　·　台北，台灣</div>
+    <div class="title">AI 工程師｜醫療 AI · 地端 LLM · RAG　·　新北市三重區</div>
     <div class="contact"><span class="c-item"><b>Email</b> <a href="mailto:lulu@lufolio.dev">lulu@lufolio.dev</a></span><span class="c-item"><b>電話</b> <a href="tel:+886909213395">0909-213-395</a></span><span class="c-item"><b>GitHub</b> <a href="https://github.com/Tai-Ju">github.com/Tai-Ju</a></span><span class="c-item"><b>Hugging Face</b> <a href="https://huggingface.co/ruru0116">huggingface.co/ruru0116</a></span><span class="c-item"><b>LinkedIn</b> <a href="https://www.linkedin.com/in/tai-ju-liu/">linkedin.com/in/tai-ju-liu</a></span></div>
   </div>
 
@@ -97,21 +100,27 @@
   <div class="body">
     <section class="summary">
       <h2>簡介<span class="en">Profile</span></h2>
-      <p>我在醫療體系工作逾八年，先後任職於馬偕紀念醫院醫學教育部與藥劑部，對醫院的組織運作、法規環境與跨部門協作有深入的實務理解。這份領域知識，是我所有技術工作的根基。</p><p>過去數年，我系統性地建立了資料分析與軟體開發能力——從 SQL 資料管線、Power BI 商業智慧，到 Python 應用開發與大型語言模型的落地研究。我不做概念驗證式的展示，而是交付真正進入日常作業流程、被臨床與行政團隊持續使用的工具。</p><p>目前於國立臺北護理健康大學資訊管理研究所進修，研究本地端大型語言模型於藥事決策支援之應用，持續深化醫療資訊領域的專業縱深。</p>
+      <p>我想做的是醫院真的用得上的 AI。碩士論文做的是地端部署的 LLM 用藥建議系統：以 RAG 架構串接開源模型與藥品資料，全程離線運行，資料不必送出院外。</p><p>目前在三軍總醫院參與健康台灣深耕計畫，負責診所端電子處方箋與虛擬健保卡模組的後端開發，包括 API 與資料庫設計、FHIR 資料交換，以及和健保署、衛福部平台的介接。AI 要在醫院上線，最後都得接上這些系統。</p><p>轉職前在馬偕紀念醫院待了六年，前五年多做醫學教育行政，後來到藥劑部開始自己寫工具解決現場問題。這段經歷讓我做系統前會先想清楚：誰在用、在什麼情況下用。</p>
     </section>
     <section>
       <h2>經歷<span class="en">Experience</span></h2>
       
     <div class="entry">
-      <div class="entry-head"><h3>行政管理師</h3><span class="dates">2023 — 迄今</span></div>
-      <div class="org">馬偕紀念醫院 · 藥劑部</div>
-      <p>統籌部門行政管理，並主導資料分析與數位化專案，服務約 37 人之藥事團隊。</p>
-      <ul><li>規劃並建置全院抗生素管理儀表板，涵蓋 DOT、DID 用藥密度指標與 WHO AWaRe 分類，整合 Oracle 與 SQL Server 雙資料庫之自動化資料管線</li><li>開發 ICU 藥事照護管理工具，以 OCR 技術自動化擷取申報數據，大幅縮減人工作業時間</li><li>設計部門出勤管理系統架構（FastAPI、React、PostgreSQL），完成複雜班別規則之系統化</li></ul>
+      <div class="entry-head"><h3>後端工程師</h3><span class="dates">2026/8 — 迄今</span></div>
+      <div class="org">三軍總醫院</div>
+      <p>參與健康台灣深耕計畫，負責診所端數位服務的後端開發與維護。</p>
+      <ul><li>負責電子處方箋、虛擬健保卡等診所端服務的後端開發，包含 RESTful API 與資料庫設計</li><li>處理 FHIR／HL7 資料交換，介接健保署、衛福部平台及醫院／診所 HIS</li><li>撰寫 API 規格書、系統架構圖與資料流程文件，並依審查意見修訂</li><li>負責單元測試與整合測試，依測試結果和使用者回饋除錯、調整功能</li><li>依資安與個資規範實作權限控管、資料加密與存取稽核紀錄</li><li>參與需求訪談與技術會議，協調醫院、診所與系統廠商之間的技術對接</li></ul>
     </div>
     <div class="entry">
-      <div class="entry-head"><h3>行政人員</h3><span class="dates">2018 — 2023</span></div>
-      <div class="org">馬偕紀念醫院 · 醫學教育部</div>
-      <p>負責醫學教育行政與教學品質管理，累積醫療機構治理、評鑑作業與跨部門協調之扎實基礎。</p>
+      <div class="entry-head"><h3>技術員｜藥劑部技術開發</h3><span class="dates">2025/1 — 2026/8</span></div>
+      <div class="org">馬偕紀念醫院 · 藥劑部</div>
+      <p>在藥劑部從現場問題出發，自己動手開發工具與系統，範圍從 LLM 應用、流程自動化到排班系統。</p>
+      <ul><li>地端 LLM 用藥建議系統｜Python · Ollama · ChromaDB：以 RAG 架構串接多個開源模型，可中英混合查詢，完全離線運行</li><li>FHIR 電子處方箋系統｜Electron · React · TypeScript：依 TW Core EMR-IG 2.5 實作 FHIR R4 電子處方箋 Profile</li><li>住院藥局排班系統｜Google Apps Script：排班、出勤查詢與加班費試算自動化，減少人工核算錯誤</li><li>調閱單電子化｜AutoHotkey · Python：把每天的列印、合併、備份流程自動化，約 95% 不需人工處理</li><li>ADC 智慧藥櫃數據分析｜Power BI：整理逾 30 萬筆 ADC Log，做成庫存儀表板供補藥決策參考</li><li>文獻自動蒐集流程｜n8n：串接 ScienceDirect／Web of Science API，自動抓取並去除重複文獻</li></ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><h3>管理師｜醫學教育行政</h3><span class="dates">2019/8 — 2025/1</span></div>
+      <div class="org">馬偕紀念醫院</div>
+      <p>先後支援醫學教育部、內科部、婦產部與神經外科，負責住院醫師教學排程、師資培育行政、評鑑資料整理（TMAC／ACGME-I）與教學量能統計。</p>
       
     </div>
     </section>
@@ -122,40 +131,45 @@
         <h2>專長<span class="en">Expertise</span></h2>
         <div class="skills-3col">
     <div class="skill-group">
-      <h4>資料工程與分析</h4>
-      <div class="skill-row"><b>Power BI</b><span>DAX 進階量值、Power Query M、多來源資料管線</span></div><div class="skill-row"><b>SQL</b><span>Oracle、SQL Server 查詢設計與跨庫整合</span></div><div class="skill-row"><b>機器學習</b><span>迴歸、分群模型於醫療資料之應用</span></div>
+      <h4>AI 與 LLM</h4>
+      <div class="skill-row"><b>RAG / 地端 LLM</b><span>Ollama、ChromaDB、離線部署</span></div><div class="skill-row"><b>模型整合</b><span>LLaMA3、Qwen3、Gemma3 多模型串接</span></div><div class="skill-row"><b>Python 資料處理</b><span>pandas、scikit-learn</span></div>
     </div>
     <div class="skill-group">
-      <h4>軟體開發</h4>
-      <div class="skill-row"><b>Python</b><span>應用開發、OCR 自動化、TQC+ 認證</span></div><div class="skill-row"><b>AI 應用</b><span>RAG 系統、LlamaIndex、本地端 LLM 部署評估</span></div><div class="skill-row"><b>Web 技術</b><span>FastAPI、Vue、React、Docker</span></div>
+      <h4>後端與系統串接</h4>
+      <div class="skill-row"><b>Python / Django</b><span>RESTful API、資料庫設計</span></div><div class="skill-row"><b>FHIR / HL7</b><span>電子處方箋、健保署與 HIS 介接</span></div><div class="skill-row"><b>Web 與工具</b><span>React、TypeScript、Docker、Git</span></div>
     </div>
     <div class="skill-group">
-      <h4>醫療資訊</h4>
-      <div class="skill-row"><b>FHIR 標準</b><span>TW Core Profile 實作、全國聯測驗證經驗</span></div><div class="skill-row"><b>流程優化</b><span>BPMN 建模、流程探勘</span></div><div class="skill-row"><b>領域知識</b><span>醫務管理、藥事作業、評鑑與法規</span></div>
+      <h4>醫療領域</h4>
+      <div class="skill-row"><b>醫院流程</b><span>醫務管理、藥事作業</span></div><div class="skill-row"><b>評鑑與法規</b><span>TMAC／ACGME-I 評鑑、個資規範</span></div><div class="skill-row"><b>流程自動化</b><span>Python、AutoHotkey</span></div>
     </div></div>
       </section>
       <section>
         <h2>專案實績<span class="en">Selected Work</span></h2>
         
     <div class="entry work">
-      <div class="entry-head"><h3>藥事知識決策支援系統</h3><span class="dates">2025 — 2026</span></div>
-      <p>本地端部署之 RAG 問答系統，以國際臨床指引為知識庫，完成多個開源模型之系統性評估，兼顧醫療資料隱私與回覆品質。碩士論文研究主題。</p>
-      <div class="stack">LlamaIndex · ChromaDB · Ollama · LangSmith</div>
+      <div class="entry-head"><h3>地端 LLM 用藥建議系統</h3><span class="dates">2025 — 2026</span></div>
+      <p>碩士論文題目。以 RAG 架構串接 LLaMA3、Qwen3、Gemma3 與 ChromaDB，資料來源包括 FDA 藥品仿單、PubMed 與 RxNorm，可中英混合查詢。全程離線運行，資料不必送出院外。</p>
+      <div class="stack">Python · Ollama · ChromaDB · RAG</div>
     </div>
     <div class="entry work">
-      <div class="entry-head"><h3>抗生素使用管理儀表板</h3><span class="dates">2025 — 2026</span></div>
-      <p>整合雙資料庫之自動化監測平台，實作國際標準之用藥密度指標，供感染管制與藥事委員會決策使用，並建立完整資料字典以利長期維運。</p>
-      <div class="stack">Power BI · DAX · Power Query M · Oracle · SQL Server</div>
+      <div class="entry-head"><h3>FHIR 電子處方箋系統</h3><span class="dates">2026</span></div>
+      <p>依衛福部 TW Core EMR-IG 2.5 開發的桌面應用程式，實作 FHIR R4 電子處方箋的 Bundle-EP、Composition-EP、MedicationRequest-EP 等 Profile。</p>
+      <div class="stack">Electron · React · TypeScript · FHIR</div>
     </div>
     <div class="entry work">
-      <div class="entry-head"><h3>FHIR 醫療資料交換工具</h3><span class="dates">2026</span></div>
-      <p>桌面應用程式，實作 FHIR Bundle 之封裝與上傳，於 TWCAT 2026 台灣醫療資訊聯測完成 TW EMR Profile 合規驗證。</p>
-      <div class="stack">FHIR · Electron · OAuth 2.0</div>
+      <div class="entry-head"><h3>調閱單電子化自動處理系統</h3><span class="dates">2025</span></div>
+      <p>藥劑部每天要把醫令系統的調閱單印成 PDF、合併、備份，原本全靠人工。我用 AutoHotkey 和 Python 把整段流程串起來：自動攔截列印視窗並命名存檔、一鍵合併當日檔案、定時清理，並做本機與網路雙重備份。現在約 95% 的步驟不需人工介入，也沒有額外採購軟體。</p>
+      <div class="stack">AutoHotkey · Python · Batch · Automation</div>
     </div>
     <div class="entry work">
-      <div class="entry-head"><h3>ICU 藥事照護管理工具</h3><span class="dates">2025</span></div>
-      <p>自動化資料擷取管線，從掃描文件中辨識並結構化 ICU 照護與申報數據，打包為單機應用程式供部門同仁日常使用。</p>
-      <div class="stack">Python · Tesseract OCR · PyInstaller</div>
+      <div class="entry-head"><h3>住院藥局排班系統</h3><span class="dates">2025 — 2026</span></div>
+      <p>住院藥局原本靠人工排班、手算加班費。這套工具處理班別規則、出勤查詢與加班費試算，減少核算錯誤。</p>
+      <div class="stack">Google Apps Script · Google Sheets</div>
+    </div>
+    <div class="entry work">
+      <div class="entry-head"><h3>ADC 智慧藥櫃數據分析</h3><span class="dates">2025 — 2026</span></div>
+      <p>整理逾 30 萬筆智慧藥櫃（ADC）使用紀錄，在 Power BI 建立庫存儀表板，作為補藥決策的參考。</p>
+      <div class="stack">Power BI · DAX</div>
     </div>
       </section>
       <div class="duo">
@@ -163,19 +177,19 @@
           <h2>學歷<span class="en">Education</span></h2>
           
     <div class="edu">
-      <b>資訊管理研究所 · 碩士</b>
-      <div class="meta">國立臺北護理健康大學 · 預計 2027 年畢業</div>
-      <div class="note">研究方向：本地端大型語言模型於藥事決策支援系統之應用</div>
+      <b>資訊管理學系 · 碩士</b>
+      <div class="meta">國立臺北護理健康大學 · 2025/9 — 2027/6（就讀中）</div>
+      <div class="note">研究方向：地端 LLM 用藥建議系統</div>
     </div>
     <div class="edu">
-      <b>醫務管理學系 · 學士</b>
-      <div class="meta">已畢業</div>
-      
+      <b>醫務管理系 · 四技</b>
+      <div class="meta">慈濟大學 · 2014/9 — 2017/6</div>
+      <div class="note">海外經歷：澳洲馬特醫院臨床見習、中國蘇州慈濟實習交流、英國坎伯里大學語言交換</div>
     </div>
         </section>
         <section class="side">
           <h2>專業認證<span class="en">Certifications</span></h2>
-          <ul class="certs"><li>醫資管理師（台灣醫學資訊學會）</li><li>TQC+ Python 3 程式語言認證</li><li>TWCAT 2026 台灣醫療資訊聯測參與</li></ul>
+          <ul class="certs"><li>AI 應用規劃師 - 初級能力鑑定（iPAS 經濟部產業人才能力鑑定）</li><li>醫學資訊管理師（社團法人台灣醫學資訊學會｜醫資證（管）1052 字第 538 號）</li><li>TQC 資訊科技 Python（TQC-DK）</li></ul>
         </section>
       </div>
     </div>
